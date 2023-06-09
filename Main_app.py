@@ -21,7 +21,7 @@ def main():
     # Valores establecidos para el Sistema de Ascensores.
 
     Altura_entre_pisos = 3.5
-    Sotanos = 4
+    Sotanos = 3
     Pisos_Superiores = 85
 
     # Determinar el valor del contrapeso y cabina.
