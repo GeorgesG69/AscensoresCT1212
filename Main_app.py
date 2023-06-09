@@ -36,6 +36,8 @@ def main():
     Personas_Sotanos = 15
     Personas_P_Superiores = 35
 
+    Nro_Ascensores = 6
+
     Area_Pisos = 750
 
     def Paradas_Probables(ns):
@@ -50,9 +52,9 @@ def main():
 
         
     
-    def Recorrido_Probable(ns, Pv):
+    def Capacidad_de_Transporte():
 
-        Hp = ns - (()/())
+        C = (300*Pv*Nro_Ascensores)
 
     # Determinar el valor del contrapeso y cabina.
 
