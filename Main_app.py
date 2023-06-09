@@ -30,7 +30,9 @@ def main():
     Area_Pisos = 750
 
     ''' 
-      
+    Este edificio cuenta con 85 plantas superiores y 3 sotanos, un total de 57 plantas.
+
+    La altura entre pisos es de 3.5m  
     '''
 
     # Determinar el valor del contrapeso y cabina.
