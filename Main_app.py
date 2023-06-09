@@ -30,6 +30,8 @@ def main():
     Altura_entre_pisos = 3.5
     Sotanos = 3
     Pisos_Superiores = 85
+    Pisos_Totales = Pisos_Superiores + Sotanos
+    Pisos_Sobre_PSuperior = Pisos_Totales - 1
 
     Personas_Sotanos = 15
     Personas_P_Superiores = 35
