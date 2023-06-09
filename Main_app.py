@@ -16,6 +16,13 @@ George Galindez: 85
 -Personas que ocupan cada nivel superior 35/piso
 '''
 
+    ''' 
+    Este edificio cuenta con 85 plantas superiores y 3 sotanos, un total de 57 plantas.
+
+    La altura entre pisos es de 3.5m  
+
+    '''
+
 def main():
 
     # Valores establecidos para el Sistema de Ascensores.
@@ -29,16 +36,11 @@ def main():
 
     Area_Pisos = 750
 
-    ''' 
-    Este edificio cuenta con 85 plantas superiores y 3 sotanos, un total de 57 plantas.
 
-    La altura entre pisos es de 3.5m  
-
-    '''
 
     def Personas_por_Viaje(P):
     
-        Pv = (3.2/P)+0.7*P+0.5
+        Pv = (3.2/P)+(0.7*P)+0.5
 
         return Pv
 
