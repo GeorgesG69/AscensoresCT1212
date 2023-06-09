@@ -27,6 +27,8 @@ def main():
     Personas_Sotanos = 15
     Personas_P_Superiores = 35
 
+    Area_Pisos = 750
+
     # Determinar el valor del contrapeso y cabina.
 
     def Valor_Contrapeso_Cabina():
