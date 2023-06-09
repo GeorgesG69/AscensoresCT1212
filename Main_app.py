@@ -40,13 +40,19 @@ def main():
 
     def Paradas_Probables(ns):
 
+        # ns: número de pisos servidos por encima de la planta principal.
         Np = ns(1-((ns-1)/(ns)))
 
     def Personas_por_Viaje(P):
     
+        # P: capacidad nominal de la cabina (personas).
         Pv = (3.2/P)+(0.7*P)+0.5
 
-        return Pv
+        
+    
+    def Recorrido_Probable(ns, Pv):
+
+        Hp = ns - (()/())
 
     # Determinar el valor del contrapeso y cabina.
 
