@@ -38,7 +38,9 @@ def main():
 
     Area_Pisos = 750
 
+    def Paradas_Probables(ns):
 
+        Np = ns(1-((ns-1)/(ns)))
 
     def Personas_por_Viaje(P):
     
