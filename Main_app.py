@@ -98,7 +98,7 @@ def main():
         TiempoP_Apertura_T1 = 5.26 #s
         Velocidad_Nominal = 2 #m/s
 
-    elif Entrada_libre_minima == 900:
+    if Entrada_libre_minima == 900:
 
         Tiempo_Entrada_Salida_T2 = 2.1 #s
 
