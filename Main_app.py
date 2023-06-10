@@ -90,7 +90,7 @@ def main():
 
         Hoja = wb.active
 
-        Hoja["A1"] = "A1"
+        Hoja["A1"] = "Hola"
 
         wb.save("Prueba.xlsx")
 
