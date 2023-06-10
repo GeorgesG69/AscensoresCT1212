@@ -34,7 +34,7 @@ def main():
     Planta_Principal = 1
     Pisos_Superiores = 84
     Pisos_Totales = Pisos_Superiores + Planta_Principal + Sotanos
-    Pisos_Sobre_PSuperior = Pisos_Totales - 1
+    
 
     Personas_Sotanos = 15
     Personas_P_Superiores = 35
