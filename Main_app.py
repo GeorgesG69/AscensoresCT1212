@@ -69,7 +69,7 @@ def main():
         (un total de 6 ascensores)
     '''
 
-
+    # Valores del Grupo A:
 
     ne = 0 #Numero de pisos no servidos por encima de la planta principal
 
