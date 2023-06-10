@@ -76,6 +76,8 @@ def main():
 
         print("Entrada Libre Mínima: Fuera de rango.")
 
+    print(Velocidad_Nominal)
+
     
 
 
