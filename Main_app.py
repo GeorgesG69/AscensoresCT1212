@@ -84,6 +84,8 @@ def main():
 
     Entrada_libre_minima = float(input("Ingrese la Entrada Libre mínima: "))
     Velocidad_Nominal = 0
+    TiempoP_Apertura_T1 = 0
+    Tiempo_Entrada_Salida_T2 = 0
 
     if Entrada_libre_minima == 800:
 
