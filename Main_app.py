@@ -83,6 +83,7 @@ def main():
     print (Vn)
 
     Entrada_libre_minima = float(input("Ingrese la Entrada Libre mínima: "))
+    Velocidad_Nominal = 0
 
     if Entrada_libre_minima == 800:
 
