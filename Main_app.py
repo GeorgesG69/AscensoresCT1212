@@ -48,7 +48,7 @@ def main():
 
         Ha = 308
 
-        Hs = 294
+        Hs = 308
     '''
 
     Area_Pisos = 750 #m^2
