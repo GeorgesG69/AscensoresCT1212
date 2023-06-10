@@ -1,4 +1,4 @@
-import numpy
+
 '''  
 Altura entre pisos= 3.5m
 El número de piso viene dado por:
@@ -22,6 +22,8 @@ Este edificio cuenta con 85 plantas superiores y 3 sotanos, un total de 57 plant
 La altura entre pisos es de 3.5m  
 
 '''
+
+import numpy
 
 def main():
 
