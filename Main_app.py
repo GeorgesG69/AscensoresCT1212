@@ -76,7 +76,7 @@ def main():
 
     He = 3.5 #Recorrido entre la planta principal y la primera planta superior servida
 
-    Hs = Ha - He
+    Hs = Ha - He #Recorrido sobre la planta principal con servicio de ascensores entre la primera y la ultima parada superior
 
     Vn = numpy.sqrt(Hs*Aceleracion/np)
 
