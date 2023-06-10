@@ -66,12 +66,12 @@ def main():
 
     if Entrada_libre_minima == 800:
 
-        TiempoP_Apertura = 4.3 #s
+        TiempoP_Apertura_T1 = 4.3 #s
         Velocidad_Nominal = 1.6 #m/s
 
     elif Entrada_libre_minima >= 900 and Entrada_libre_minima <= 1000:
 
-        TiempoP_Apertura = 5.26 #s
+        TiempoP_Apertura_T1 = 5.26 #s
         Velocidad_Nominal = 2 #m/s
     
     else:
@@ -79,7 +79,7 @@ def main():
         print("Entrada Libre Mínima: Fuera de rango.")
 
     print("La Velocidad Nominal [Vn] del ascensor es de: " , Velocidad_Nominal , " m/s")
-    print("El Tiempo Promedio de Apertura [T1] es de: " , TiempoP_Apertura , "Segundos [s]")
+    print("El Tiempo Promedio de Apertura [T1] es de: " , TiempoP_Apertura_T1 , "Segundos [s]")
 
     
 
