@@ -66,11 +66,25 @@ def main():
 
     if Entrada_libre_minima == 800:
 
+        Tiempo_Entrada_Salida_T2 = 2.2 #s
         TiempoP_Apertura_T1 = 4.3 #s
         Velocidad_Nominal = 1.6 #m/s
 
+    elif Entrada_libre_minima == 900:
+
+        Tiempo_Entrada_Salida_T2 = 2.1 #s
+
+    elif Entrada_libre_minima == 1000:
+
+        Tiempo_Entrada_Salida_T2 = 2 #s
+
+    elif Entrada_libre_minima == 1100:
+
+        Tiempo_Entrada_Salida_T2 = 1.9 #s
+
     elif Entrada_libre_minima >= 900 and Entrada_libre_minima <= 1000:
 
+        
         TiempoP_Apertura_T1 = 5.26 #s
         Velocidad_Nominal = 2 #m/s
     
