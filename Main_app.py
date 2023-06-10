@@ -44,6 +44,9 @@ def main():
 
     Nro_Ascensores = 6
 
+
+    NN = 0
+
     '''
         na = 88
         ep = 3.5m
@@ -81,7 +84,17 @@ def main():
 
     def Guardar_Calculo():
 
-        Hoja_1 = wb.create_chartsheet("Cálculo 1")
+        
+
+        HojaCreada = wb.create_sheet("Cálculo", 0)
+
+        Hoja = wb.active
+
+        Hoja["A1"] = "A1"
+
+    
+
+
 
 
     pass
