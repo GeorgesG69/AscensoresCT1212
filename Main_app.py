@@ -83,9 +83,9 @@ def main():
     print (Vn)
 
     Entrada_libre_minima = float(input("Ingrese la Entrada Libre mínima: "))
-    Velocidad_Nominal = 0
-    TiempoP_Apertura_T1 = 0
-    Tiempo_Entrada_Salida_T2 = 0
+    Velocidad_Nominal = float()
+    TiempoP_Apertura_T1 = float()
+    Tiempo_Entrada_Salida_T2 = float()
 
     if Entrada_libre_minima == 800:
 
@@ -118,6 +118,8 @@ def main():
     else:
 
         print("Entrada Libre Mínima: Fuera de rango.")
+
+    
 
     print("La Velocidad Nominal [Vn] del ascensor es de: " , Velocidad_Nominal , "[m/s]")
     print("El Tiempo Promedio de Apertura [T1] es de: " , TiempoP_Apertura_T1 , "[s]")
