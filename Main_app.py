@@ -76,7 +76,7 @@ def main():
 
         print("Entrada Libre Mínima: Fuera de rango.")
 
-    print("La Velocidad Nominal del ascensor es de: " + Velocidad_Nominal)
+    print("La Velocidad Nominal del ascensor es de: " ; Velocidad_Nominal)
 
     
 
