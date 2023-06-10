@@ -62,7 +62,21 @@ def main():
 
     Aceleracon = 1 #m/s^2
 
-    Entrada_libre_minima = 1000 #mm
+    Entrada_libre_minima = float(input("Ingrese la Entrada Libre mínima: "))
+
+    if Entrada_libre_minima == 800:
+
+        Velocidad_Nominal = 1.6 #m/s
+
+    elif Entrada_libre_minima >= 900 and Entrada_libre_minima <= 1000:
+
+        Velocidad_Nominal = 2 #m/s
+    
+    else:
+
+        print("Entrada Libre Mínima: Fuera de rango.")
+
+    
 
 
     def Paradas_Probables(ns):
