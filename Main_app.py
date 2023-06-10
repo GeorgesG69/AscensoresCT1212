@@ -24,6 +24,9 @@ La altura entre pisos es de 3.5m
 '''
 
 import numpy
+import openpyxl
+
+wb = openpyxl.Workbook()
 
 def main():
 
@@ -75,6 +78,11 @@ def main():
 
 
         pass
+
+    def Guardar_Calculo():
+
+        Hoja_1 = wb.create_chartsheet("Cálculo 1")
+
 
     pass
     
