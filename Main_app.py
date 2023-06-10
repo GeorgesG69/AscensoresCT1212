@@ -29,7 +29,7 @@ def main():
 
     # Valores establecidos para el Sistema de Ascensores.
 
-    Altura_entre_pisos = 3.5
+    Altura_entre_pisos = 3.5 #m
     Sotanos = 3
     Pisos_Superiores = 85
     Pisos_Totales = Pisos_Superiores + Sotanos
@@ -40,9 +40,18 @@ def main():
 
     Nro_Ascensores = 6
 
-    
+    '''
+        na = 88
+        ep = 3.5m
+        np = 88
+        ne = 0
 
-    Area_Pisos = 750
+        Ha = 308
+
+        Hs = 294
+    '''
+
+    Area_Pisos = 750 #m^2
 
     def Paradas_Probables(ns):
 
