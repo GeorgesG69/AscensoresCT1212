@@ -60,6 +60,11 @@ def main():
 
     Area_Pisos = 750 #m^2
 
+    Aceleracon = 1 #m/s^2
+
+    Entrada_libre_minima = 1000 #mm
+
+
     def Paradas_Probables(ns):
 
         # ns: número de pisos servidos por encima de la planta principal.
