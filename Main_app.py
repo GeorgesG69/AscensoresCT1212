@@ -65,9 +65,11 @@ def main():
     #----------------------------------------------------------
 
     '''
-        El sistema de ascensores se divide en 2 grupos de ascensores, con 3 ascensores cada uno
+        El sistema de ascensores se divide en 2 grupos (A y B) de ascensores, con 3 ascensores cada uno
         (un total de 6 ascensores)
     '''
+
+
 
     ne = 0 #Numero de pisos no servidos por encima de la planta principal
 
