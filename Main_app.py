@@ -60,7 +60,27 @@ def main():
 
     Area_Pisos = 750 #m^2
 
-    Aceleracon = 1 #m/s^2
+    Aceleracion = 1 #m/s^2
+
+    #----------------------------------------------------------
+
+    ne = 0 #Numero de pisos no servidos por encima de la planta principal
+
+    np = 84 #Numero de paradas probables en los pisos superiores
+
+    ns = 84 #Numero de pisos servidos encima de la planta principal
+
+    na = ns + ne #Número total de pisos encima de la planta principal.
+
+    Ha = na*np #Recorrido entre la planta principal y superior
+
+    He = 3.5 #Recorrido entre la planta principal y la primera planta superior servida
+
+    Hs = Ha - He
+
+    Vn = numpy.sqrt(Hs*Aceleracion/np)
+
+    print (Vn)
 
     Entrada_libre_minima = float(input("Ingrese la Entrada Libre mínima: "))
 
