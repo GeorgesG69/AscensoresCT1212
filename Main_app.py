@@ -38,7 +38,7 @@ def main():
 
     Nro_Ascensores = 6
 
-    #TVC = 
+    
 
     Area_Pisos = 750
 
@@ -51,19 +51,6 @@ def main():
     
         # P: capacidad nominal de la cabina (personas).
         Pv = (3.2/P)+(0.7*P)+0.5
-
-    #def Tiempo_Total_Viaje():
-
-      #  TTV = TVC + TA
-    
-    #def Capacidad_de_Transporte(Pv):
-
-    #    global Pv
-    #    global TTV 
-
-     #   C = (300*Pv*Nro_Ascensores*100)/(TTV*B)
-
-    # Determinar el valor del contrapeso y cabina.
 
     def Valor_Contrapeso_Cabina():
 
