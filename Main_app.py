@@ -115,12 +115,8 @@ def main():
 
         pass
 
-
-    
-    
     #Guardar_Calculo()
 
-    
     
 if __name__ == "__main__":
     print("Running...")
