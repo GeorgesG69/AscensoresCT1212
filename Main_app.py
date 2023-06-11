@@ -111,7 +111,7 @@ def main():
 
     I_A = Tiempo_Total_Viaje_A/Nro_Ascensores_A
 
-    print("[Grupo A] Intervalo probable: ", I_A)
+    print("[Grupo A] Intervalo probable: ", I_A , "[s]")
 
     def Guardar_Calculo():
 
