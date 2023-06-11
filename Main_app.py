@@ -87,6 +87,7 @@ def main():
  
     #------------------------Cálculos del Grupo A (Pisos Pares):
 
+
     print("\n Cálculos del grupo A: \n")
 
     ne_A = 42 #Numero de pisos NO servidos por encima de la planta principal
@@ -134,6 +135,7 @@ def main():
 
     #----------Cálculos del Grupo B (Pisos Impares):
 
+    print(f"[Grupo B] La Vel. Nominal establecida es: {Velocidad_Nominal_B} [m/s]")
     print("\n Cálculos del grupo B: \n")
 
     ne_B = 42 #Numero de pisos NO servidos por encima de la planta principal
@@ -152,7 +154,7 @@ def main():
 
     RVn_B = numpy.sqrt(Hs_B*Aceleracion/Np_B)
 
-    print("[Grupo A] Referencial Vel. nominal es: " , RVn_B)
+    print("[Grupo B] Referencial Vel. nominal es: " , RVn_B)
 
     # P: capacidad nominal de la cabina (personas).
 
@@ -160,23 +162,23 @@ def main():
     # -(Hs_A/(Np_A*Velocidad_Nominal_A))
     Tiempo_Viaje_Completo_B = (2*(Ha_B/Velocidad_Nominal_B))+(((Velocidad_Nominal_B/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_B+1))-(Hs_B/(Np_B*Velocidad_Nominal_B))+(Tiempo_Entrada_Salida_B*Pv_B)
 
-    print("[Grupo A] Tiempo de Viaje completo: ", Tiempo_Viaje_Completo_B)
+    print("[Grupo B] Tiempo de Viaje completo: ", Tiempo_Viaje_Completo_B)
 
     Tiempo_Total_Viaje_B = Tiempo_Viaje_Completo_B + Tiempo_Viaje_Completo_B*(30/100)
 
-    print("[Grupo A] Tiempo Total de Viaje: ", Tiempo_Total_Viaje_B)
+    print("[Grupo B] Tiempo Total de Viaje: ", Tiempo_Total_Viaje_B)
 
     
 
-    print("[Grupo A] Personas por viaje: ", Pv_B)
+    print("[Grupo B] Personas por viaje: ", Pv_B)
 
     C_B = (300*(Pv_B)*(Nro_Ascensores)*100)/(Tiempo_Total_Viaje_B*Poblacion_estimada_B)
 
-    print("[Grupo A] Capacidad de transporte: ", C_A, "%")
+    print("[Grupo B] Capacidad de transporte: ", C_A, "%")
 
     I_B = Tiempo_Total_Viaje_A/Nro_Ascensores_B
 
-    print("[Grupo A] Intervalo probable: ", I_B , "[s]")
+    print("[Grupo B] Intervalo probable: ", I_B , "[s]")
 
 
     def Guardar_Calculo():
