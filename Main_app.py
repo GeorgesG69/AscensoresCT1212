@@ -86,7 +86,7 @@ def main():
         (un total de 6 ascensores)
     '''
  
-    #------------------------Cálculos del Grupo A (Pisos Pares):
+    #------------------------Cálculos del Grupo A (Planta Ppaal. hasta 28):
 
 
     print("\n Cálculos del grupo A: \n")
