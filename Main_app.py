@@ -129,7 +129,7 @@ def main():
     
     def Capacidad_de_Transporte(Nro_Ascensores):
 
-        C = (300*Personas_por_Viaje*Nro_Ascensores*100)/(Tiempo_Total_Viaje*Poblacion_estimada)
+        C = (300*(Personas_por_Viaje(20))*(Nro_Ascensores)*100)/(Tiempo_Total_Viaje*Poblacion_estimada)
 
         return C
     
@@ -186,7 +186,9 @@ def main():
     
     
     #Guardar_Calculo()
-    
+    Personas_por_Viaje(20)
+    Capacidad_de_Transporte(3)
+    Intervalo_Probable
     Valores_Grupo_A_PPares(42, Paradas_Probables(42), 42, )
     
     
