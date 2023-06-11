@@ -41,6 +41,7 @@ def main():
 
     Personas_Sotanos = 15
     Personas_P_Superiores = 35
+    Poblacion_estimada = 3020
 
     Nro_Ascensores = 6
 
@@ -131,8 +132,15 @@ def main():
         # P: capacidad nominal de la cabina (personas).
         Pv = (3.2/P)+(0.7*P)+0.5
 
-    def Valor_Contrapeso_Cabina():
+        return Pv
+    
+    def Capacidad_de_Transporte(Nro_Ascensores):
 
+        C = (300*Personas_por_Viaje()*Nro_Ascensores*100)/Tiempo_Total_Viaje*Poblacion_estimada
+
+        return C
+
+    def Valor_Contrapeso_Cabina():
 
         pass
 
@@ -140,12 +148,9 @@ def main():
 
     def Cantidad_Pasajeros():
 
-
         pass
 
     def Guardar_Calculo():
-
-        
 
         #HojaCreada = wb.create_sheet("Cálculo", 0)
 
