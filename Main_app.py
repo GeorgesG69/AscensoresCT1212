@@ -68,14 +68,15 @@ def main():
         El sistema de ascensores se divide en 2 grupos (A y B) de ascensores, con 3 ascensores cada uno
         (un total de 6 ascensores)
     '''
+ 
 
     # Valores del Grupo A (Pisos Pares):
 
     ne_A = 0 #Numero de pisos no servidos por encima de la planta principal
 
-    np_A = 84 #Numero de paradas probables en los pisos superiores
+    np_A = 42 #Numero de paradas probables en los pisos superiores
 
-    ns_A = 84 #Numero de pisos servidos encima de la planta principal
+    ns_A = 42 #Numero de pisos servidos encima de la planta principal
 
     na_A = ns_A + ne_A #Número total de pisos encima de la planta principal.
 
@@ -133,8 +134,7 @@ def main():
     print("El Tiempo Promedio de Apertura [T1] es de: " , TiempoP_Apertura_T1 , "[s]")
     print("El Tiempo de Entrada y Salida es de: " , Tiempo_Entrada_Salida_T2 , "[s]")
 
-    
-
+    # Cálculos Generales:
 
     def Paradas_Probables(ns):
 
