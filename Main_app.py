@@ -123,7 +123,7 @@ def main():
     def Paradas_Probables(ns):
 
         # ns: número de pisos servidos por encima de la planta principal.
-        Np = ns(1-((ns-1)/(ns)))
+        Np = ns*(1-((ns-1)/(ns)))
         return Np
 
     def Personas_por_Viaje(P):
@@ -157,7 +157,7 @@ def main():
 
         pass
 
-    def Valores_Grupo_A_PPares(ne_A, np_A, ns_A, na_A, Ha_A, He_A, Hs_A):
+    def Valores_Grupo_A_PPares(ne_A, np_A, ns_A):
 
 
 
@@ -182,8 +182,8 @@ def main():
     
     
     #Guardar_Calculo()
-    Paradas_Probables(42)
-    Valores_Grupo_A_PPares(42, Paradas_Probables(), 42)
+    
+    Valores_Grupo_A_PPares(42, Paradas_Probables(42), 42, )
     
     
 if __name__ == "__main__":
