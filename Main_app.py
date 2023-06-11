@@ -52,12 +52,12 @@ def main():
         El Grupo A atiende los pisos pares, la planta principal y 3 sótanos.
     '''
 
-    Poblacion_estimada_A = 1515
+    Poblacion_estimada_A = 1025
     
-    Nro_Ascensores_A = 3
+    Nro_Ascensores_A = 4
     Velocidad_Nominal_A = 6 #m/s
     Tiempo_Entrada_Salida_A = 2 #s
-    eap = 7
+    eap = 3.5
 
     print(f"[Grupo A]La Vel. Nominal establecida es: {Velocidad_Nominal_A} [m/s]")
 
@@ -95,9 +95,9 @@ def main():
 
     Pv_A = int((3.2/P)+(0.7*P)+0.5)
 
-    ne_A = 42 #Numero de pisos NO servidos por encima de la planta principal
+    ne_A = 0 #Numero de pisos NO servidos por encima de la planta principal
 
-    ns_A = 42 #Numero de pisos servidos encima de la planta principal
+    ns_A = 28 #Numero de pisos servidos encima de la planta principal
 
     Np_A = ns_A*(1-(((ns_A-1)/(ns_A))**(Pv_A))) # Nro de paradas probables en los pisos superiores
 
@@ -105,7 +105,7 @@ def main():
 
     Ha_A = na_A*eap #Recorrido entre la planta principal y superior
 
-    He_A = 7 #Recorrido entre la planta principal y la primera planta superior servida
+    He_A = ne_A*eap #Recorrido entre la planta principal y la primera planta superior servida
 
     Hs_A = Ha_A - He_A #Recorrido sobre la planta principal con servicio de ascensores entre la primera y la ultima parada superior
 
@@ -113,9 +113,14 @@ def main():
 
     print("[Grupo A] Referencial Vel. nominal es: " , RVn_A)
 
+    if RVn_A >= Velocidad_Nominal_A:
 
     # -(Hs_A/(Np_A*Velocidad_Nominal_A))
-    Tiempo_Viaje_Completo_A = (2*(Ha_A/Velocidad_Nominal_A))+(((Velocidad_Nominal_A/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_A+1))-(Hs_A/(Np_A*Velocidad_Nominal_A))+(Tiempo_Entrada_Salida_A*Pv_A)
+        Tiempo_Viaje_Completo_A = (2*(Ha_A/Velocidad_Nominal_A))+(((Velocidad_Nominal_A/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_A+1))-(Hs_A/(Np_A*Velocidad_Nominal_A))+(Tiempo_Entrada_Salida_A*Pv_A)
+    
+    elif RVn_A <= Velocidad_Nominal_A:
+
+        Tiempo_Viaje_Completo_A = (2*(Ha_A/Velocidad_Nominal_A))-(Hs_A/Velocidad_Nominal_A)+(2*Velocidad_Nominal_A/Aceleracion)+(2*Hs_A/(Hs_A*Aceleracion/Np_A)**Np_A)*(Np_A-1)+Tiempo_Apertura_Cierre*(Np_A+1)+Tiempo_Entrada_Salida_A*(Pv_A)
 
     print("[Grupo A] Tiempo de Viaje completo: ", Tiempo_Viaje_Completo_A)
 
