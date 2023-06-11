@@ -43,7 +43,7 @@ def main():
     Personas_Sotanos = 15
     Personas_P_Superiores = 35
     
-    P = 22 #Capacidad nominal de la cabina
+    P = 20 #Capacidad nominal de la cabina
 
     Tiempo_Apertura_Cierre = 3.95 #s
 
@@ -91,11 +91,15 @@ def main():
 
     print("\n Cálculos del grupo A: \n")
 
+    # P: capacidad nominal de la cabina (personas).
+
+    Pv_A = int((3.2/P)+(0.7*P)+0.5)
+
     ne_A = 42 #Numero de pisos NO servidos por encima de la planta principal
 
     ns_A = 42 #Numero de pisos servidos encima de la planta principal
 
-    Np_A = ns_A*(1-((ns_A-1)/(ns_A))) # Nro de paradas probables en los pisos superiores
+    Np_A = ns_A*(1-(((ns_A-1)/(ns_A))**(Pv_A))) # Nro de paradas probables en los pisos superiores
 
     na_A = ns_A + ne_A #Número total de pisos encima de la planta principal.
 
@@ -109,9 +113,7 @@ def main():
 
     print("[Grupo A] Referencial Vel. nominal es: " , RVn_A)
 
-    # P: capacidad nominal de la cabina (personas).
 
-    Pv_A = int((3.2/P)+(0.7*P)+0.5)
     # -(Hs_A/(Np_A*Velocidad_Nominal_A))
     Tiempo_Viaje_Completo_A = (2*(Ha_A/Velocidad_Nominal_A))+(((Velocidad_Nominal_A/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_A+1))-(Hs_A/(Np_A*Velocidad_Nominal_A))+(Tiempo_Entrada_Salida_A*Pv_A)
 
