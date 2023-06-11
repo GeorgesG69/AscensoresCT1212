@@ -130,7 +130,7 @@ def main():
 
     I_A = Tiempo_Total_Viaje_A/Nro_Ascensores_A
 
-    print("[Grupo A] Intervalo probable: ", I_A , "[s]")
+    print("[Grupo A] Intervalo probable: ", I_A , "[s] \n")
 
 
     #----------Cálculos del Grupo B (Pisos Impares):
