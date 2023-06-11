@@ -46,9 +46,9 @@ def main():
     Nro_Ascensores = 6
 
 
-    Tiempo_Viaje_Completo = 104 #S
+    #Tiempo_Viaje_Completo = 104 #S
 
-    Tiempo_Total_Viaje = Tiempo_Viaje_Completo + Tiempo_Viaje_Completo*(30/100)
+    #Tiempo_Total_Viaje = Tiempo_Viaje_Completo + Tiempo_Viaje_Completo*(30/100)
 
 
     Area_Pisos = 750 #m^2
