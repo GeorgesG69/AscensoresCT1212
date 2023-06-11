@@ -53,6 +53,7 @@ def main():
 
     Area_Pisos = 750 #m^2
 
+    Velocidad_Nominal_A = 6 #m/s
     Aceleracion = 1 #m/s^2
 
     #----------------------------------------------------------
@@ -62,111 +63,7 @@ def main():
         (un total de 6 ascensores)
     '''
  
-
-    # Valores del Grupo A (Pisos Pares):
-
-   
-
-    Entrada_libre_minima = float(input("Ingrese la Entrada Libre mínima: "))
-    #Velocidad_Nominal = float()
-    #TiempoP_Apertura_T1 = float()
-    #Tiempo_Entrada_Salida_T2 = float()
-
-    if Entrada_libre_minima == 800:
-
-        Tiempo_Entrada_Salida_T2 = 2.2 #s
-        TiempoP_Apertura_T1 = 4.3 #s
-        Velocidad_Nominal = 1.6 #m/s
-
-    elif Entrada_libre_minima >= 900 and Entrada_libre_minima <= 1000:
-
-        TiempoP_Apertura_T1 = 3.95 #s
-        Velocidad_Nominal = 2 #m/s
-
-    if Entrada_libre_minima == 900:
-
-        Tiempo_Entrada_Salida_T2 = 2.1 #s
-
-    elif Entrada_libre_minima == 1000:
-
-        Tiempo_Entrada_Salida_T2 = 2 #s
-
-    elif Entrada_libre_minima == 1100:
-
-        Tiempo_Entrada_Salida_T2 = 1.9 #s
-
-    elif Entrada_libre_minima == 1200:
-
-        Tiempo_Entrada_Salida_T2 = 1.8 #s
-
-    
-    
-    else:
-
-        print("Entrada Libre Mínima: Fuera de rango.")
-
-    
-
-    print("La Velocidad Nominal [Vn] del ascensor es de: " , Velocidad_Nominal , "[m/s]")
-    print("El Tiempo Promedio de Apertura [T1] es de: " , TiempoP_Apertura_T1 , "[s]")
-    print("El Tiempo de Entrada y Salida es de: " , Tiempo_Entrada_Salida_T2 , "[s]")
-
-    # Cálculos Generales:
-
-    def Paradas_Probables(ns):
-
-        # ns: número de pisos servidos por encima de la planta principal.
-        Np = ns*(1-((ns-1)/(ns)))
-        return Np
-
-    def Personas_por_Viaje(P):
-    
-        # P: capacidad nominal de la cabina (personas).
-        Pv = (3.2/P)+(0.7*P)+0.5
-        print("Personas por viaje: ", Pv)
-
-        return Pv
-        
-    
-
-
-    
-    def Capacidad_de_Transporte(Nro_Ascensores):
-
-        C = (300*(Personas_por_Viaje(20))*(Nro_Ascensores)*100)/(Tiempo_Total_Viaje*Poblacion_estimada)
-        print("Capacidad de transporte: ", C, "%")
-
-        return C
-    
-    def Intervalo_Probable():
-
-        I = Tiempo_Total_Viaje/Nro_Ascensores
-
-        print("Intervalo probable: ", I)
-
-        return I
-
-    def Valor_Contrapeso_Cabina():
-
-        pass
-
-    # Determinar cantidad de pasajeros según la norma COVENIN.
-
-    def Cantidad_Pasajeros():
-
-        pass
-
-    def Guardar_Calculo():
-
-        #HojaCreada = wb.create_sheet("Cálculo", 0)
-
-        Hoja = wb.active
-
-        Hoja["A1"] = "Hola"
-
-        wb.save("Prueba.xlsx")
-
-        pass
+    # Cálculos del Grupo A (Pisos Pares):
 
     def Valores_Grupo_A_PPares(ne_A, np_A, ns_A):
 
@@ -186,9 +83,67 @@ def main():
 
         Hs_A = Ha_A - He_A #Recorrido sobre la planta principal con servicio de ascensores entre la primera y la ultima parada superior
 
-        Vn_A = numpy.sqrt(Hs_A*Aceleracion/np_A)
+        RVn_A = numpy.sqrt(Hs_A*Aceleracion/np_A)
 
-        print ("[Grupo A] Velocidad Nominal 1: " , Vn_A)
+        print ("[Grupo A] Referencial Vnominal es: " , RVn_A)
+
+
+
+    def Tiempo_viaje_Completo_A():
+
+        global Ha_A
+
+        TVC = (2*(Ha_A/Velocidad_Nominal_A))+((Velocidad_Nominal_A/Aceleracion)+T1)
+
+    # Cálculos Generales:
+
+
+
+        # ns: número de pisos servidos por encima de la planta principal.
+    Np = ns*(1-((ns-1)/(ns)))
+
+
+
+    
+        # P: capacidad nominal de la cabina (personas).
+    Pv = (3.2/P)+(0.7*P)+0.5
+    print("Personas por viaje: ", Pv)
+
+
+        
+    
+
+
+    
+
+
+    C = (300*(Personas_por_Viaje(20))*(Nro_Ascensores)*100)/(Tiempo_Total_Viaje*Poblacion_estimada)
+    print("Capacidad de transporte: ", C, "%")
+
+
+    
+
+
+    I = Tiempo_Total_Viaje/Nro_Ascensores
+
+    print("Intervalo probable: ", I)
+
+
+
+
+
+    def Guardar_Calculo():
+
+        #HojaCreada = wb.create_sheet("Cálculo", 0)
+
+        Hoja = wb.active
+
+        Hoja["A1"] = "Hola"
+
+        wb.save("Prueba.xlsx")
+
+        pass
+
 
     
     
