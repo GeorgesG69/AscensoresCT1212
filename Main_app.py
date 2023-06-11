@@ -81,7 +81,7 @@ def main():
 
     RVn_A = numpy.sqrt(Hs_A*Aceleracion/Np_A)
 
-    print("[Grupo A] Referencial Vnominal es: " , RVn_A)
+    print("[Grupo A] Referencial Vel. nominal es: " , RVn_A)
 
     Tiempo_Viaje_Completo_A = (2*(Ha_A/Velocidad_Nominal_A))+((Velocidad_Nominal_A/Aceleracion)+Tiempo_Apertura_Cierre)
     Tiempo_Total_Viaje_A = Tiempo_Viaje_Completo_A + Tiempo_Viaje_Completo_A*(30/100)
