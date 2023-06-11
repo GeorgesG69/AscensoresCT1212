@@ -61,6 +61,10 @@ def main():
     print(f"[Grupo A]La Vel. Nominal establecida es: {Velocidad_Nominal_A} [m/s]")
 
     # Datos Grupo B:
+
+    '''
+        El grupo B atiende los pisos impares, la planta principal y 3 sótanos.
+    '''
     Poblacion_estimada_B = 1515
 
     Nro_Ascensores_B = 3
