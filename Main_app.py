@@ -54,7 +54,7 @@ def main():
 
     Poblacion_estimada_A = 1025
     
-    Nro_Ascensores_A = 6
+    Nro_Ascensores_A = 7
     Velocidad_Nominal_A = 6 #m/s
     Tiempo_Entrada_Salida_A = 2 #s
     eap = 3.5
@@ -146,17 +146,19 @@ def main():
     print(f"[Grupo B] La Vel. Nominal establecida es: {Velocidad_Nominal_B} [m/s]")
     print("\n Cálculos del grupo B: \n")
 
+    Pv_B = int((3.2/P)+(0.7*P)+0.5)
+
     ne_B = 56 #Numero de pisos NO servidos por encima de la planta principal
 
     ns_B = 28 #Numero de pisos servidos encima de la planta principal
 
-    Np_B = ns_B*(1-((ns_B-1)/(ns_B))) # Nro de paradas probables en los pisos superiores
+    Np_B = ns_B*(1-(((ns_B-1)/(ns_B))**Pv_B)) # Nro de paradas probables en los pisos superiores
 
     na_B = ns_B + ne_B #Número total de pisos encima de la planta principal.
 
-    Ha_B = na_B*Np_B #Recorrido entre la planta principal y superior
+    Ha_B = na_B*eap #Recorrido entre la planta principal y superior
 
-    He_B = 3.5 #Recorrido entre la planta principal y la primera planta superior servida
+    He_B = ne_B*eap #Recorrido entre la planta principal y la primera planta superior servida
 
     Hs_B = Ha_B - He_B #Recorrido sobre la planta principal con servicio de ascensores entre la primera y la ultima parada superior
 
@@ -164,7 +166,7 @@ def main():
 
     print("[Grupo B] Referencial Vel. nominal es: " , RVn_B)
 
-    Pv_B = int((3.2/P)+(0.7*P)+0.5)
+    
 
     if RVn_B >= Velocidad_Nominal_B:
 
