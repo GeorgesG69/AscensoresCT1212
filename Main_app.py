@@ -42,12 +42,14 @@ def main():
 
     Personas_Sotanos = 15
     Personas_P_Superiores = 35
-    Poblacion_estimada = 3020
-    P = 20 #Capacidad nominal de la cabina
+    
+    P = 22 #Capacidad nominal de la cabina
 
     Tiempo_Apertura_Cierre = 3 #s
 
     # Datos Grupo A: 
+
+    Poblacion_estimada_A = 630
     
     Nro_Ascensores_A = 3
     Velocidad_Nominal_A = 6 #m/s
@@ -73,7 +75,7 @@ def main():
 
     ne_A = 0 #Numero de pisos NO servidos por encima de la planta principal
 
-    ns_A = 28 #Numero de pisos servidos encima de la planta principal
+    ns_A = 42 #Numero de pisos servidos encima de la planta principal
 
     Np_A = ns_A*(1-((ns_A-1)/(ns_A))) # Nro de paradas probables en los pisos superiores
 
@@ -91,7 +93,7 @@ def main():
 
     # P: capacidad nominal de la cabina (personas).
 
-    Pv_A = (3.2/P)+(0.7*P)+0.5
+    Pv_A = int((3.2/P)+(0.7*P)+0.5)
     # -(Hs_A/(Np_A*Velocidad_Nominal_A))
     Tiempo_Viaje_Completo_A = (2*(Ha_A/Velocidad_Nominal_A))+(((Velocidad_Nominal_A/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_A+1))-(Hs_A/(Np_A*Velocidad_Nominal_A))+(Tiempo_Entrada_Salida_A*Pv_A)
 
@@ -105,7 +107,7 @@ def main():
 
     print("[Grupo A] Personas por viaje: ", Pv_A)
 
-    C_A = (300*(Pv_A)*(Nro_Ascensores)*100)/(Tiempo_Total_Viaje_A*Poblacion_estimada)
+    C_A = (300*(Pv_A)*(Nro_Ascensores)*100)/(Tiempo_Total_Viaje_A*Poblacion_estimada_A)
 
     print("[Grupo A] Capacidad de transporte: ", C_A, "%")
 
