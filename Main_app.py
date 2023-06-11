@@ -93,7 +93,7 @@ def main():
 
     Pv_A = (3.2/P)+(0.7*P)+0.5
     # -(Hs_A/(Np_A*Velocidad_Nominal_A))
-    Tiempo_Viaje_Completo_A = (2*(Ha_A/Velocidad_Nominal_A))+(((Velocidad_Nominal_A/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_A+1))+(Tiempo_Entrada_Salida_A*Pv_A)
+    Tiempo_Viaje_Completo_A = (2*(Ha_A/Velocidad_Nominal_A))+(((Velocidad_Nominal_A/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_A+1))-(Hs_A/(Np_A*Velocidad_Nominal_A))+(Tiempo_Entrada_Salida_A*Pv_A)
 
     print("[Grupo A] Tiempo de Viaje completo: ", Tiempo_Viaje_Completo_A)
 
