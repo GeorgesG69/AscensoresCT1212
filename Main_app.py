@@ -52,10 +52,10 @@ def main():
         El Grupo A atiende los pisos pares, la planta principal y 3 sótanos.
     '''
 
-    Poblacion_estimada_A = 2145
+    Poblacion_estimada_A = 1515
     
     Nro_Ascensores_A = 3
-    Velocidad_Nominal_A = 6 #m/s
+    Velocidad_Nominal_A = 2 #m/s
     Tiempo_Entrada_Salida_A = 2 #s
 
     print(f"[Grupo A]La Vel. Nominal establecida es: {Velocidad_Nominal_A} [m/s]")
