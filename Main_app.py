@@ -83,7 +83,7 @@ def main():
 
     print("[Grupo A] Referencial Vel. nominal es: " , RVn_A)
 
-    Tiempo_Viaje_Completo_A = (2*(Ha_A/Velocidad_Nominal_A))+((Velocidad_Nominal_A/Aceleracion)+Tiempo_Apertura_Cierre)
+    Tiempo_Viaje_Completo_A = (2*(Ha_A/Velocidad_Nominal_A))+((Velocidad_Nominal_A/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_A+1)-(Hs_A/(Np_A*Velocidad_Nominal_A))
     Tiempo_Total_Viaje_A = Tiempo_Viaje_Completo_A + Tiempo_Viaje_Completo_A*(30/100)
 
     # P: capacidad nominal de la cabina (personas).
