@@ -17,7 +17,7 @@ George Galindez: 85
 '''
 
 ''' 
-Este edificio cuenta con 85 plantas superiores y 3 sotanos, un total de 57 plantas.
+Este edificio cuenta con 85 plantas superiores y 3 sotanos, un total de 88 plantas.
 
 La altura entre pisos es de 3.5m  
 
@@ -48,6 +48,9 @@ def main():
     Tiempo_Apertura_Cierre = 3 #s
 
     # Datos Grupo A: 
+    '''
+        El Grupo A atiende los pisos pares, la planta principal y 3 sótanos.
+    '''
 
     Poblacion_estimada_A = 630
     
@@ -73,7 +76,7 @@ def main():
  
     # Cálculos del Grupo A (Pisos Pares):
 
-    ne_A = 0 #Numero de pisos NO servidos por encima de la planta principal
+    ne_A = 42 #Numero de pisos NO servidos por encima de la planta principal
 
     ns_A = 42 #Numero de pisos servidos encima de la planta principal
 
