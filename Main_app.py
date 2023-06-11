@@ -78,6 +78,8 @@ def main():
  
     #------------------------Cálculos del Grupo A (Pisos Pares):
 
+    print("\n Cálculos del grupo A: \n")
+
     ne_A = 42 #Numero de pisos NO servidos por encima de la planta principal
 
     ns_A = 42 #Numero de pisos servidos encima de la planta principal
@@ -122,6 +124,51 @@ def main():
 
 
     #----------Cálculos del Grupo B (Pisos Impares):
+
+    print("\n Cálculos del grupo B: \n")
+
+    ne_B = 42 #Numero de pisos NO servidos por encima de la planta principal
+
+    ns_B = 42 #Numero de pisos servidos encima de la planta principal
+
+    Np_B = ns_B*(1-((ns_B-1)/(ns_B))) # Nro de paradas probables en los pisos superiores
+
+    na_B = ns_B + ne_B #Número total de pisos encima de la planta principal.
+
+    Ha_B = na_B*Np_B #Recorrido entre la planta principal y superior
+
+    He_B = 3.5 #Recorrido entre la planta principal y la primera planta superior servida
+
+    Hs_B = Ha_B - He_B #Recorrido sobre la planta principal con servicio de ascensores entre la primera y la ultima parada superior
+
+    RVn_B = numpy.sqrt(Hs_B*Aceleracion/Np_B)
+
+    print("[Grupo A] Referencial Vel. nominal es: " , RVn_B)
+
+    # P: capacidad nominal de la cabina (personas).
+
+    Pv_B = int((3.2/P)+(0.7*P)+0.5)
+    # -(Hs_A/(Np_A*Velocidad_Nominal_A))
+    Tiempo_Viaje_Completo_B = (2*(Ha_B/Velocidad_Nominal_B))+(((Velocidad_Nominal_B/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_B+1))-(Hs_B/(Np_B*Velocidad_Nominal_B))+(Tiempo_Entrada_Salida_B*Pv_B)
+
+    print("[Grupo A] Tiempo de Viaje completo: ", Tiempo_Viaje_Completo_B)
+
+    Tiempo_Total_Viaje_B = Tiempo_Viaje_Completo_B + Tiempo_Viaje_Completo_B*(30/100)
+
+    print("[Grupo A] Tiempo Total de Viaje: ", Tiempo_Total_Viaje_B)
+
+    
+
+    print("[Grupo A] Personas por viaje: ", Pv_B)
+
+    C_B = (300*(Pv_B)*(Nro_Ascensores)*100)/(Tiempo_Total_Viaje_B*Poblacion_estimada_B)
+
+    print("[Grupo A] Capacidad de transporte: ", C_A, "%")
+
+    I_B = Tiempo_Total_Viaje_A/Nro_Ascensores_B
+
+    print("[Grupo A] Intervalo probable: ", I_B , "[s]")
+
 
     def Guardar_Calculo():
 
