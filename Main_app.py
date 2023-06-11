@@ -80,7 +80,7 @@ def main():
 
     elif Entrada_libre_minima >= 900 and Entrada_libre_minima <= 1000:
 
-        TiempoP_Apertura_T1 = 5.26 #s
+        TiempoP_Apertura_T1 = 3.95 #s
         Velocidad_Nominal = 2 #m/s
 
     if Entrada_libre_minima == 900:
