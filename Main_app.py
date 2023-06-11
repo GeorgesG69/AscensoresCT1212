@@ -55,13 +55,18 @@ def main():
     Poblacion_estimada_A = 1515
     
     Nro_Ascensores_A = 3
-    Velocidad_Nominal_A = 2 #m/s
+    Velocidad_Nominal_A = 6 #m/s
     Tiempo_Entrada_Salida_A = 2 #s
 
     print(f"[Grupo A]La Vel. Nominal establecida es: {Velocidad_Nominal_A} [m/s]")
 
     # Datos Grupo B:
+    Poblacion_estimada_B = 1515
+
     Nro_Ascensores_B = 3
+    Velocidad_Nominal_B = 6 #m/s
+    Tiempo_Entrada_Salida_B = 2
+
     Nro_Ascensores = Nro_Ascensores_A + Nro_Ascensores_B #Bloque A + Bloque B
 
     Area_Pisos = 750 #m^2
