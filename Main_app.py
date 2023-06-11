@@ -45,7 +45,7 @@ def main():
     
     P = 22 #Capacidad nominal de la cabina
 
-    Tiempo_Apertura_Cierre = 3 #s
+    Tiempo_Apertura_Cierre = 3.95 #s
 
     # Datos Grupo A: 
     '''
