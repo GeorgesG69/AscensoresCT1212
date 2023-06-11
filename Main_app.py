@@ -46,14 +46,20 @@ def main():
     P = 20 #Capacidad nominal de la cabina
 
     Tiempo_Apertura_Cierre = 3 #s
+
+    # Datos Grupo A: 
     
     Nro_Ascensores_A = 3
+    Velocidad_Nominal_A = 6 #m/s
+    Tiempo_Entrada_Salida_A = 2 #s
+
+    # Datos Grupo B:
     Nro_Ascensores_B = 3
     Nro_Ascensores = Nro_Ascensores_A + Nro_Ascensores_B #Bloque A + Bloque B
 
     Area_Pisos = 750 #m^2
 
-    Velocidad_Nominal_A = 6 #m/s
+    
     Aceleracion = 1 #m/s^2
 
     #----------------------------------------------------------
@@ -83,8 +89,13 @@ def main():
 
     print("[Grupo A] Referencial Vel. nominal es: " , RVn_A)
 
-    Tiempo_Viaje_Completo_A = (2*(Ha_A/Velocidad_Nominal_A))+((Velocidad_Nominal_A/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_A+1)-(Hs_A/(Np_A*Velocidad_Nominal_A))
+    Tiempo_Viaje_Completo_A = (2*(Ha_A/Velocidad_Nominal_A))+((Velocidad_Nominal_A/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_A+1)-(Hs_A/(Np_A*Velocidad_Nominal_A))+(Tiempo_Entrada_Salida_A*Pv_A)
+
+    print("[Grupo A] Tiempo de Viaje completo: ", Tiempo_Viaje_Completo_A)
+
     Tiempo_Total_Viaje_A = Tiempo_Viaje_Completo_A + Tiempo_Viaje_Completo_A*(30/100)
+
+    print("[Grupo A] Tiempo Total de Viaje: ", Tiempo_Total_Viaje_A)
 
     # P: capacidad nominal de la cabina (personas).
 
