@@ -90,7 +90,7 @@ def main():
 
         Vn_A = numpy.sqrt(Hs_A*Aceleracion/np_A)
 
-    print ("[Grupo A] Velocidad Nominal 1: " , Vn_A)
+        print ("[Grupo A] Velocidad Nominal 1: " , Vn_A)
 
     Entrada_libre_minima = float(input("Ingrese la Entrada Libre mínima: "))
     #Velocidad_Nominal = float()
