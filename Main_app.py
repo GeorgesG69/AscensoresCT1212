@@ -49,7 +49,7 @@ def main():
 
     # Datos Grupo A: 
     
-    Nro_Ascensores_A = 3
+    Nro_Ascensores_A = 4
     Velocidad_Nominal_A = 6 #m/s
     Tiempo_Entrada_Salida_A = 2 #s
 
