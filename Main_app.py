@@ -37,7 +37,8 @@ def main():
     Planta_Principal = 1
     Pisos_Superiores = 84
     Pisos_Totales = Pisos_Superiores + Planta_Principal + Sotanos
-    
+
+    # Cantidad de personas    
 
     Personas_Sotanos = 15
     Personas_P_Superiores = 35
@@ -47,13 +48,7 @@ def main():
     Tiempo_Apertura_Cierre = 3 #s
     
 
-    Nro_Ascensores = 6
-
-
-    #Tiempo_Viaje_Completo = 104 #S
-
-    #Tiempo_Total_Viaje = Tiempo_Viaje_Completo + Tiempo_Viaje_Completo*(30/100)
-
+    Nro_Ascensores = 6 #Bloque A + Bloque B
 
     Area_Pisos = 750 #m^2
 
