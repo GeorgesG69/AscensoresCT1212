@@ -132,6 +132,12 @@ def main():
         C = (300*Personas_por_Viaje*Nro_Ascensores*100)/(Tiempo_Total_Viaje*Poblacion_estimada)
 
         return C
+    
+    def Intervalo_Probable():
+
+        I = Tiempo_Total_Viaje/Nro_Ascensores
+
+        return I
 
     def Valor_Contrapeso_Cabina():
 
