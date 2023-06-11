@@ -52,7 +52,7 @@ def main():
         El Grupo A atiende los pisos pares, la planta principal y 3 sótanos.
     '''
 
-    Poblacion_estimada_A = 630
+    Poblacion_estimada_A = 2145
     
     Nro_Ascensores_A = 3
     Velocidad_Nominal_A = 6 #m/s
