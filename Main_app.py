@@ -202,6 +202,8 @@ def main():
 
     print("[Grupo B] Intervalo probable: ", I_B , "[s]")
 
+    print("\n")
+
 
     def Guardar_Calculo():
 
