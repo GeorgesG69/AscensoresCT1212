@@ -54,7 +54,7 @@ def main():
 
     Poblacion_estimada_A = 1025
     
-    Nro_Ascensores_A = 4
+    Nro_Ascensores_A = 6
     Velocidad_Nominal_A = 6 #m/s
     Tiempo_Entrada_Salida_A = 2 #s
     eap = 3.5
@@ -66,9 +66,9 @@ def main():
     '''
         El grupo B atiende los pisos impares, la planta principal y 3 sótanos.
     '''
-    Poblacion_estimada_B = 1515
+    Poblacion_estimada_B = 1025
 
-    Nro_Ascensores_B = 3
+    Nro_Ascensores_B = 6
     Velocidad_Nominal_B = 6 #m/s
     Tiempo_Entrada_Salida_B = 2
 
@@ -82,8 +82,8 @@ def main():
     #----------------------------------------------------------
 
     '''
-        El sistema de ascensores se divide en 2 grupos (A y B) de ascensores, con 3 ascensores cada uno
-        (un total de 6 ascensores)
+        El sistema de ascensores se divide en X grupos (???) de ascensores, con Y ascensores cada uno
+        (un total de J ascensores)
     '''
  
     #------------------------Cálculos del Grupo A (Planta Ppaal. hasta 28):
@@ -95,7 +95,7 @@ def main():
 
     Pv_A = int((3.2/P)+(0.7*P)+0.5)
 
-    ne_A = 0 #Numero de pisos NO servidos por encima de la planta principal
+    ne_A = 56 #Numero de pisos NO servidos por encima de la planta principal
 
     ns_A = 28 #Numero de pisos servidos encima de la planta principal
 
@@ -105,7 +105,7 @@ def main():
 
     Ha_A = na_A*eap #Recorrido entre la planta principal y superior
 
-    He_A = ne_A*eap #Recorrido entre la planta principal y la primera planta superior servida
+    He_A = ne_A*eap #Recorrido expreso
 
     Hs_A = Ha_A - He_A #Recorrido sobre la planta principal con servicio de ascensores entre la primera y la ultima parada superior
 
@@ -146,9 +146,9 @@ def main():
     print(f"[Grupo B] La Vel. Nominal establecida es: {Velocidad_Nominal_B} [m/s]")
     print("\n Cálculos del grupo B: \n")
 
-    ne_B = 42 #Numero de pisos NO servidos por encima de la planta principal
+    ne_B = 56 #Numero de pisos NO servidos por encima de la planta principal
 
-    ns_B = 42 #Numero de pisos servidos encima de la planta principal
+    ns_B = 28 #Numero de pisos servidos encima de la planta principal
 
     Np_B = ns_B*(1-((ns_B-1)/(ns_B))) # Nro de paradas probables en los pisos superiores
 
@@ -164,11 +164,23 @@ def main():
 
     print("[Grupo B] Referencial Vel. nominal es: " , RVn_B)
 
+    Pv_B = int((3.2/P)+(0.7*P)+0.5)
+
+    if RVn_B >= Velocidad_Nominal_B:
+
+    # -(Hs_A/(Np_A*Velocidad_Nominal_A))
+        Tiempo_Viaje_Completo_B = (2*(Ha_B/Velocidad_Nominal_B))+(((Velocidad_Nominal_B/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_B+1))-(Hs_B/(Np_B*Velocidad_Nominal_B))+(Tiempo_Entrada_Salida_B*Pv_B)
+    
+    elif RVn_B <= Velocidad_Nominal_B:
+
+        Tiempo_Viaje_Completo_B = (2*(Ha_B/Velocidad_Nominal_B))-(Hs_A/Velocidad_Nominal_B)+(2*Velocidad_Nominal_B/Aceleracion)+(2*Hs_A/(Hs_B*Aceleracion/Np_A)**Np_B)*(Np_B-1)+Tiempo_Apertura_Cierre*(Np_B+1)+Tiempo_Entrada_Salida_B*(Pv_B)
+
+
     # P: capacidad nominal de la cabina (personas).
 
-    Pv_B = int((3.2/P)+(0.7*P)+0.5)
+    
     # -(Hs_A/(Np_A*Velocidad_Nominal_A))
-    Tiempo_Viaje_Completo_B = (2*(Ha_B/Velocidad_Nominal_B))+(((Velocidad_Nominal_B/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_B+1))-(Hs_B/(Np_B*Velocidad_Nominal_B))+(Tiempo_Entrada_Salida_B*Pv_B)
+   # Tiempo_Viaje_Completo_B = (2*(Ha_B/Velocidad_Nominal_B))+(((Velocidad_Nominal_B/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_B+1))-(Hs_B/(Np_B*Velocidad_Nominal_B))+(Tiempo_Entrada_Salida_B*Pv_B)
 
     print("[Grupo B] Tiempo de Viaje completo: ", Tiempo_Viaje_Completo_B)
 
