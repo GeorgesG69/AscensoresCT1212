@@ -58,6 +58,8 @@ def main():
     Velocidad_Nominal_A = 6 #m/s
     Tiempo_Entrada_Salida_A = 2 #s
 
+    print(f"[Grupo A]La Vel. Nominal establecida es: {Velocidad_Nominal_A} [m/s]")
+
     # Datos Grupo B:
     Nro_Ascensores_B = 3
     Nro_Ascensores = Nro_Ascensores_A + Nro_Ascensores_B #Bloque A + Bloque B
