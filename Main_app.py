@@ -86,8 +86,6 @@ def main():
     Tiempo_Viaje_Completo_A = (2*(Ha_A/Velocidad_Nominal_A))+((Velocidad_Nominal_A/Aceleracion)+Tiempo_Apertura_Cierre)
     Tiempo_Total_Viaje_A = Tiempo_Viaje_Completo_A + Tiempo_Viaje_Completo_A*(30/100)
 
-    
-
     # P: capacidad nominal de la cabina (personas).
 
     Pv_A = (3.2/P)+(0.7*P)+0.5
@@ -97,7 +95,6 @@ def main():
     C_A = (300*(Pv_A)*(Nro_Ascensores)*100)/(Tiempo_Total_Viaje_A*Poblacion_estimada)
 
     print("[Grupo A] Capacidad de transporte: ", C_A, "%")
-
 
     I_A = Tiempo_Total_Viaje_A/Nro_Ascensores_A
 
