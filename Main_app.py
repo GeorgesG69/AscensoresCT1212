@@ -57,6 +57,7 @@ def main():
     Nro_Ascensores_A = 3
     Velocidad_Nominal_A = 6 #m/s
     Tiempo_Entrada_Salida_A = 2 #s
+    eap = 7
 
     print(f"[Grupo A]La Vel. Nominal establecida es: {Velocidad_Nominal_A} [m/s]")
 
@@ -98,9 +99,9 @@ def main():
 
     na_A = ns_A + ne_A #Número total de pisos encima de la planta principal.
 
-    Ha_A = na_A*Np_A #Recorrido entre la planta principal y superior
+    Ha_A = na_A*eap #Recorrido entre la planta principal y superior
 
-    He_A = 3.5 #Recorrido entre la planta principal y la primera planta superior servida
+    He_A = 7 #Recorrido entre la planta principal y la primera planta superior servida
 
     Hs_A = Ha_A - He_A #Recorrido sobre la planta principal con servicio de ascensores entre la primera y la ultima parada superior
 
