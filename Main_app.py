@@ -67,27 +67,26 @@ def main():
 
     ne_A = 42 #Numero de pisos NO servidos por encima de la planta principal
 
-    #np_A = 42 #Numero de paradas probables en los pisos superiores
-
     ns_A = 42 #Numero de pisos servidos encima de la planta principal
+
+    Np_A = ns_A*(1-((ns_A-1)/(ns_A)))
 
     na_A = ns_A + ne_A #Número total de pisos encima de la planta principal.
 
-    Ha_A = na_A*np_A #Recorrido entre la planta principal y superior
+    Ha_A = na_A*Np_A #Recorrido entre la planta principal y superior
 
     He_A = 3.5 #Recorrido entre la planta principal y la primera planta superior servida
 
     Hs_A = Ha_A - He_A #Recorrido sobre la planta principal con servicio de ascensores entre la primera y la ultima parada superior
 
-    RVn_A = numpy.sqrt(Hs_A*Aceleracion/np_A)
+    RVn_A = numpy.sqrt(Hs_A*Aceleracion/Np_A)
 
     print("[Grupo A] Referencial Vnominal es: " , RVn_A)
 
     Tiempo_Viaje_Completo_A = (2*(Ha_A/Velocidad_Nominal_A))+((Velocidad_Nominal_A/Aceleracion)+Tiempo_Apertura_Cierre)
     Tiempo_Total_Viaje_A = Tiempo_Viaje_Completo_A + Tiempo_Viaje_Completo_A*(30/100)
 
-    # ns: número de pisos servidos por encima de la planta principal.
-    Np_A = ns_A*(1-((ns_A-1)/(ns_A)))
+    
 
     # P: capacidad nominal de la cabina (personas).
 
