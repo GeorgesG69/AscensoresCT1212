@@ -54,7 +54,7 @@ def main():
 
     Poblacion_estimada_A = 1025
     
-    Nro_Ascensores_A = 7
+    Nro_Ascensores_A = 6
     Velocidad_Nominal_A = 6 #m/s
     Tiempo_Entrada_Salida_A = 2 #s
     eap = 3.5
