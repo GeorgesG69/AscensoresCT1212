@@ -65,27 +65,27 @@ def main():
  
     # Cálculos del Grupo A (Pisos Pares):
 
-    def Valores_Grupo_A_PPares(ne_A, np_A, ns_A):
 
 
 
-        #ne_A = 0 #Numero de pisos no servidos por encima de la planta principal
 
-        #np_A = 42 #Numero de paradas probables en los pisos superiores
+    ne_A = 0 #Numero de pisos no servidos por encima de la planta principal
 
-        #ns_A = 42 #Numero de pisos servidos encima de la planta principal
+    np_A = 42 #Numero de paradas probables en los pisos superiores
 
-        na_A = ns_A + ne_A #Número total de pisos encima de la planta principal.
+    ns_A = 42 #Numero de pisos servidos encima de la planta principal
 
-        Ha_A = na_A*np_A #Recorrido entre la planta principal y superior
+    na_A = ns_A + ne_A #Número total de pisos encima de la planta principal.
 
-        He_A = 3.5 #Recorrido entre la planta principal y la primera planta superior servida
+    Ha_A = na_A*np_A #Recorrido entre la planta principal y superior
 
-        Hs_A = Ha_A - He_A #Recorrido sobre la planta principal con servicio de ascensores entre la primera y la ultima parada superior
+    He_A = 3.5 #Recorrido entre la planta principal y la primera planta superior servida
 
-        RVn_A = numpy.sqrt(Hs_A*Aceleracion/np_A)
+    Hs_A = Ha_A - He_A #Recorrido sobre la planta principal con servicio de ascensores entre la primera y la ultima parada superior
 
-        print ("[Grupo A] Referencial Vnominal es: " , RVn_A)
+    RVn_A = numpy.sqrt(Hs_A*Aceleracion/np_A)
+
+    print("[Grupo A] Referencial Vnominal es: " , RVn_A)
 
 
 
@@ -99,14 +99,15 @@ def main():
 
 
 
-        # ns: número de pisos servidos por encima de la planta principal.
+    # ns: número de pisos servidos por encima de la planta principal.
     Np = ns*(1-((ns-1)/(ns)))
 
 
 
     
-        # P: capacidad nominal de la cabina (personas).
+    # P: capacidad nominal de la cabina (personas).
     Pv = (3.2/P)+(0.7*P)+0.5
+
     print("Personas por viaje: ", Pv)
 
 
@@ -118,6 +119,7 @@ def main():
 
 
     C = (300*(Personas_por_Viaje(20))*(Nro_Ascensores)*100)/(Tiempo_Total_Viaje*Poblacion_estimada)
+
     print("Capacidad de transporte: ", C, "%")
 
 
