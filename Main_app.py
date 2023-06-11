@@ -42,6 +42,10 @@ def main():
     Personas_Sotanos = 15
     Personas_P_Superiores = 35
     Poblacion_estimada = 3020
+    P = 20
+
+    Tiempo_Apertura_Cierre = 3 #s
+    
 
     Nro_Ascensores = 6
 
@@ -87,52 +91,25 @@ def main():
 
     print("[Grupo A] Referencial Vnominal es: " , RVn_A)
 
-
-
-    def Tiempo_viaje_Completo_A():
-
-        global Ha_A
-
-        TVC = (2*(Ha_A/Velocidad_Nominal_A))+((Velocidad_Nominal_A/Aceleracion)+T1)
-
-    # Cálculos Generales:
-
-
+    TVC = (2*(Ha_A/Velocidad_Nominal_A))+((Velocidad_Nominal_A/Aceleracion)+Tiempo_Apertura_Cierre)
 
     # ns: número de pisos servidos por encima de la planta principal.
-    Np = ns*(1-((ns-1)/(ns)))
+    Np = ns_A*(1-((ns-1)/(ns)))
 
-
-
-    
     # P: capacidad nominal de la cabina (personas).
+
     Pv = (3.2/P)+(0.7*P)+0.5
 
     print("Personas por viaje: ", Pv)
-
-
-        
-    
-
-
-    
-
 
     C = (300*(Personas_por_Viaje(20))*(Nro_Ascensores)*100)/(Tiempo_Total_Viaje*Poblacion_estimada)
 
     print("Capacidad de transporte: ", C, "%")
 
 
-    
-
-
     I = Tiempo_Total_Viaje/Nro_Ascensores
 
     print("Intervalo probable: ", I)
-
-
-
-
 
     def Guardar_Calculo():
 
@@ -150,10 +127,7 @@ def main():
     
     
     #Guardar_Calculo()
-    Personas_por_Viaje(20)
-    Capacidad_de_Transporte(3)
-    Intervalo_Probable
-    Valores_Grupo_A_PPares(42, Paradas_Probables(42), 42, )
+
     
     
 if __name__ == "__main__":
