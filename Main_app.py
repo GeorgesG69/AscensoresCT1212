@@ -75,7 +75,7 @@ def main():
 
     ns_A = 42 #Numero de pisos servidos encima de la planta principal
 
-    Np_A = ns_A*(1-((ns_A-1)/(ns_A)))
+    Np_A = ns_A*(1-((ns_A-1)/(ns_A))) # Nro de paradas probables en los pisos superiores
 
     na_A = ns_A + ne_A #Número total de pisos encima de la planta principal.
 
