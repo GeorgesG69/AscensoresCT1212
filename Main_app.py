@@ -47,8 +47,9 @@ def main():
 
     Tiempo_Apertura_Cierre = 3 #s
     
-
-    Nro_Ascensores = 6 #Bloque A + Bloque B
+    Nro_Ascensores_A = 3
+    Nro_Ascensores_B = 3
+    Nro_Ascensores = Nro_Ascensores_A + Nro_Ascensores_B #Bloque A + Bloque B
 
     Area_Pisos = 750 #m^2
 
@@ -64,9 +65,9 @@ def main():
  
     # Cálculos del Grupo A (Pisos Pares):
 
-    ne_A = 0 #Numero de pisos no servidos por encima de la planta principal
+    ne_A = 42 #Numero de pisos NO servidos por encima de la planta principal
 
-    np_A = 42 #Numero de paradas probables en los pisos superiores
+    #np_A = 42 #Numero de paradas probables en los pisos superiores
 
     ns_A = 42 #Numero de pisos servidos encima de la planta principal
 
@@ -86,22 +87,22 @@ def main():
     Tiempo_Total_Viaje_A = Tiempo_Viaje_Completo_A + Tiempo_Viaje_Completo_A*(30/100)
 
     # ns: número de pisos servidos por encima de la planta principal.
-    Np = ns_A*(1-((ns_A-1)/(ns_A)))
+    Np_A = ns_A*(1-((ns_A-1)/(ns_A)))
 
     # P: capacidad nominal de la cabina (personas).
 
-    Pv = (3.2/P)+(0.7*P)+0.5
+    Pv_A = (3.2/P)+(0.7*P)+0.5
 
-    print("Personas por viaje: ", Pv)
+    print("[Grupo A] Personas por viaje: ", Pv_A)
 
-    C = (300*(Pv)*(Nro_Ascensores)*100)/(Tiempo_Total_Viaje_A*Poblacion_estimada)
+    C_A = (300*(Pv_A)*(Nro_Ascensores)*100)/(Tiempo_Total_Viaje_A*Poblacion_estimada)
 
-    print("Capacidad de transporte: ", C, "%")
+    print("[Grupo A] Capacidad de transporte: ", C_A, "%")
 
 
-    I = Tiempo_Total_Viaje_A/Nro_Ascensores
+    I_A = Tiempo_Total_Viaje_A/Nro_Ascensores_A
 
-    print("Intervalo probable: ", I)
+    print("[Grupo A] Intervalo probable: ", I_A)
 
     def Guardar_Calculo():
 
