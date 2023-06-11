@@ -43,7 +43,7 @@ def main():
     Personas_Sotanos = 15
     Personas_P_Superiores = 35
     
-    P = 20 #Capacidad nominal de la cabina
+    P = 22 #Capacidad nominal de la cabina
 
     Tiempo_Apertura_Cierre = 3.95 #s
 
@@ -132,7 +132,7 @@ def main():
 
     print("[Grupo A] Personas por viaje: ", Pv_A)
 
-    C_A = (300*(Pv_A)*(Nro_Ascensores)*100)/(Tiempo_Total_Viaje_A*Poblacion_estimada_A)
+    C_A = (300*(Pv_A)*(Nro_Ascensores_A)*100)/(Tiempo_Total_Viaje_A*Poblacion_estimada_A)
 
     print("[Grupo A] Capacidad de transporte: ", C_A, "%")
 
@@ -180,7 +180,7 @@ def main():
 
     print("[Grupo B] Personas por viaje: ", Pv_B)
 
-    C_B = (300*(Pv_B)*(Nro_Ascensores)*100)/(Tiempo_Total_Viaje_B*Poblacion_estimada_B)
+    C_B = (300*(Pv_B)*(Nro_Ascensores_B)*100)/(Tiempo_Total_Viaje_B*Poblacion_estimada_B)
 
     print("[Grupo B] Capacidad de transporte: ", C_A, "%")
 
