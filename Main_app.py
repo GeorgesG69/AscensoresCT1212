@@ -76,7 +76,7 @@ def main():
         (un total de 6 ascensores)
     '''
  
-    # Cálculos del Grupo A (Pisos Pares):
+    #------------------------Cálculos del Grupo A (Pisos Pares):
 
     ne_A = 42 #Numero de pisos NO servidos por encima de la planta principal
 
@@ -119,6 +119,9 @@ def main():
     I_A = Tiempo_Total_Viaje_A/Nro_Ascensores_A
 
     print("[Grupo A] Intervalo probable: ", I_A , "[s]")
+
+
+    #----------Cálculos del Grupo B (Pisos Impares):
 
     def Guardar_Calculo():
 
