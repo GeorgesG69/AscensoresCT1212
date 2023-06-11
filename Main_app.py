@@ -125,14 +125,11 @@ def main():
         Pv = (3.2/P)+(0.7*P)+0.5
 
         return Pv
-    
-    
 
-        
     
     def Capacidad_de_Transporte(Nro_Ascensores):
 
-        C = (300*Personas_por_Viaje*Nro_Ascensores*100)/Tiempo_Total_Viaje*Poblacion_estimada
+        C = (300*Personas_por_Viaje*Nro_Ascensores*100)/(Tiempo_Total_Viaje*Poblacion_estimada)
 
         return C
 
