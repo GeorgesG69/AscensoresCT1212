@@ -85,9 +85,9 @@ def main():
 
     Hs_A = Ha_A - He_A #Recorrido sobre la planta principal con servicio de ascensores entre la primera y la ultima parada superior
 
-    Vn_A = numpy.sqrt(Hs*Aceleracion/np)
+    Vn_A = numpy.sqrt(Hs_A*Aceleracion/np_A)
 
-    print ("Velocidad Nominal 1: " , Vn)
+    print ("[Grupo A] Velocidad Nominal 1: " , Vn_A)
 
     Entrada_libre_minima = float(input("Ingrese la Entrada Libre mínima: "))
     #Velocidad_Nominal = float()
