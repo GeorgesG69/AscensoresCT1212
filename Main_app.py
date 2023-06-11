@@ -123,19 +123,26 @@ def main():
     
         # P: capacidad nominal de la cabina (personas).
         Pv = (3.2/P)+(0.7*P)+0.5
+        print("Personas por viaje: ", Pv)
 
         return Pv
+        
+    
+
 
     
     def Capacidad_de_Transporte(Nro_Ascensores):
 
         C = (300*(Personas_por_Viaje(20))*(Nro_Ascensores)*100)/(Tiempo_Total_Viaje*Poblacion_estimada)
+        print("Capacidad de transporte: ", C, "%")
 
         return C
     
     def Intervalo_Probable():
 
         I = Tiempo_Total_Viaje/Nro_Ascensores
+
+        print("Intervalo probable: ", I)
 
         return I
 
