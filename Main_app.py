@@ -72,25 +72,7 @@ def main():
 
     # Valores del Grupo A (Pisos Pares):
 
-    def Valores_Grupo_A_PPares(ne_A, np_A, ns_A, na_A, Ha_A, He_A, Hs_A):
-
-        ne_A = 0 #Numero de pisos no servidos por encima de la planta principal
-
-        np_A = 42 #Numero de paradas probables en los pisos superiores
-
-        ns_A = 42 #Numero de pisos servidos encima de la planta principal
-
-        na_A = ns_A + ne_A #Número total de pisos encima de la planta principal.
-
-        Ha_A = na_A*np_A #Recorrido entre la planta principal y superior
-
-        He_A = 3.5 #Recorrido entre la planta principal y la primera planta superior servida
-
-        Hs_A = Ha_A - He_A #Recorrido sobre la planta principal con servicio de ascensores entre la primera y la ultima parada superior
-
-        Vn_A = numpy.sqrt(Hs_A*Aceleracion/np_A)
-
-        print ("[Grupo A] Velocidad Nominal 1: " , Vn_A)
+   
 
     Entrada_libre_minima = float(input("Ingrese la Entrada Libre mínima: "))
     #Velocidad_Nominal = float()
@@ -142,6 +124,7 @@ def main():
 
         # ns: número de pisos servidos por encima de la planta principal.
         Np = ns(1-((ns-1)/(ns)))
+        return Np
 
     def Personas_por_Viaje(P):
     
@@ -174,13 +157,33 @@ def main():
 
         pass
 
+    def Valores_Grupo_A_PPares(ne_A, np_A, ns_A, na_A, Ha_A, He_A, Hs_A):
+
+
+
+        #ne_A = 0 #Numero de pisos no servidos por encima de la planta principal
+
+        #np_A = 42 #Numero de paradas probables en los pisos superiores
+
+        #ns_A = 42 #Numero de pisos servidos encima de la planta principal
+
+        na_A = ns_A + ne_A #Número total de pisos encima de la planta principal.
+
+        Ha_A = na_A*np_A #Recorrido entre la planta principal y superior
+
+        He_A = 3.5 #Recorrido entre la planta principal y la primera planta superior servida
+
+        Hs_A = Ha_A - He_A #Recorrido sobre la planta principal con servicio de ascensores entre la primera y la ultima parada superior
+
+        Vn_A = numpy.sqrt(Hs_A*Aceleracion/np_A)
+
+        print ("[Grupo A] Velocidad Nominal 1: " , Vn_A)
+
     
-
-
-
-
     
     #Guardar_Calculo()
+    Paradas_Probables(42)
+    Valores_Grupo_A_PPares(42, Paradas_Probables(), 42)
     
     
 if __name__ == "__main__":
