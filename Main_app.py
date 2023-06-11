@@ -72,21 +72,23 @@ def main():
 
     # Valores del Grupo A (Pisos Pares):
 
-    ne_A = 0 #Numero de pisos no servidos por encima de la planta principal
+    def Valores_Grupo_A_PPares(ne_A, np_A, ns_A, na_A, Ha_A, He_A, Hs_A):
 
-    np_A = 42 #Numero de paradas probables en los pisos superiores
+        ne_A = 0 #Numero de pisos no servidos por encima de la planta principal
 
-    ns_A = 42 #Numero de pisos servidos encima de la planta principal
+        np_A = 42 #Numero de paradas probables en los pisos superiores
 
-    na_A = ns_A + ne_A #Número total de pisos encima de la planta principal.
+        ns_A = 42 #Numero de pisos servidos encima de la planta principal
 
-    Ha_A = na_A*np_A #Recorrido entre la planta principal y superior
+        na_A = ns_A + ne_A #Número total de pisos encima de la planta principal.
 
-    He_A = 3.5 #Recorrido entre la planta principal y la primera planta superior servida
+        Ha_A = na_A*np_A #Recorrido entre la planta principal y superior
 
-    Hs_A = Ha_A - He_A #Recorrido sobre la planta principal con servicio de ascensores entre la primera y la ultima parada superior
+        He_A = 3.5 #Recorrido entre la planta principal y la primera planta superior servida
 
-    Vn_A = numpy.sqrt(Hs_A*Aceleracion/np_A)
+        Hs_A = Ha_A - He_A #Recorrido sobre la planta principal con servicio de ascensores entre la primera y la ultima parada superior
+
+        Vn_A = numpy.sqrt(Hs_A*Aceleracion/np_A)
 
     print ("[Grupo A] Velocidad Nominal 1: " , Vn_A)
 
