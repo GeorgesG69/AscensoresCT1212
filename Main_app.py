@@ -46,18 +46,10 @@ def main():
     Nro_Ascensores = 6
 
 
-    NN = 0
+    Tiempo_Viaje_Completo = 104 #S
 
-    '''
-        na = 88
-        ep = 3.5m
-        np = 88
-        ne = 0
+    Tiempo_Total_Viaje = Tiempo_Viaje_Completo + Tiempo_Viaje_Completo*(30/100)
 
-        Ha = 308
-
-        Hs = 308
-    '''
 
     Area_Pisos = 750 #m^2
 
@@ -134,9 +126,13 @@ def main():
 
         return Pv
     
+    
+
+        
+    
     def Capacidad_de_Transporte(Nro_Ascensores):
 
-        C = (300*Personas_por_Viaje()*Nro_Ascensores*100)/Tiempo_Total_Viaje*Poblacion_estimada
+        C = (300*Personas_por_Viaje*Nro_Ascensores*100)/Tiempo_Total_Viaje*Poblacion_estimada
 
         return C
 
