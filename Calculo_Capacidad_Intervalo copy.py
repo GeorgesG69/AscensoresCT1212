@@ -35,9 +35,35 @@ Datos Generales:
 
 B: Población Estimada
 
+TVC: Tiempo de viaje completo
+
+Ta: Tiempo adicional
+
+TTV: Tiempo_Total_Viaje
+
     '''
+    Planta_Principal = 1
+    Pisos_Superiores = 84
+    Sotanos = 3
+    Distancia_Promedio = 3.5 #m
+    Recorrido_Ppal_Super = 0
+
+
 
     Aceleracion = 1 #m/s
+    Poblacion_Piso = 35
+    Poblacion_Sotano = 15
+
+
+    ReferenciaV_Nom = numpy.sqrt()
+
+    Tiempo_Adicional = 30/10
+
+    if ():
+        Tiempo_Viaje_Completo = 0
+    Tiempo_Total_Viaje = Tiempo_Viaje_Completo + Tiempo_Viaje_Completo*Tiempo_Adicional
+    
+
 
 
     def Guardar_Calculo():
