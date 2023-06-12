@@ -64,7 +64,7 @@ def main():
     # Datos Grupo B:
 
     '''
-        El grupo B atiende los pisos impares, la planta principal y 3 sótanos.
+        El grupo B atiende Pb, Piso 29 al 57 y 3 Sótanos.
     '''
     Poblacion_estimada_B = 1025
 
@@ -72,7 +72,18 @@ def main():
     Velocidad_Nominal_B = 6 #m/s
     Tiempo_Entrada_Salida_B = 2
 
-    Nro_Ascensores = Nro_Ascensores_A + Nro_Ascensores_B #Bloque A + Bloque B
+     # Datos Grupo C:
+
+    '''
+        El grupo C atiende Pb, Piso 58 al 85 y 3 Sótanos.
+    '''
+    Poblacion_estimada_C = 1025
+
+    Nro_Ascensores_C = 6
+    Velocidad_Nominal_C = 6 #m/s
+    Tiempo_Entrada_Salida_C = 2
+
+    Nro_Ascensores = Nro_Ascensores_A + Nro_Ascensores_B + Nro_Ascensores_C #Bloque A + Bloque B
 
     Area_Pisos = 750 #m^2
 
@@ -141,10 +152,10 @@ def main():
     print("[Grupo A] Intervalo probable: ", I_A , "[s] \n")
 
 
-    #----------Cálculos del Grupo B (Pisos Impares):
+    #----------Cálculos del Grupo B (Piso 29 al 57):
 
-    print(f"[Grupo B] La Vel. Nominal establecida es: {Velocidad_Nominal_B} [m/s]")
     print("\n Cálculos del grupo B: \n")
+    print(f"[Grupo B] La Vel. Nominal establecida es: {Velocidad_Nominal_B} [m/s]")
 
     Pv_B = int((3.2/P)+(0.7*P)+0.5)
 
@@ -166,8 +177,6 @@ def main():
 
     print("[Grupo B] Referencial Vel. nominal es: " , RVn_B)
 
-    
-
     if RVn_B >= Velocidad_Nominal_B:
 
     # -(Hs_A/(Np_A*Velocidad_Nominal_A))
@@ -177,10 +186,6 @@ def main():
 
         Tiempo_Viaje_Completo_B = (2*(Ha_B/Velocidad_Nominal_B))-(Hs_A/Velocidad_Nominal_B)+(2*Velocidad_Nominal_B/Aceleracion)+(2*Hs_A/(Hs_B*Aceleracion/Np_A)**Np_B)*(Np_B-1)+Tiempo_Apertura_Cierre*(Np_B+1)+Tiempo_Entrada_Salida_B*(Pv_B)
 
-
-    # P: capacidad nominal de la cabina (personas).
-
-    
     # -(Hs_A/(Np_A*Velocidad_Nominal_A))
    # Tiempo_Viaje_Completo_B = (2*(Ha_B/Velocidad_Nominal_B))+(((Velocidad_Nominal_B/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_B+1))-(Hs_B/(Np_B*Velocidad_Nominal_B))+(Tiempo_Entrada_Salida_B*Pv_B)
 
@@ -198,9 +203,65 @@ def main():
 
     print("[Grupo B] Capacidad de transporte: ", C_A, "%")
 
-    I_B = Tiempo_Total_Viaje_A/Nro_Ascensores_B
+    I_B = Tiempo_Total_Viaje_B/Nro_Ascensores_B
 
     print("[Grupo B] Intervalo probable: ", I_B , "[s]")
+
+    print("\n")
+
+    #-------------------Cálculos del Grupo C (Piso 58 al 85, Pb y Sótanos):
+
+    print(f"[Grupo C] La Vel. Nominal establecida es: {Velocidad_Nominal_C} [m/s]")
+
+    Pv_C = int((3.2/P)+(0.7*P)+0.5)
+
+    ne_C = 56 #Numero de pisos NO servidos por encima de la planta principal
+
+    ns_C = 28 #Numero de pisos servidos encima de la planta principal
+
+    Np_C = ns_C*(1-(((ns_C-1)/(ns_C))**Pv_C)) # Nro de paradas probables en los pisos superiores
+
+    na_C = ns_C + ne_C #Número total de pisos encima de la planta principal.
+
+    Ha_C = na_C*eap #Recorrido entre la planta principal y superior
+
+    He_C = ne_C*eap #Recorrido entre la planta principal y la primera planta superior servida
+
+    Hs_C = Ha_C - He_C #Recorrido sobre la planta principal con servicio de ascensores entre la primera y la ultima parada superior
+
+    RVn_C = numpy.sqrt(Hs_C*Aceleracion/Np_C)
+
+    print("[Grupo C] Referencial Vel. nominal es: " , RVn_C)
+
+    if RVn_C >= Velocidad_Nominal_C:
+
+    # -(Hs_A/(Np_A*Velocidad_Nominal_A))
+        Tiempo_Viaje_Completo_C = (2*(Ha_C/Velocidad_Nominal_C))+(((Velocidad_Nominal_C/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_C+1))-(Hs_C/(Np_C*Velocidad_Nominal_C))+(Tiempo_Entrada_Salida_C*Pv_C)
+    
+    elif RVn_C <= Velocidad_Nominal_C:
+
+        Tiempo_Viaje_Completo_C = (2*(Ha_C/Velocidad_Nominal_C))-(Hs_A/Velocidad_Nominal_C)+(2*Velocidad_Nominal_C/Aceleracion)+(2*Hs_A/(Hs_C*Aceleracion/Np_A)**Np_C)*(Np_C-1)+Tiempo_Apertura_Cierre*(Np_C+1)+Tiempo_Entrada_Salida_C*(Pv_C)
+
+    # -(Hs_A/(Np_A*Velocidad_Nominal_A))
+   # Tiempo_Viaje_Completo_C = (2*(Ha_C/Velocidad_Nominal_C))+(((Velocidad_Nominal_C/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_C+1))-(Hs_C/(Np_C*Velocidad_Nominal_C))+(Tiempo_Entrada_Salida_C*Pv_C)
+
+    print("[Grupo C] Tiempo de Viaje completo: ", Tiempo_Viaje_Completo_C)
+
+    Tiempo_Total_Viaje_C = Tiempo_Viaje_Completo_C + Tiempo_Viaje_Completo_C*(30/100)
+
+    print("[Grupo C] Tiempo Total de Viaje: ", Tiempo_Total_Viaje_C)
+
+    
+
+    print("[Grupo C] Personas por viaje: ", Pv_C)
+
+    C_C = (300*(Pv_C)*(Nro_Ascensores_C)*100)/(Tiempo_Total_Viaje_C*Poblacion_estimada_C)
+
+    print("[Grupo C] Capacidad de transporte: ", C_A, "%")
+
+    I_C = Tiempo_Total_Viaje_C/Nro_Ascensores_C
+
+    print("[Grupo C] Intervalo probable: ", I_C , "[s]")
 
     print("\n")
 
