@@ -146,7 +146,11 @@ TTV: Tiempo_Total_Viaje
                             "Recorrido superior: " : [Recorrido_Ppal_Super],
                             "Recorrido expreso: " : [Recorrido_Ppal_1PSuper],
                             "Recorrido superior servido: " : [Recorrido_Superior_Servido],
-                            })
+                            "Tiempo de apertura y cierre: " : [Tiempo_Apertira_cierre],
+                            "Tiempo de entrada y salida: " : [Tiempo_Entrada_Salida],
+                            "Tiempo de Viaje Completo: " : [Tiempo_Viaje_Completo],
+                            "Tiempo Total de VIaje: " : [Tiempo_Total_Viaje],
+                            "Personas por viaje: " : [Personas_Viaje]})
 
     #Guardar_Calculo()
 
