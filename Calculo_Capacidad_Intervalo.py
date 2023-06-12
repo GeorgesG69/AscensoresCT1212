@@ -49,7 +49,7 @@ def main():
 
     # Datos Grupo A: 
     '''
-        El Grupo A atiende los pisos pares, la planta principal y 3 sótanos.
+        El Grupo A atiende Pb, hasta el piso 28 y 3 Sótanos.
     '''
 
     Poblacion_estimada_A = 1025
@@ -93,8 +93,8 @@ def main():
     #----------------------------------------------------------
 
     '''
-        El sistema de ascensores se divide en X grupos (???) de ascensores, con Y ascensores cada uno
-        (un total de J ascensores)
+        El sistema de ascensores se divide en 3 grupos (A, B y C) de ascensores, con 6 ascensores cada uno
+        (un total de 18 ascensores)
     '''
  
     #------------------------Cálculos del Grupo A (Planta Ppaal. hasta 28):
