@@ -188,11 +188,11 @@ TTV: Tiempo_Total_Viaje
 
             if AttributeError:
 
-                print("Error al guardar:", AttributeError)
+                print("\nError al guardar:", AttributeError)
 
         finally:
 
-            print("Programa terminado.")
+            print("Programa terminado.\n")
 
     Guardar_Calculo()
 
