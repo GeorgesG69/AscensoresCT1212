@@ -74,12 +74,6 @@ TTV: Tiempo_Total_Viaje
 
 
 
-    Capacidad_Transporte = (300*Personas_Viaje*Nro_Ascensores*100)/(Tiempo_Total_Viaje*Poblacion_Total) # (C)
-    Intervalo_Probable = Tiempo_Total_Viaje/Nro_Ascensores
-
-    Tiempo_Llenado = 500/Capacidad_Transporte
-
-
 
 
 
@@ -95,6 +89,12 @@ TTV: Tiempo_Total_Viaje
         Tiempo_Viaje_Completo = 0
 
     Tiempo_Total_Viaje = Tiempo_Viaje_Completo + Tiempo_Viaje_Completo*Tiempo_Adicional
+
+
+    Capacidad_Transporte = (300*Personas_Viaje*Nro_Ascensores*100)/(Tiempo_Total_Viaje*Poblacion_Total) # (C)
+    Intervalo_Probable = Tiempo_Total_Viaje/Nro_Ascensores
+
+    Tiempo_Llenado = 500/Capacidad_Transporte
     
 
 
