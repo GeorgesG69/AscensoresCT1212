@@ -56,7 +56,7 @@ TTV: Tiempo_Total_Viaje
 
     print(f"Pisos servidos: {Pisos_Servidos} \n Pisos NO servidos: {Pisos_No_Servidos} \n Pisos totales: {Pisos_Totales}")
 
-    Poblacion_Total = Poblacion_Piso*Pisos_Servidos + Poblacion_Sotano*Sotanos
+    Poblacion_Total = Poblacion_Piso*Pisos_Servidos + Poblacion_Sotano*Sotanos # (B)
     
     Recorrido_Ppal_Super = Pisos_Totales*Distancia_Promedio #(Ha)
     Recorrido_Ppal_1PSuper = Pisos_No_Servidos*Distancia_Promedio #(He)
@@ -69,7 +69,13 @@ TTV: Tiempo_Total_Viaje
 
     Paradas_Probables = Pisos_Servidos*(1-(((Pisos_Servidos-1)/Pisos_Servidos)**Personas_Viaje)) #np
 
-    Capacidad_Transporte = (300*Personas_Viaje*Nro_Ascensores*100)/(Tiempo_Total_Viaje*)# (C)
+
+
+
+    Capacidad_Transporte = (300*Personas_Viaje*Nro_Ascensores*100)/(Tiempo_Total_Viaje*Poblacion_Total) # (C)
+    Intervalo_Probable = Tiempo_Total_Viaje/Nro_Ascensores
+
+    Tiempo_Llenado = 500/Capacidad_Transporte
 
 
 
