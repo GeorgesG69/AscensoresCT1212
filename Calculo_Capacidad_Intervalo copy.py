@@ -33,9 +33,11 @@ def main():
     '''
 Datos Generales: 
 
-
+B: Población Estimada
 
     '''
+
+    Aceleracion = 1 #m/s
 
 
     def Guardar_Calculo():
