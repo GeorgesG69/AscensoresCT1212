@@ -108,10 +108,14 @@ TTV: Tiempo_Total_Viaje
     Intervalo_Probable = Tiempo_Total_Viaje/Nro_Ascensores
 
     Tiempo_Llenado = 500/Capacidad_Transporte
-    
 
-
-
+    print(f"La Vel. Nominal establecida es: {Velocidad_Nominal_Establecida} [m/s]")
+    print(f"Referencial Vel. Nominal: {ReferenciaV_Nom}")
+    print(f"Tiempo de Viaje Completo: {Tiempo_Viaje_Completo} [s]")
+    print(f"Tiempo Total de Viaje: {Tiempo_Total_Viaje} [s]")
+    print(f"Personas por viaje: {Personas_Viaje}")
+    print(f"Capacidad de Transporte [C] {Capacidad_Transporte} %")
+    print(f"Intervalo Probable: {Intervalo_Probable} [s]")
 
     def Guardar_Calculo():
 
