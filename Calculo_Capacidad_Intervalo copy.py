@@ -80,9 +80,13 @@ TTV: Tiempo_Total_Viaje
     Tiempo_Entrada_Salida = 1.9 #s
     Tiempo_Adicional = 30/10
 
-    if ReferenciaV_Nom <= Velocidad_Nominal_Establecida and Zona_expresa == False:
+    if ReferenciaV_Nom < Velocidad_Nominal_Establecida and Zona_expresa == False:
 
         Tiempo_Viaje_Completo = (2*Recorrido_Ppal_Super/numpy.sqrt(Recorrido_Ppal_Super*Aceleracion/Paradas_Probables))+(Velocidad_Nominal_Establecida/Aceleracion)+(Recorrido_Ppal_Super/Velocidad_Nominal_Establecida)+(Tiempo_Apertira_cierre*(Paradas_Probables+1))+Tiempo_Entrada_Salida*Personas_Viaje
+
+    elif ReferenciaV_Nom >= Velocidad_Nominal_Establecida and Zona_expresa == False:
+
+        Tiempo_Viaje_Completo = (2*Recorrido_Ppal_Super/Velocidad_Nominal_Establecida)+((Velocidad_Nominal_Establecida/Aceleracion)+Tiempo_Apertira_cierre)*(Paradas_Probables+1)+Tiempo_Entrada_Salida*Personas_Viaje
 
     Tiempo_Total_Viaje = Tiempo_Viaje_Completo + Tiempo_Viaje_Completo*Tiempo_Adicional
 
