@@ -43,23 +43,23 @@ TTV: Tiempo_Total_Viaje
 
     '''
     Poblacion_Piso = 35
-    Poblacion_Sotano = 15
+    Poblacion_Sotano = 0
     
     Planta_Principal = 1
     Pisos_Superiores = 84
-    Sotanos = 3 # (ni)
-    Distancia_Promedio = 3.5 #m (ep)
-    Pisos_No_Servidos = 0 # (ne)
-    Pisos_Servidos = 84 #(ns)
+    Sotanos = 1 # (ni)
+    Distancia_Promedio = 3.4 #m (ep)
+    Pisos_No_Servidos = 34 # (ne)
+    Pisos_Servidos = 16 #(ns)
     Pisos_Totales = Pisos_Servidos + Pisos_No_Servidos # (na)
 
-    Nro_Ascensores = 3
-    Velocidad_Nominal_Establecida = 10 #m/s
-    Zona_expresa = False
+    Nro_Ascensores = 4
+    Velocidad_Nominal_Establecida = 6 #m/s
+    Zona_expresa = True
 
-    print(f"Pisos servidos: {Pisos_Servidos} \n Pisos NO servidos: {Pisos_No_Servidos} \n Pisos totales: {Pisos_Totales}")
+    print(f"Pisos servidos: {Pisos_Servidos} \nPisos NO servidos: {Pisos_No_Servidos} \nPisos totales: {Pisos_Totales}")
 
-    Poblacion_Total = Poblacion_Piso*Pisos_Servidos + Poblacion_Sotano*Sotanos # (B)
+    Poblacion_Total = 16 #Poblacion_Piso*Pisos_Servidos + Poblacion_Sotano*Sotanos # (B)
     
     Recorrido_Ppal_Super = Pisos_Totales*Distancia_Promedio #(Ha)
     Recorrido_Ppal_1PSuper = Pisos_No_Servidos*Distancia_Promedio #(He)
@@ -76,8 +76,8 @@ TTV: Tiempo_Total_Viaje
 
     ReferenciaV_Nom = numpy.sqrt(Recorrido_Superior_Servido*Aceleracion/Paradas_Probables)
 
-    Tiempo_Apertira_cierre = 4.11 #s
-    Tiempo_Entrada_Salida = 1.9 #s
+    Tiempo_Apertira_cierre = 3.95 #s
+    Tiempo_Entrada_Salida = 2 #s
     Tiempo_Adicional = 30/10
 
     if ReferenciaV_Nom < Velocidad_Nominal_Establecida and Zona_expresa == False:
@@ -114,8 +114,10 @@ TTV: Tiempo_Total_Viaje
     print(f"Tiempo de Viaje Completo: {Tiempo_Viaje_Completo} [s]")
     print(f"Tiempo Total de Viaje: {Tiempo_Total_Viaje} [s]")
     print(f"Personas por viaje: {Personas_Viaje}")
+    print(f"Paradas probables: {Paradas_Probables}")
     print(f"Capacidad de Transporte [C] {Capacidad_Transporte} %")
     print(f"Intervalo Probable: {Intervalo_Probable} [s]")
+    print(f"Tiempo de llenado: {Tiempo_Llenado}")
 
     def Guardar_Calculo():
 
@@ -133,6 +135,6 @@ TTV: Tiempo_Total_Viaje
 
     
 if __name__ == "__main__":
-    print("Running...")
+    print("Running... \n")
     main()
     
