@@ -43,23 +43,24 @@ TTV: Tiempo_Total_Viaje
 
     '''
     Poblacion_Piso = 35
-    Poblacion_Sotano = 0
+    Poblacion_Sotano = 15
     
     Planta_Principal = 1
     Pisos_Superiores = 84
-    Sotanos = 1 # (ni)
+    Sotanos = 3 # (ni)
     Distancia_Promedio = 3.4 #m (ep)
-    Pisos_No_Servidos = 34 # (ne)
-    Pisos_Servidos = 16 #(ns)
-    Pisos_Totales = Pisos_Servidos + Pisos_No_Servidos # (na)
+    Pisos_No_Servidos = 0 # (ne)
+    Pisos_Servidos = 30 #(ns)
+    Pisos_Totales = 30 #Pisos_Servidos + Pisos_No_Servidos # (na)
 
-    Nro_Ascensores = 4
+    Nro_Ascensores = 5
     Velocidad_Nominal_Establecida = 6 #m/s
-    Zona_expresa = True
+    Zona_expresa = False
 
+    print(f"Zona expresa: {Zona_expresa}")
     print(f"Pisos servidos: {Pisos_Servidos} \nPisos NO servidos: {Pisos_No_Servidos} \nPisos totales: {Pisos_Totales}")
 
-    Poblacion_Total = 16 #Poblacion_Piso*Pisos_Servidos + Poblacion_Sotano*Sotanos # (B)
+    Poblacion_Total = Poblacion_Piso*Pisos_Servidos + Poblacion_Sotano*Sotanos # (B)
     
     Recorrido_Ppal_Super = Pisos_Totales*Distancia_Promedio #(Ha)
     Recorrido_Ppal_1PSuper = Pisos_No_Servidos*Distancia_Promedio #(He)
@@ -67,7 +68,7 @@ TTV: Tiempo_Total_Viaje
     Recorrido_Superior_Servido = Recorrido_Ppal_Super - Recorrido_Ppal_1PSuper #(Hs)
     Recorrido_Total = Recorrido_Ppal_Super + Recorrido_Sotanos #(Ht)
 
-    Capacidad_Nominal_P = 22
+    Capacidad_Nominal_P = 18
     Personas_Viaje = int((3.2/Capacidad_Nominal_P)+(0.7*Capacidad_Nominal_P)+0.5) #Pv
 
     Paradas_Probables = Pisos_Servidos*(1-(((Pisos_Servidos-1)/Pisos_Servidos)**Personas_Viaje)) #np
@@ -109,14 +110,21 @@ TTV: Tiempo_Total_Viaje
 
     Tiempo_Llenado = 500/Capacidad_Transporte
 
-    print(f"La Vel. Nominal establecida es: {Velocidad_Nominal_Establecida} [m/s]")
+    print(f"\nLa Vel. Nominal establecida es: {Velocidad_Nominal_Establecida} [m/s]")
     print(f"Referencial Vel. Nominal: {ReferenciaV_Nom}")
+    print(f"\nRecorrido Superior: {Recorrido_Ppal_Super}")
+    print(f"Recorrido Expreso: {Recorrido_Ppal_1PSuper}")
+    print(f"Recorrido Superior Servido: {Recorrido_Superior_Servido} \n")
+
+    print(f"Tiempo de apertura y cierre: {Tiempo_Apertira_cierre}")
+    print(f"Tiempo de entrada y salida: {Tiempo_Entrada_Salida} \n")
+
     print(f"Tiempo de Viaje Completo: {Tiempo_Viaje_Completo} [s]")
-    print(f"Tiempo Total de Viaje: {Tiempo_Total_Viaje} [s]")
+    print(f"Tiempo Total de Viaje: {Tiempo_Total_Viaje} [s] \n")
     print(f"Personas por viaje: {Personas_Viaje}")
-    print(f"Paradas probables: {Paradas_Probables}")
+    print(f"Paradas probables: {Paradas_Probables} \n")
     print(f"Capacidad de Transporte [C] {Capacidad_Transporte} %")
-    print(f"Intervalo Probable: {Intervalo_Probable} [s]")
+    print(f"Intervalo Probable [I]: {Intervalo_Probable} [s] \n")
     print(f"Tiempo de llenado: {Tiempo_Llenado}")
 
     def Guardar_Calculo():
