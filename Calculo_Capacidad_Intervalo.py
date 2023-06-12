@@ -43,7 +43,7 @@ def main():
     Personas_Sotanos = 15
     Personas_P_Superiores = 35
     
-    P = 22 #Capacidad nominal de la cabina
+    P = 15 #Capacidad nominal de la cabina
 
     Tiempo_Apertura_Cierre = 4.46 #s
 
@@ -54,8 +54,8 @@ def main():
 
     Poblacion_estimada_A = 1060
     
-    Nro_Ascensores_A = 7
-    Velocidad_Nominal_A = 10 #m/s
+    Nro_Ascensores_A = 4
+    Velocidad_Nominal_A = 4 #m/s
     Tiempo_Entrada_Salida_A = 1.9 #s
     eap = 3.5
 
@@ -105,9 +105,9 @@ def main():
 
     Pv_A = int((3.2/P)+(0.7*P)+0.5)
 
-    ne_A = 56 #Numero de pisos NO servidos por encima de la planta principal
+    ne_A = 59 #Numero de pisos NO servidos por encima de la planta principal
 
-    ns_A = 28 #Numero de pisos servidos encima de la planta principal
+    ns_A = 25 #Numero de pisos servidos encima de la planta principal
 
     Np_A = ns_A*(1-(((ns_A-1)/(ns_A))**(Pv_A))) # Nro de paradas probables en los pisos superiores
 
