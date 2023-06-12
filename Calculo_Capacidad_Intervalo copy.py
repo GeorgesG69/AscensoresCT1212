@@ -150,7 +150,11 @@ TTV: Tiempo_Total_Viaje
                             "Tiempo de entrada y salida: " : [Tiempo_Entrada_Salida],
                             "Tiempo de Viaje Completo: " : [Tiempo_Viaje_Completo],
                             "Tiempo Total de VIaje: " : [Tiempo_Total_Viaje],
-                            "Personas por viaje: " : [Personas_Viaje]})
+                            "Personas por viaje: " : [Personas_Viaje],
+                            "Paradas Probables: " : [Paradas_Probables],
+                            "C (>12): " : [Capacidad_Transporte],
+                            "I (<40): " : [Intervalo_Probable],
+                            "Tiempo de llenado: " : [Tiempo_Llenado]})
 
     #Guardar_Calculo()
 
