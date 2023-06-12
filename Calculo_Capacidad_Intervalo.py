@@ -125,11 +125,11 @@ def main():
 
     if RVn_A >= Velocidad_Nominal_A:
 
-        Tiempo_Viaje_Completo_A = (2*(Ha_A/Velocidad_Nominal_A))+(((Velocidad_Nominal_A/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_A+1))-(Hs_A/(Np_A*Velocidad_Nominal_A))+(Tiempo_Entrada_Salida_A*Pv_A)
+        Tiempo_Viaje_Completo_A = (2*(Ha_A/Velocidad_Nominal_A))+(((Velocidad_Nominal_A/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_A+1))+Tiempo_Entrada_Salida_A*Pv_A
     
     elif RVn_A <= Velocidad_Nominal_A:
 
-        Tiempo_Viaje_Completo_A = (2*(Ha_A/Velocidad_Nominal_A))-(Hs_A/Velocidad_Nominal_A)+(2*Velocidad_Nominal_A/Aceleracion)+(2*Hs_A/(Hs_A*Aceleracion/Np_A)**Np_A)*(Np_A-1)+Tiempo_Apertura_Cierre*(Np_A+1)+Tiempo_Entrada_Salida_A*(Pv_A)
+        Tiempo_Viaje_Completo_A = (2*Ha_A/numpy.sqrt(Ha_A*Aceleracion/Np_A))+(Velocidad_Nominal_A/Aceleracion)+(Ha_A/Velocidad_Nominal_A)+(Tiempo_Apertura_Cierre*(Np_A+1))+Tiempo_Entrada_Salida_A*Pv_A
 
     print("[Grupo A] Tiempo de Viaje completo: ", Tiempo_Viaje_Completo_A)
 
