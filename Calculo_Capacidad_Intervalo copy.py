@@ -26,6 +26,7 @@ La altura entre pisos es de 3.5m
 import numpy
 import openpyxl
 import pandas as pd
+from pandas import ExcelWriter
 
 wb = openpyxl.Workbook()
 
@@ -55,7 +56,7 @@ TTV: Tiempo_Total_Viaje
     Pisos_Totales = Pisos_Servidos + Pisos_No_Servidos # (na)
 
     Nro_Ascensores = 6
-    Capacidad_Nominal_P = 22
+    Capacidad_Nominal_P = 24
     Velocidad_Nominal_Establecida = 10 #m/s
     Zona_expresa = False
 
@@ -130,17 +131,22 @@ TTV: Tiempo_Total_Viaje
     print(f"Intervalo Probable [I]: {Intervalo_Probable} [s] (<40) \n")
     print(f"Tiempo de llenado: {Tiempo_Llenado}")
 
-    def Guardar_Calculo():
+    def Guardar_Calculo(): 
 
-        #HojaCreada = wb.create_sheet("Cálculo", 0)
+        Res_Grupo = input("Ingrese el grupo del cálculo: ")
 
-        Hoja = wb.active
 
-        Hoja["A1"] = "Hola"
-
-        wb.save("Prueba.xlsx")
-
-        pass
+        df = pd.DataFrame({"Grupo" : [f"Grupo {Res_Grupo}"],
+                            "Zona expresa" : [Zona_expresa],
+                            "Pisos Servidos: " : [Pisos_Servidos],
+                            "Pisos no servidos: " : [Pisos_No_Servidos],
+                            "Pisos totales: " : [Pisos_Totales],
+                            "Velocidad Nominal: " : [Velocidad_Nominal_Establecida],
+                            "Ref. Vel. Nominal: " : [ReferenciaV_Nom],
+                            "Recorrido superior: " : [Recorrido_Ppal_Super],
+                            "Recorrido expreso: " : [Recorrido_Ppal_1PSuper],
+                            "Recorrido superior servido: " : [Recorrido_Superior_Servido],
+                            })
 
     #Guardar_Calculo()
 
