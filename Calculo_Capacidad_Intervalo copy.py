@@ -54,6 +54,7 @@ TTV: Tiempo_Total_Viaje
     Pisos_Totales = 30 #Pisos_Servidos + Pisos_No_Servidos # (na)
 
     Nro_Ascensores = 5
+    Capacidad_Nominal_P = 18
     Velocidad_Nominal_Establecida = 6 #m/s
     Zona_expresa = False
 
@@ -68,7 +69,7 @@ TTV: Tiempo_Total_Viaje
     Recorrido_Superior_Servido = Recorrido_Ppal_Super - Recorrido_Ppal_1PSuper #(Hs)
     Recorrido_Total = Recorrido_Ppal_Super + Recorrido_Sotanos #(Ht)
 
-    Capacidad_Nominal_P = 18
+    
     Personas_Viaje = int((3.2/Capacidad_Nominal_P)+(0.7*Capacidad_Nominal_P)+0.5) #Pv
 
     Paradas_Probables = Pisos_Servidos*(1-(((Pisos_Servidos-1)/Pisos_Servidos)**Personas_Viaje)) #np
@@ -123,8 +124,8 @@ TTV: Tiempo_Total_Viaje
     print(f"Tiempo Total de Viaje: {Tiempo_Total_Viaje} [s] \n")
     print(f"Personas por viaje: {Personas_Viaje}")
     print(f"Paradas probables: {Paradas_Probables} \n")
-    print(f"Capacidad de Transporte [C] {Capacidad_Transporte} %")
-    print(f"Intervalo Probable [I]: {Intervalo_Probable} [s] \n")
+    print(f"Capacidad de Transporte [C] {Capacidad_Transporte} % (>12)")
+    print(f"Intervalo Probable [I]: {Intervalo_Probable} [s] (<40) \n")
     print(f"Tiempo de llenado: {Tiempo_Llenado}")
 
     def Guardar_Calculo():
