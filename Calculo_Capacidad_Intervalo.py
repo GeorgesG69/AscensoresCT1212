@@ -52,7 +52,7 @@ def main():
         El Grupo A atiende Pb, hasta el piso 28 y 3 Sótanos.
     '''
 
-    Poblacion_estimada_A = 1025
+    Poblacion_estimada_A = 1060
     
     Nro_Ascensores_A = 6
     Velocidad_Nominal_A = 10 #m/s
@@ -64,7 +64,7 @@ def main():
     '''
         El grupo B atiende Pb, Piso 29 al 57 y 3 Sótanos.
     '''
-    Poblacion_estimada_B = 1025
+    Poblacion_estimada_B = 1060
 
     Nro_Ascensores_B = 6
     Velocidad_Nominal_B = 10 #m/s
@@ -75,7 +75,7 @@ def main():
     '''
         El grupo C atiende Pb, Piso 58 al 84 y 3 Sótanos.
     '''
-    Poblacion_estimada_C = 1025
+    Poblacion_estimada_C = 1060
 
     Nro_Ascensores_C = 6
     Velocidad_Nominal_C = 10 #m/s
