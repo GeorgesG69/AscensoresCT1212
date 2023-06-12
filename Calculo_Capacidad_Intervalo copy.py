@@ -52,7 +52,9 @@ TTV: Tiempo_Total_Viaje
     Pisos_No_Servidos = 0 # (ne)
     Pisos_Servidos = 84 #(ns)
     Pisos_Totales = Pisos_Servidos + Pisos_No_Servidos # (na)
+
     Nro_Ascensores = 3
+    Zona_expresa = False
 
     print(f"Pisos servidos: {Pisos_Servidos} \n Pisos NO servidos: {Pisos_No_Servidos} \n Pisos totales: {Pisos_Totales}")
 
