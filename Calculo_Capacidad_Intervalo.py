@@ -47,7 +47,7 @@ def main():
 
     Tiempo_Apertura_Cierre = 3.95 #s
 
-    # Datos Grupo A: 
+    ######### Datos Grupo A: 
     '''
         El Grupo A atiende Pb, hasta el piso 28 y 3 Sótanos.
     '''
@@ -61,7 +61,7 @@ def main():
 
     print(f"[Grupo A]La Vel. Nominal establecida es: {Velocidad_Nominal_A} [m/s]")
 
-    # Datos Grupo B:
+    ######### Datos Grupo B:
 
     '''
         El grupo B atiende Pb, Piso 29 al 57 y 3 Sótanos.
@@ -72,7 +72,7 @@ def main():
     Velocidad_Nominal_B = 10 #m/s
     Tiempo_Entrada_Salida_B = 2
 
-     # Datos Grupo C:
+     ######### Datos Grupo C:
 
     '''
         El grupo C atiende Pb, Piso 58 al 84 y 3 Sótanos.
@@ -126,7 +126,6 @@ def main():
 
     if RVn_A >= Velocidad_Nominal_A:
 
-    # -(Hs_A/(Np_A*Velocidad_Nominal_A))
         Tiempo_Viaje_Completo_A = (2*(Ha_A/Velocidad_Nominal_A))+(((Velocidad_Nominal_A/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_A+1))-(Hs_A/(Np_A*Velocidad_Nominal_A))+(Tiempo_Entrada_Salida_A*Pv_A)
     
     elif RVn_A <= Velocidad_Nominal_A:
@@ -138,8 +137,6 @@ def main():
     Tiempo_Total_Viaje_A = Tiempo_Viaje_Completo_A + Tiempo_Viaje_Completo_A*(30/100)
 
     print("[Grupo A] Tiempo Total de Viaje: ", Tiempo_Total_Viaje_A)
-
-    
 
     print("[Grupo A] Personas por viaje: ", Pv_A)
 
@@ -179,15 +176,11 @@ def main():
 
     if RVn_B >= Velocidad_Nominal_B:
 
-    # -(Hs_A/(Np_A*Velocidad_Nominal_A))
         Tiempo_Viaje_Completo_B = (2*(Ha_B/Velocidad_Nominal_B))+(((Velocidad_Nominal_B/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_B+1))-(Hs_B/(Np_B*Velocidad_Nominal_B))+(Tiempo_Entrada_Salida_B*Pv_B)
     
     elif RVn_B <= Velocidad_Nominal_B:
 
         Tiempo_Viaje_Completo_B = (2*(Ha_B/Velocidad_Nominal_B))-(Hs_B/Velocidad_Nominal_B)+(2*Velocidad_Nominal_B/Aceleracion)+(2*Hs_B/(Hs_B*Aceleracion/Np_B)**Np_B)*(Np_B-1)+Tiempo_Apertura_Cierre*(Np_B+1)+Tiempo_Entrada_Salida_B*(Pv_B)
-
-    # -(Hs_A/(Np_A*Velocidad_Nominal_A))
-   # Tiempo_Viaje_Completo_B = (2*(Ha_B/Velocidad_Nominal_B))+(((Velocidad_Nominal_B/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_B+1))-(Hs_B/(Np_B*Velocidad_Nominal_B))+(Tiempo_Entrada_Salida_B*Pv_B)
 
     print("[Grupo B] Tiempo de Viaje completo: ", Tiempo_Viaje_Completo_B)
 
@@ -235,7 +228,6 @@ def main():
 
     if RVn_C >= Velocidad_Nominal_C:
 
-    # -(Hs_A/(Np_A*Velocidad_Nominal_A))
         Tiempo_Viaje_Completo_C = (2*(Ha_C/Velocidad_Nominal_C))+(((Velocidad_Nominal_C/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_C+1))-(Hs_C/(Np_C*Velocidad_Nominal_C))+(Tiempo_Entrada_Salida_C*Pv_C)
     
     elif RVn_C <= Velocidad_Nominal_C:
@@ -243,8 +235,7 @@ def main():
         Tiempo_Viaje_Completo_C = (2*(Ha_C/Velocidad_Nominal_C))-(Hs_C/Velocidad_Nominal_C)+(2*Velocidad_Nominal_C/Aceleracion)+(2*Hs_C/(Hs_C*Aceleracion/Np_C)**Np_C)*(Np_C-1)+Tiempo_Apertura_Cierre*(Np_C+1)+Tiempo_Entrada_Salida_C*(Pv_C)
 
     # -(Hs_A/(Np_A*Velocidad_Nominal_A))
-   # Tiempo_Viaje_Completo_C = (2*(Ha_C/Velocidad_Nominal_C))+(((Velocidad_Nominal_C/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_C+1))-(Hs_C/(Np_C*Velocidad_Nominal_C))+(Tiempo_Entrada_Salida_C*Pv_C)
-
+  
     print("[Grupo C] Tiempo de Viaje completo: ", Tiempo_Viaje_Completo_C)
 
     Tiempo_Total_Viaje_C = Tiempo_Viaje_Completo_C + Tiempo_Viaje_Completo_C*(30/100)
