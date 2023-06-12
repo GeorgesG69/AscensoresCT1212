@@ -184,7 +184,7 @@ def main():
     
     elif RVn_B <= Velocidad_Nominal_B:
 
-        Tiempo_Viaje_Completo_B = (2*(Ha_B/Velocidad_Nominal_B))-(Hs_A/Velocidad_Nominal_B)+(2*Velocidad_Nominal_B/Aceleracion)+(2*Hs_A/(Hs_B*Aceleracion/Np_A)**Np_B)*(Np_B-1)+Tiempo_Apertura_Cierre*(Np_B+1)+Tiempo_Entrada_Salida_B*(Pv_B)
+        Tiempo_Viaje_Completo_B = (2*(Ha_B/Velocidad_Nominal_B))-(Hs_B/Velocidad_Nominal_B)+(2*Velocidad_Nominal_B/Aceleracion)+(2*Hs_B/(Hs_B*Aceleracion/Np_B)**Np_B)*(Np_B-1)+Tiempo_Apertura_Cierre*(Np_B+1)+Tiempo_Entrada_Salida_B*(Pv_B)
 
     # -(Hs_A/(Np_A*Velocidad_Nominal_A))
    # Tiempo_Viaje_Completo_B = (2*(Ha_B/Velocidad_Nominal_B))+(((Velocidad_Nominal_B/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_B+1))-(Hs_B/(Np_B*Velocidad_Nominal_B))+(Tiempo_Entrada_Salida_B*Pv_B)
@@ -195,13 +195,11 @@ def main():
 
     print("[Grupo B] Tiempo Total de Viaje: ", Tiempo_Total_Viaje_B)
 
-    
-
     print("[Grupo B] Personas por viaje: ", Pv_B)
 
     C_B = (300*(Pv_B)*(Nro_Ascensores_B)*100)/(Tiempo_Total_Viaje_B*Poblacion_estimada_B)
 
-    print("[Grupo B] Capacidad de transporte: ", C_A, "%")
+    print("[Grupo B] Capacidad de transporte: ", C_B, "%")
 
     I_B = Tiempo_Total_Viaje_B/Nro_Ascensores_B
 
@@ -240,7 +238,7 @@ def main():
     
     elif RVn_C <= Velocidad_Nominal_C:
 
-        Tiempo_Viaje_Completo_C = (2*(Ha_C/Velocidad_Nominal_C))-(Hs_A/Velocidad_Nominal_C)+(2*Velocidad_Nominal_C/Aceleracion)+(2*Hs_A/(Hs_C*Aceleracion/Np_A)**Np_C)*(Np_C-1)+Tiempo_Apertura_Cierre*(Np_C+1)+Tiempo_Entrada_Salida_C*(Pv_C)
+        Tiempo_Viaje_Completo_C = (2*(Ha_C/Velocidad_Nominal_C))-(Hs_C/Velocidad_Nominal_C)+(2*Velocidad_Nominal_C/Aceleracion)+(2*Hs_C/(Hs_C*Aceleracion/Np_C)**Np_C)*(Np_C-1)+Tiempo_Apertura_Cierre*(Np_C+1)+Tiempo_Entrada_Salida_C*(Pv_C)
 
     # -(Hs_A/(Np_A*Velocidad_Nominal_A))
    # Tiempo_Viaje_Completo_C = (2*(Ha_C/Velocidad_Nominal_C))+(((Velocidad_Nominal_C/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_C+1))-(Hs_C/(Np_C*Velocidad_Nominal_C))+(Tiempo_Entrada_Salida_C*Pv_C)
@@ -251,13 +249,11 @@ def main():
 
     print("[Grupo C] Tiempo Total de Viaje: ", Tiempo_Total_Viaje_C)
 
-    
-
     print("[Grupo C] Personas por viaje: ", Pv_C)
 
     C_C = (300*(Pv_C)*(Nro_Ascensores_C)*100)/(Tiempo_Total_Viaje_C*Poblacion_estimada_C)
 
-    print("[Grupo C] Capacidad de transporte: ", C_A, "%")
+    print("[Grupo C] Capacidad de transporte: ", C_C, "%")
 
     I_C = Tiempo_Total_Viaje_C/Nro_Ascensores_C
 
