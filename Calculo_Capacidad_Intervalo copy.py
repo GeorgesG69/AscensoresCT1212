@@ -42,6 +42,9 @@ Ta: Tiempo adicional
 TTV: Tiempo_Total_Viaje
 
     '''
+    Poblacion_Piso = 35
+    Poblacion_Sotano = 15
+    
     Planta_Principal = 1
     Pisos_Superiores = 84
     Sotanos = 3 # (ni)
@@ -49,8 +52,11 @@ TTV: Tiempo_Total_Viaje
     Pisos_No_Servidos = 0 # (ne)
     Pisos_Servidos = 84 #(ns)
     Pisos_Totales = Pisos_Servidos + Pisos_No_Servidos # (na)
+    Nro_Ascensores = 3
 
     print(f"Pisos servidos: {Pisos_Servidos} \n Pisos NO servidos: {Pisos_No_Servidos} \n Pisos totales: {Pisos_Totales}")
+
+    Poblacion_Total = Poblacion_Piso*Pisos_Servidos + Poblacion_Sotano*Sotanos
     
     Recorrido_Ppal_Super = Pisos_Totales*Distancia_Promedio #(Ha)
     Recorrido_Ppal_1PSuper = Pisos_No_Servidos*Distancia_Promedio #(He)
@@ -63,13 +69,14 @@ TTV: Tiempo_Total_Viaje
 
     Paradas_Probables = Pisos_Servidos*(1-(((Pisos_Servidos-1)/Pisos_Servidos)**Personas_Viaje)) #np
 
+    Capacidad_Transporte = (300*Personas_Viaje*Nro_Ascensores*100)/(Tiempo_Total_Viaje*)# (C)
+
 
 
 
 
     Aceleracion = 1 #m/s
-    Poblacion_Piso = 35
-    Poblacion_Sotano = 15
+    
 
 
     ReferenciaV_Nom = numpy.sqrt()
