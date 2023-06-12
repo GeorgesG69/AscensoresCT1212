@@ -197,8 +197,6 @@ def main():
 
     print("[Grupo B] Intervalo probable: ", I_B , "[s]")
 
-    print("\n")
-
     #-------------------Cálculos del Grupo C (Piso 58 al 85, Pb y Sótanos):
 
     print("\n Cálculos del grupo C: \n")
