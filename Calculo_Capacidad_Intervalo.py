@@ -24,250 +24,180 @@ La altura entre pisos es de 3.5m
 '''
 
 import numpy
-import openpyxl
+import pandas as pd
+from pandas import ExcelWriter
 
-wb = openpyxl.Workbook()
+
+
 
 def main():
 
-    # Valores establecidos para el Sistema de Ascensores.
+    '''
+Datos Generales: 
 
-    Altura_entre_pisos = 3.5 #m
-    Sotanos = 3
+B: Población Estimada
+
+TVC: Tiempo de viaje completo
+
+Ta: Tiempo adicional
+
+TTV: Tiempo_Total_Viaje
+
+    '''
+    Poblacion_Piso = 35
+    Poblacion_Sotano = 15
+    
     Planta_Principal = 1
     Pisos_Superiores = 84
-    Pisos_Totales = Pisos_Superiores + Planta_Principal + Sotanos
+    Sotanos = 3 # (ni)
+    Distancia_Promedio = 3.5 #m (ep)
+    Pisos_No_Servidos = 0 # (ne)
+    Pisos_Servidos = 28 #(ns)
+    Pisos_Totales = Pisos_Servidos + Pisos_No_Servidos # (na)
 
-    # Cantidad de personas    
+    Nro_Ascensores = 6
+    Capacidad_Nominal_P = 22
+    Velocidad_Nominal_Establecida = 10 #m/s
+    Zona_expresa = False
 
-    Personas_Sotanos = 15
-    Personas_P_Superiores = 35
+    print(f"Zona expresa: {Zona_expresa}")
+    print(f"Pisos servidos: {Pisos_Servidos} \nPisos NO servidos: {Pisos_No_Servidos} \nPisos totales: {Pisos_Totales}")
+
+    Poblacion_Total = Poblacion_Piso*Pisos_Servidos + Poblacion_Sotano*Sotanos # (B)
     
-    P = 15 #Capacidad nominal de la cabina
-
-    Tiempo_Apertura_Cierre = 4.46 #s
-
-    ######### Datos Grupo A: 
-    '''
-        El Grupo A atiende Pb, hasta el piso 28 y 3 Sótanos.
-    '''
-
-    Poblacion_estimada_A = 1060
-    
-    Nro_Ascensores_A = 4
-    Velocidad_Nominal_A = 4 #m/s
-    Tiempo_Entrada_Salida_A = 1.9 #s
-    eap = 3.5
-
-    ######### Datos Grupo B:
-
-    '''
-        El grupo B atiende Pb, Piso 29 al 57 y 3 Sótanos.
-    '''
-    Poblacion_estimada_B = 1060
-
-    Nro_Ascensores_B = 7
-    Velocidad_Nominal_B = 10 #m/s
-    Tiempo_Entrada_Salida_B = 1.9
-
-     ######### Datos Grupo C:
-
-    '''
-        El grupo C atiende Pb, Piso 57 al 84 y 3 Sótanos.
-    '''
-    Poblacion_estimada_C = 1060
-
-    Nro_Ascensores_C = 7
-    Velocidad_Nominal_C = 10 #m/s
-    Tiempo_Entrada_Salida_C = 1.9
-
-    Nro_Ascensores = Nro_Ascensores_A + Nro_Ascensores_B + Nro_Ascensores_C 
-
-    Area_Pisos = 750 #m^2
+    Recorrido_Ppal_Super = Pisos_Totales*Distancia_Promedio #(Ha)
+    Recorrido_Ppal_1PSuper = Pisos_No_Servidos*Distancia_Promedio #(He)
+    Recorrido_Sotanos = Sotanos*Distancia_Promedio #(Hi)
+    Recorrido_Superior_Servido = Recorrido_Ppal_Super - Recorrido_Ppal_1PSuper #(Hs)
+    Recorrido_Total = Recorrido_Ppal_Super + Recorrido_Sotanos #(Ht)
 
     
-    Aceleracion = 1 #m/s^2
+    Personas_Viaje = int((3.2/Capacidad_Nominal_P)+(0.7*Capacidad_Nominal_P)+0.5) #Pv
 
-    #----------------------------------------------------------
+    Paradas_Probables = Pisos_Servidos*(1-(((Pisos_Servidos-1)/Pisos_Servidos)**Personas_Viaje)) #np
 
-    '''
-        El sistema de ascensores se divide en 3 grupos (A, B y C) de ascensores, con 6 ascensores cada uno
-        (un total de 18 ascensores)
-    '''
- 
-    #------------------------Cálculos del Grupo A (Planta Ppaal. piso 1 hasta 28):
+    Aceleracion = 1 #m/s
 
+    ReferenciaV_Nom = numpy.sqrt((Recorrido_Superior_Servido*Aceleracion)/Paradas_Probables)
 
-    print("\n Cálculos del grupo A: \n")
-    print(f"[Grupo A]La Vel. Nominal establecida es: {Velocidad_Nominal_A} [m/s]")
+    Tiempo_Apertira_cierre = 3.95 #s
+    Tiempo_Entrada_Salida = 2 #s
+    Tiempo_Adicional = 3/10
 
-    # P: capacidad nominal de la cabina (personas).
+    if ReferenciaV_Nom < Velocidad_Nominal_Establecida and Zona_expresa == False:
 
-    Pv_A = int((3.2/P)+(0.7*P)+0.5)
+        Tiempo_Viaje_Completo = (2*Recorrido_Ppal_Super/numpy.sqrt(Recorrido_Ppal_Super*Aceleracion/Paradas_Probables))+(Velocidad_Nominal_Establecida/Aceleracion)+(Recorrido_Ppal_Super/Velocidad_Nominal_Establecida)+(Tiempo_Apertira_cierre*(Paradas_Probables+1))+Tiempo_Entrada_Salida*Personas_Viaje
 
-    ne_A = 59 #Numero de pisos NO servidos por encima de la planta principal
+    elif ReferenciaV_Nom >= Velocidad_Nominal_Establecida and Zona_expresa == False:
 
-    ns_A = 25 #Numero de pisos servidos encima de la planta principal
+        Tiempo_Viaje_Completo = (2*Recorrido_Ppal_Super/Velocidad_Nominal_Establecida)+((Velocidad_Nominal_Establecida/Aceleracion)+Tiempo_Apertira_cierre)*(Paradas_Probables+1)+Tiempo_Entrada_Salida*Personas_Viaje
 
-    Np_A = ns_A*(1-(((ns_A-1)/(ns_A))**(Pv_A))) # Nro de paradas probables en los pisos superiores
+    elif ReferenciaV_Nom >= Velocidad_Nominal_Establecida and Zona_expresa == True:
 
-    na_A = ns_A + ne_A #Número total de pisos encima de la planta principal.
+        Tiempo_Viaje_Completo = (2*Recorrido_Ppal_Super/Velocidad_Nominal_Establecida)+((Velocidad_Nominal_Establecida/Aceleracion)+Tiempo_Apertira_cierre)*(Paradas_Probables+1)-(Recorrido_Superior_Servido/(Paradas_Probables*Velocidad_Nominal_Establecida))+Tiempo_Entrada_Salida*Personas_Viaje
 
-    Ha_A = na_A*eap #Recorrido entre la planta principal y superior
+    elif ReferenciaV_Nom < Velocidad_Nominal_Establecida and Zona_expresa == True:
 
-    He_A = ne_A*eap #Recorrido expreso
+        Tiempo_Viaje_Completo = (2*Recorrido_Ppal_Super/Velocidad_Nominal_Establecida)-(Recorrido_Superior_Servido/Velocidad_Nominal_Establecida)+(2*Velocidad_Nominal_Establecida/Aceleracion)+((2*Recorrido_Superior_Servido)/(Recorrido_Superior_Servido*Aceleracion/Paradas_Probables)**(1/Paradas_Probables))*(Paradas_Probables-1)+(Tiempo_Apertira_cierre*(Paradas_Probables+1))+Tiempo_Entrada_Salida*Personas_Viaje
 
-    Hs_A = Ha_A - He_A #Recorrido sobre la planta principal con servicio de ascensores entre la primera y la ultima parada superior
+    else:
 
-    RVn_A = numpy.sqrt(Hs_A*Aceleracion/Np_A)
+        print("Valor errado para Tiempo de Viaje Completo.")
 
-    print("[Grupo A] Referencial Vel. nominal es: " , RVn_A)
 
-    if RVn_A >= Velocidad_Nominal_A:
+    Tiempo_Total_Viaje = Tiempo_Viaje_Completo + Tiempo_Viaje_Completo*Tiempo_Adicional
 
-        Tiempo_Viaje_Completo_A = (2*(Ha_A/Velocidad_Nominal_A))+(((Velocidad_Nominal_A/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_A+1))+Tiempo_Entrada_Salida_A*Pv_A
-    
-    elif RVn_A <= Velocidad_Nominal_A:
 
-        Tiempo_Viaje_Completo_A = (2*Ha_A/numpy.sqrt(Ha_A*Aceleracion/Np_A))+(Velocidad_Nominal_A/Aceleracion)+(Ha_A/Velocidad_Nominal_A)+(Tiempo_Apertura_Cierre*(Np_A+1))+Tiempo_Entrada_Salida_A*Pv_A
+    Capacidad_Transporte = (300*Personas_Viaje*Nro_Ascensores*100)/(Tiempo_Total_Viaje*Poblacion_Total) # (C)
+    Intervalo_Probable = Tiempo_Total_Viaje/Nro_Ascensores
 
-    print("[Grupo A] Tiempo de Viaje completo: ", Tiempo_Viaje_Completo_A)
 
-    Tiempo_Total_Viaje_A = Tiempo_Viaje_Completo_A + Tiempo_Viaje_Completo_A*(30/100)
+    Tiempo_Llenado = 500/Capacidad_Transporte
 
-    print("[Grupo A] Tiempo Total de Viaje: ", Tiempo_Total_Viaje_A)
+    print(f"Número de Ascensores: {Nro_Ascensores}")
+    print(f"\nLa Vel. Nominal establecida es: {Velocidad_Nominal_Establecida} [m/s]")
+    print(f"Referencial Vel. Nominal: {ReferenciaV_Nom}")
+    print(f"\nRecorrido Superior: {Recorrido_Ppal_Super}")
+    print(f"Recorrido Expreso: {Recorrido_Ppal_1PSuper}")
+    print(f"Recorrido Superior Servido: {Recorrido_Superior_Servido} \n")
 
-    print("[Grupo A] Personas por viaje: ", Pv_A)
+    print(f"Tiempo de apertura y cierre: {Tiempo_Apertira_cierre}")
+    print(f"Tiempo de entrada y salida: {Tiempo_Entrada_Salida} \n")
 
-    C_A = (300*(Pv_A)*(Nro_Ascensores_A)*100)/(Tiempo_Total_Viaje_A*Poblacion_estimada_A)
+    print(f"Tiempo de Viaje Completo: {Tiempo_Viaje_Completo} [s]")
+    print(f"Tiempo Total de Viaje: {Tiempo_Total_Viaje} [s] \n")
+    print(f"Personas por viaje: {Personas_Viaje}")
+    print(f"Paradas probables: {Paradas_Probables} \n")
+    print(f"Capacidad de Transporte [C] {Capacidad_Transporte} % (>12)")
+    print(f"Intervalo Probable [I]: {Intervalo_Probable} [s] (<40) \n")
+    print(f"Tiempo de llenado: {Tiempo_Llenado}")
 
-    print("[Grupo A] Capacidad de transporte: ", C_A, "%")
+    def Guardar_Calculo(): 
 
-    I_A = Tiempo_Total_Viaje_A/Nro_Ascensores_A
+        Res_Grupo = input("Ingrese el grupo del cálculo: ")
 
-    print("[Grupo A] Intervalo probable: ", I_A , "[s] \n")
 
+        df = pd.DataFrame({"Grupo" : [f"Grupo {Res_Grupo}"],
+                           "Ascensores" : [Nro_Ascensores],
+                            "Zona expresa" : [Zona_expresa],
+                            "Pisos Servidos" : [Pisos_Servidos],
+                            "Pisos no servidos" : [Pisos_No_Servidos],
+                            "Pisos totales" : [Pisos_Totales],
+                            "Velocidad Nominal" : [Velocidad_Nominal_Establecida],
+                            "Ref. Vel. Nominal" : [ReferenciaV_Nom],
+                            "Recorrido superior" : [Recorrido_Ppal_Super],
+                            "Recorrido expreso" : [Recorrido_Ppal_1PSuper],
+                            "Recorrido superior servido" : [Recorrido_Superior_Servido],
+                            "Tiempo de apertura y cierre" : [Tiempo_Apertira_cierre],
+                            "Tiempo de entrada y salida" : [Tiempo_Entrada_Salida],
+                            "Tiempo de Viaje Completo" : [Tiempo_Viaje_Completo],
+                            "Tiempo Total de viaje" : [Tiempo_Total_Viaje],
+                            "Personas por viaje" : [Personas_Viaje],
+                            "Paradas Probables" : [Paradas_Probables],
+                            "C (>12)" : [Capacidad_Transporte],
+                            "I (<40)" : [Intervalo_Probable],
+                            "Tiempo de llenado" : [Tiempo_Llenado]})
+        
+        df = df[["Grupo",
+                 "Ascensores",
+                 "Zona expresa",
+                 "Pisos Servidos",
+                 "Pisos no servidos",
+                 "Pisos totales",
+                 "Velocidad Nominal",
+                 "Ref. Vel. Nominal",
+                 "Recorrido superior",
+                 "Recorrido expreso",
+                 "Recorrido superior servido",
+                 "Tiempo de apertura y cierre",
+                 "Tiempo de entrada y salida",
+                 "Tiempo de Viaje Completo",
+                 "Tiempo Total de viaje",
+                 "Personas por viaje",
+                 "Paradas Probables",
+                 "C (>12)",
+                 "I (<40)",
+                 "Tiempo de llenado"]]
+        
+        Writer = ExcelWriter(f".\\Cálculo Grupo {Res_Grupo}.xlsx")
+        df.to_excel(Writer, f"Calculo Grupo {Res_Grupo}", index=False)
 
-    #----------Cálculos del Grupo B (Piso 29 al 56):
+        try:
 
-    print("\n Cálculos del grupo B: \n")
-    print(f"[Grupo B] La Vel. Nominal establecida es: {Velocidad_Nominal_B} [m/s]")
+            Writer._save()
 
-    Pv_B = int((3.2/P)+(0.7*P)+0.5)
+            if AttributeError:
 
-    ne_B = 56 #Numero de pisos NO servidos por encima de la planta principal
+                print("\nError al guardar:", AttributeError)
 
-    ns_B = 28 #Numero de pisos servidos encima de la planta principal
+        finally:
 
-    Np_B = ns_B*(1-(((ns_B-1)/(ns_B))**Pv_B)) # Nro de paradas probables en los pisos superiores
+            print("Programa terminado.\n")
 
-    na_B = ns_B + ne_B #Número total de pisos encima de la planta principal.
-
-    Ha_B = na_B*eap #Recorrido entre la planta principal y superior
-
-    He_B = ne_B*eap #Recorrido entre la planta principal y la primera planta superior servida
-
-    Hs_B = Ha_B - He_B #Recorrido sobre la planta principal con servicio de ascensores entre la primera y la ultima parada superior
-
-    RVn_B = numpy.sqrt(Hs_B*Aceleracion/Np_B)
-
-    print("[Grupo B] Referencial Vel. nominal es: " , RVn_B)
-
-    if RVn_B >= Velocidad_Nominal_B:
-
-        Tiempo_Viaje_Completo_B = (2*(Ha_B/Velocidad_Nominal_B))+(((Velocidad_Nominal_B/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_B+1))-(Hs_B/(Np_B*Velocidad_Nominal_B))+(Tiempo_Entrada_Salida_B*Pv_B)
-    
-    elif RVn_B <= Velocidad_Nominal_B:
-
-        Tiempo_Viaje_Completo_B = (2*(Ha_B/Velocidad_Nominal_B))-(Hs_B/Velocidad_Nominal_B)+(2*Velocidad_Nominal_B/Aceleracion)+(2*Hs_B/(Hs_B*Aceleracion/Np_B)**(1/Np_B))*(Np_B-1)+Tiempo_Apertura_Cierre*(Np_B+1)+Tiempo_Entrada_Salida_B*(Pv_B)
-
-    print("[Grupo B] Tiempo de Viaje completo: ", Tiempo_Viaje_Completo_B)
-
-    Tiempo_Total_Viaje_B = Tiempo_Viaje_Completo_B + Tiempo_Viaje_Completo_B*(30/100)
-
-    print("[Grupo B] Tiempo Total de Viaje: ", Tiempo_Total_Viaje_B)
-
-    print("[Grupo B] Personas por viaje: ", Pv_B)
-
-    C_B = (300*(Pv_B)*(Nro_Ascensores_B)*100)/(Tiempo_Total_Viaje_B*Poblacion_estimada_B)
-
-    print("[Grupo B] Capacidad de transporte: ", C_B, "%")
-
-    I_B = Tiempo_Total_Viaje_B/Nro_Ascensores_B
-
-    print("[Grupo B] Intervalo probable: ", I_B , "[s]")
-
-    #-------------------Cálculos del Grupo C (Piso 57 al 85, Pb y Sótanos):
-
-    print("\n Cálculos del grupo C: \n")
-
-    print(f"[Grupo C] La Vel. Nominal establecida es: {Velocidad_Nominal_C} [m/s]")
-
-    Pv_C = int((3.2/P)+(0.7*P)+0.5)
-
-    ne_C = 56 #Numero de pisos NO servidos por encima de la planta principal
-
-    ns_C = 28 #Numero de pisos servidos encima de la planta principal
-
-    Np_C = ns_C*(1-(((ns_C-1)/(ns_C))**Pv_C)) # Nro de paradas probables en los pisos superiores
-
-    na_C = ns_C + ne_C #Número total de pisos encima de la planta principal.
-
-    Ha_C = na_C*eap #Recorrido entre la planta principal y superior
-
-    He_C = ne_C*eap #Recorrido entre la planta principal y la primera planta superior servida
-
-    Hs_C = Ha_C - He_C #Recorrido sobre la planta principal con servicio de ascensores entre la primera y la ultima parada superior
-
-    RVn_C = numpy.sqrt(Hs_C*Aceleracion/Np_C)
-
-    print("[Grupo C] Referencial Vel. nominal es: " , RVn_C)
-
-    if RVn_C >= Velocidad_Nominal_C:
-
-        Tiempo_Viaje_Completo_C = (2*(Ha_C/Velocidad_Nominal_C))+(((Velocidad_Nominal_C/Aceleracion)+Tiempo_Apertura_Cierre)*(Np_C+1))-(Hs_C/(Np_C*Velocidad_Nominal_C))+(Tiempo_Entrada_Salida_C*Pv_C)
-    
-    elif RVn_C <= Velocidad_Nominal_C:
-
-        Tiempo_Viaje_Completo_C = (2*(Ha_C/Velocidad_Nominal_C))-(Hs_C/Velocidad_Nominal_C)+(2*Velocidad_Nominal_C/Aceleracion)+(2*Hs_C/(Hs_C*Aceleracion/Np_C)**(1/Np_C))*(Np_C-1)+Tiempo_Apertura_Cierre*(Np_C+1)+Tiempo_Entrada_Salida_C*(Pv_C)
-
-    # -(Hs_A/(Np_A*Velocidad_Nominal_A))
-  
-    print("[Grupo C] Tiempo de Viaje completo: ", Tiempo_Viaje_Completo_C)
-
-    Tiempo_Total_Viaje_C = Tiempo_Viaje_Completo_C + Tiempo_Viaje_Completo_C*(30/100)
-
-    print("[Grupo C] Tiempo Total de Viaje: ", Tiempo_Total_Viaje_C)
-
-    print("[Grupo C] Personas por viaje: ", Pv_C)
-
-    C_C = (300*(Pv_C)*(Nro_Ascensores_C)*100)/(Tiempo_Total_Viaje_C*Poblacion_estimada_C)
-
-    print("[Grupo C] Capacidad de transporte: ", C_C, "%")
-
-    I_C = Tiempo_Total_Viaje_C/Nro_Ascensores_C
-
-    print("[Grupo C] Intervalo probable: ", I_C , "[s]")
-
-    print("\n")
-
-
-    def Guardar_Calculo():
-
-        #HojaCreada = wb.create_sheet("Cálculo", 0)
-
-        Hoja = wb.active
-
-        Hoja["A1"] = "Hola"
-
-        wb.save("Prueba.xlsx")
-
-        pass
-
-    #Guardar_Calculo()
+    Guardar_Calculo()
 
     
 if __name__ == "__main__":
-    print("Running...")
+    print("Running... \n")
     main()
     
