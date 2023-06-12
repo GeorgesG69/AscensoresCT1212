@@ -179,7 +179,7 @@ def main():
     
     elif RVn_B <= Velocidad_Nominal_B:
 
-        Tiempo_Viaje_Completo_B = (2*(Ha_B/Velocidad_Nominal_B))-(Hs_B/Velocidad_Nominal_B)+(2*Velocidad_Nominal_B/Aceleracion)+(2*Hs_B/(Hs_B*Aceleracion/Np_B)**Np_B)*(Np_B-1)+Tiempo_Apertura_Cierre*(Np_B+1)+Tiempo_Entrada_Salida_B*(Pv_B)
+        Tiempo_Viaje_Completo_B = (2*(Ha_B/Velocidad_Nominal_B))-(Hs_B/Velocidad_Nominal_B)+(2*Velocidad_Nominal_B/Aceleracion)+(2*Hs_B/(Hs_B*Aceleracion/Np_B)**(1/Np_B))*(Np_B-1)+Tiempo_Apertura_Cierre*(Np_B+1)+Tiempo_Entrada_Salida_B*(Pv_B)
 
     print("[Grupo B] Tiempo de Viaje completo: ", Tiempo_Viaje_Completo_B)
 
@@ -229,7 +229,7 @@ def main():
     
     elif RVn_C <= Velocidad_Nominal_C:
 
-        Tiempo_Viaje_Completo_C = (2*(Ha_C/Velocidad_Nominal_C))-(Hs_C/Velocidad_Nominal_C)+(2*Velocidad_Nominal_C/Aceleracion)+(2*Hs_C/(Hs_C*Aceleracion/Np_C)**Np_C)*(Np_C-1)+Tiempo_Apertura_Cierre*(Np_C+1)+Tiempo_Entrada_Salida_C*(Pv_C)
+        Tiempo_Viaje_Completo_C = (2*(Ha_C/Velocidad_Nominal_C))-(Hs_C/Velocidad_Nominal_C)+(2*Velocidad_Nominal_C/Aceleracion)+(2*Hs_C/(Hs_C*Aceleracion/Np_C)**(1/Np_C))*(Np_C-1)+Tiempo_Apertura_Cierre*(Np_C+1)+Tiempo_Entrada_Salida_C*(Pv_C)
 
     # -(Hs_A/(Np_A*Velocidad_Nominal_A))
   
