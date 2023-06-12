@@ -114,6 +114,7 @@ TTV: Tiempo_Total_Viaje
 
     Tiempo_Llenado = 500/Capacidad_Transporte
 
+    print(f"Número de Ascensores: {Nro_Ascensores}")
     print(f"\nLa Vel. Nominal establecida es: {Velocidad_Nominal_Establecida} [m/s]")
     print(f"Referencial Vel. Nominal: {ReferenciaV_Nom}")
     print(f"\nRecorrido Superior: {Recorrido_Ppal_Super}")
@@ -137,6 +138,7 @@ TTV: Tiempo_Total_Viaje
 
 
         df = pd.DataFrame({"Grupo" : [f"Grupo {Res_Grupo}"],
+                           "Ascensores" : [Nro_Ascensores],
                             "Zona expresa" : [Zona_expresa],
                             "Pisos Servidos" : [Pisos_Servidos],
                             "Pisos no servidos" : [Pisos_No_Servidos],
@@ -157,6 +159,7 @@ TTV: Tiempo_Total_Viaje
                             "Tiempo de llenado" : [Tiempo_Llenado]})
         
         df = df[["Grupo",
+                 "Ascensores",
                  "Zona expresa",
                  "Pisos Servidos",
                  "Pisos no servidos",
