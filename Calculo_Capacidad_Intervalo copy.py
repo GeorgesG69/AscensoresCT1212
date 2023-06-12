@@ -54,6 +54,7 @@ TTV: Tiempo_Total_Viaje
     Pisos_Totales = Pisos_Servidos + Pisos_No_Servidos # (na)
 
     Nro_Ascensores = 3
+    Velocidad_Nominal_Establecida = 10 #m/s
     Zona_expresa = False
 
     print(f"Pisos servidos: {Pisos_Servidos} \n Pisos NO servidos: {Pisos_No_Servidos} \n Pisos totales: {Pisos_Totales}")
@@ -67,26 +68,21 @@ TTV: Tiempo_Total_Viaje
     Recorrido_Total = Recorrido_Ppal_Super + Recorrido_Sotanos #(Ht)
 
     Capacidad_Nominal_P = 22
-    Personas_Viaje = int((3.2/Capacidad_Nominal_P)+(0.7*Capacidad_Nominal_P)+0.5)
+    Personas_Viaje = int((3.2/Capacidad_Nominal_P)+(0.7*Capacidad_Nominal_P)+0.5) #Pv
 
     Paradas_Probables = Pisos_Servidos*(1-(((Pisos_Servidos-1)/Pisos_Servidos)**Personas_Viaje)) #np
 
-
-
-
-
-
-
     Aceleracion = 1 #m/s
-    
 
+    ReferenciaV_Nom = numpy.sqrt(Recorrido_Superior_Servido*Aceleracion/Paradas_Probables)
 
-    ReferenciaV_Nom = numpy.sqrt()
-
+    Tiempo_Apertira_cierre = 4.11 #s
+    Tiempo_Entrada_Salida = 1.9 #s
     Tiempo_Adicional = 30/10
 
-    if ():
-        Tiempo_Viaje_Completo = 0
+    if ReferenciaV_Nom <= Velocidad_Nominal_Establecida and Zona_expresa == False:
+
+        Tiempo_Viaje_Completo = (2*Recorrido_Ppal_Super/numpy.sqrt(Recorrido_Ppal_Super*Aceleracion/Paradas_Probables))+(Velocidad_Nominal_Establecida/Aceleracion)+(Recorrido_Ppal_Super/Velocidad_Nominal_Establecida)+(Tiempo_Apertira_cierre*(Paradas_Probables+1))+Tiempo_Entrada_Salida*Personas_Viaje
 
     Tiempo_Total_Viaje = Tiempo_Viaje_Completo + Tiempo_Viaje_Completo*Tiempo_Adicional
 
