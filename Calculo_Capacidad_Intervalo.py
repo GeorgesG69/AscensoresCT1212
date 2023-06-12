@@ -73,7 +73,7 @@ def main():
      ######### Datos Grupo C:
 
     '''
-        El grupo C atiende Pb, Piso 58 al 84 y 3 Sótanos.
+        El grupo C atiende Pb, Piso 57 al 84 y 3 Sótanos.
     '''
     Poblacion_estimada_C = 1060
 
