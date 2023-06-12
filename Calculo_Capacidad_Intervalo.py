@@ -75,9 +75,9 @@ def main():
      # Datos Grupo C:
 
     '''
-        El grupo C atiende Pb, Piso 58 al 85 y 3 Sótanos.
+        El grupo C atiende Pb, Piso 58 al 84 y 3 Sótanos.
     '''
-    Poblacion_estimada_C = 1025
+    Poblacion_estimada_C = 995
 
     Nro_Ascensores_C = 6
     Velocidad_Nominal_C = 10 #m/s
@@ -215,9 +215,9 @@ def main():
 
     Pv_C = int((3.2/P)+(0.7*P)+0.5)
 
-    ne_C = 56 #Numero de pisos NO servidos por encima de la planta principal
+    ne_C = 58 #Numero de pisos NO servidos por encima de la planta principal
 
-    ns_C = 28 #Numero de pisos servidos encima de la planta principal
+    ns_C = 26 #Numero de pisos servidos encima de la planta principal
 
     Np_C = ns_C*(1-(((ns_C-1)/(ns_C))**Pv_C)) # Nro de paradas probables en los pisos superiores
 
