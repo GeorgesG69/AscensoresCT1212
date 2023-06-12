@@ -59,8 +59,6 @@ def main():
     Tiempo_Entrada_Salida_A = 2 #s
     eap = 3.5
 
-    print(f"[Grupo A]La Vel. Nominal establecida es: {Velocidad_Nominal_A} [m/s]")
-
     ######### Datos Grupo B:
 
     '''
@@ -101,6 +99,7 @@ def main():
 
 
     print("\n Cálculos del grupo A: \n")
+    print(f"[Grupo A]La Vel. Nominal establecida es: {Velocidad_Nominal_A} [m/s]")
 
     # P: capacidad nominal de la cabina (personas).
 
