@@ -185,7 +185,7 @@ TTV: Tiempo_Total_Viaje
 
             if AttributeError:
 
-                print("Error al guardar.", AttributeError)
+                print("Error al guardar:", AttributeError)
 
         finally:
 
