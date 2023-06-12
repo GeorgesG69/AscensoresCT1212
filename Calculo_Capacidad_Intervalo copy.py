@@ -76,11 +76,11 @@ TTV: Tiempo_Total_Viaje
 
     Aceleracion = 1 #m/s
 
-    ReferenciaV_Nom = ((Recorrido_Superior_Servido*Aceleracion)/Paradas_Probables)**(1/2)
+    ReferenciaV_Nom = numpy.sqrt((Recorrido_Superior_Servido*Aceleracion)/Paradas_Probables)
 
     Tiempo_Apertira_cierre = 3.95 #s
     Tiempo_Entrada_Salida = 2 #s
-    Tiempo_Adicional = 30/100
+    Tiempo_Adicional = 3/10
 
     if ReferenciaV_Nom < Velocidad_Nominal_Establecida and Zona_expresa == False:
 
