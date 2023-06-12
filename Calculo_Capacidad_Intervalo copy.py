@@ -80,7 +80,7 @@ TTV: Tiempo_Total_Viaje
 
     Tiempo_Apertira_cierre = 3.95 #s
     Tiempo_Entrada_Salida = 2 #s
-    Tiempo_Adicional = 30/10
+    Tiempo_Adicional = 30/100
 
     if ReferenciaV_Nom < Velocidad_Nominal_Establecida and Zona_expresa == False:
 
