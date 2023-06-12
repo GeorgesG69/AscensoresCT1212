@@ -43,7 +43,7 @@ def main():
     Personas_Sotanos = 15
     Personas_P_Superiores = 35
     
-    P = 17 #Capacidad nominal de la cabina
+    P = 22 #Capacidad nominal de la cabina
 
     Tiempo_Apertura_Cierre = 3.95 #s
 
@@ -55,7 +55,7 @@ def main():
     Poblacion_estimada_A = 1060
     
     Nro_Ascensores_A = 7
-    Velocidad_Nominal_A = 10 #m/s
+    Velocidad_Nominal_A = 6 #m/s
     Tiempo_Entrada_Salida_A = 2 #s
     eap = 3.5
 
@@ -67,7 +67,7 @@ def main():
     Poblacion_estimada_B = 1060
 
     Nro_Ascensores_B = 7
-    Velocidad_Nominal_B = 10 #m/s
+    Velocidad_Nominal_B = 6 #m/s
     Tiempo_Entrada_Salida_B = 2
 
      ######### Datos Grupo C:
@@ -78,7 +78,7 @@ def main():
     Poblacion_estimada_C = 1060
 
     Nro_Ascensores_C = 7
-    Velocidad_Nominal_C = 10 #m/s
+    Velocidad_Nominal_C = 6 #m/s
     Tiempo_Entrada_Salida_C = 2
 
     Nro_Ascensores = Nro_Ascensores_A + Nro_Ascensores_B + Nro_Ascensores_C 
