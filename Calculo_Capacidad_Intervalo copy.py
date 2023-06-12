@@ -57,7 +57,7 @@ TTV: Tiempo_Total_Viaje
 
     Nro_Ascensores = 6
     Capacidad_Nominal_P = 46
-    Velocidad_Nominal_Establecida = 6 #m/s
+    Velocidad_Nominal_Establecida = 10 #m/s
     Zona_expresa = False
 
     print(f"Zona expresa: {Zona_expresa}")
