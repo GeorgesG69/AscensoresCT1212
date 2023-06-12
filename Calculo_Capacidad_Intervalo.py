@@ -75,7 +75,7 @@ def main():
     '''
         El grupo C atiende Pb, Piso 58 al 84 y 3 Sótanos.
     '''
-    Poblacion_estimada_C = 995
+    Poblacion_estimada_C = 955
 
     Nro_Ascensores_C = 6
     Velocidad_Nominal_C = 10 #m/s
