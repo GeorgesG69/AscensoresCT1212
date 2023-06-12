@@ -24,7 +24,7 @@ La altura entre pisos es de 3.5m
 '''
 
 import numpy
-import openpyxl
+#import openpyxl
 import pandas as pd
 from pandas import ExcelWriter
 
@@ -176,8 +176,8 @@ TTV: Tiempo_Total_Viaje
                  "I (<40)",
                  "Tiempo de llenado"]]
         
-        Writer = ExcelWriter(f"\Cálculo Grupo {Res_Grupo}.xlsx")
-        df.to_excel(Writer, f"Calculo Grupo {Res_Grupo}", index=False)
+        Writer = ExcelWriter(".\\Cálculo Grupo {Res_Grupo}.xlsx")
+        df.to_excel(Writer, "Calculo Grupo {Res_Grupo}", index=False)
         Writer.save()
 
     Guardar_Calculo()
