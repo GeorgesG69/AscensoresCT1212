@@ -95,7 +95,7 @@ def main():
         (un total de 18 ascensores)
     '''
  
-    #------------------------Cálculos del Grupo A (Planta Ppaal. hasta 28):
+    #------------------------Cálculos del Grupo A (Planta Ppaal. piso 1 hasta 28):
 
 
     print("\n Cálculos del grupo A: \n")
@@ -148,7 +148,7 @@ def main():
     print("[Grupo A] Intervalo probable: ", I_A , "[s] \n")
 
 
-    #----------Cálculos del Grupo B (Piso 29 al 57):
+    #----------Cálculos del Grupo B (Piso 29 al 56):
 
     print("\n Cálculos del grupo B: \n")
     print(f"[Grupo B] La Vel. Nominal establecida es: {Velocidad_Nominal_B} [m/s]")
@@ -197,7 +197,7 @@ def main():
 
     print("[Grupo B] Intervalo probable: ", I_B , "[s]")
 
-    #-------------------Cálculos del Grupo C (Piso 58 al 85, Pb y Sótanos):
+    #-------------------Cálculos del Grupo C (Piso 57 al 85, Pb y Sótanos):
 
     print("\n Cálculos del grupo C: \n")
 
@@ -205,9 +205,9 @@ def main():
 
     Pv_C = int((3.2/P)+(0.7*P)+0.5)
 
-    ne_C = 58 #Numero de pisos NO servidos por encima de la planta principal
+    ne_C = 56 #Numero de pisos NO servidos por encima de la planta principal
 
-    ns_C = 26 #Numero de pisos servidos encima de la planta principal
+    ns_C = 28 #Numero de pisos servidos encima de la planta principal
 
     Np_C = ns_C*(1-(((ns_C-1)/(ns_C))**Pv_C)) # Nro de paradas probables en los pisos superiores
 
