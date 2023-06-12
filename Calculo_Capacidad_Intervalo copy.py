@@ -178,7 +178,14 @@ TTV: Tiempo_Total_Viaje
         
         Writer = ExcelWriter(f".\\Cálculo Grupo {Res_Grupo}.xlsx")
         df.to_excel(Writer, f"Calculo Grupo {Res_Grupo}", index=False)
-        Writer.save()
+
+        try:
+            
+            Writer.save()
+
+        finally:
+
+            print("Programa terminado.")
 
     Guardar_Calculo()
 
