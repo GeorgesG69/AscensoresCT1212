@@ -48,10 +48,10 @@ TTV: Tiempo_Total_Viaje
     Planta_Principal = 1
     Pisos_Superiores = 84
     Sotanos = 3 # (ni)
-    Distancia_Promedio = 3.4 #m (ep)
+    Distancia_Promedio = 3.5 #m (ep)
     Pisos_No_Servidos = 0 # (ne)
     Pisos_Servidos = 30 #(ns)
-    Pisos_Totales = 30 #Pisos_Servidos + Pisos_No_Servidos # (na)
+    Pisos_Totales = Pisos_Servidos + Pisos_No_Servidos # (na)
 
     Nro_Ascensores = 5
     Capacidad_Nominal_P = 18
@@ -76,7 +76,7 @@ TTV: Tiempo_Total_Viaje
 
     Aceleracion = 1 #m/s
 
-    ReferenciaV_Nom = numpy.sqrt(Recorrido_Superior_Servido*Aceleracion/Paradas_Probables)
+    ReferenciaV_Nom = ((Recorrido_Superior_Servido*Aceleracion)/Paradas_Probables)**(1/2)
 
     Tiempo_Apertira_cierre = 3.95 #s
     Tiempo_Entrada_Salida = 2 #s
@@ -108,6 +108,7 @@ TTV: Tiempo_Total_Viaje
 
     Capacidad_Transporte = (300*Personas_Viaje*Nro_Ascensores*100)/(Tiempo_Total_Viaje*Poblacion_Total) # (C)
     Intervalo_Probable = Tiempo_Total_Viaje/Nro_Ascensores
+
 
     Tiempo_Llenado = 500/Capacidad_Transporte
 
