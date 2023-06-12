@@ -209,6 +209,8 @@ def main():
 
     #-------------------Cálculos del Grupo C (Piso 58 al 85, Pb y Sótanos):
 
+    print("\n Cálculos del grupo C: \n")
+
     print(f"[Grupo C] La Vel. Nominal establecida es: {Velocidad_Nominal_C} [m/s]")
 
     Pv_C = int((3.2/P)+(0.7*P)+0.5)
