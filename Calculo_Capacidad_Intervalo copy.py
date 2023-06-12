@@ -176,7 +176,7 @@ TTV: Tiempo_Total_Viaje
                  "I (<40)",
                  "Tiempo de llenado"]]
         
-        Writer = ExcelWriter(f".\\Cálculo Grupo {Res_Grupo}.xlsx")
+        Writer = ExcelWriter(f".\\Cálculo Grupo {Res_Grupo}.xls")
         df.to_excel(Writer, f"Calculo Grupo {Res_Grupo}", index=False)
         Writer.save()
 
