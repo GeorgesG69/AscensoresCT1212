@@ -25,6 +25,7 @@ La altura entre pisos es de 3.5m
 
 import numpy
 import openpyxl
+import pandas as pd
 
 wb = openpyxl.Workbook()
 
