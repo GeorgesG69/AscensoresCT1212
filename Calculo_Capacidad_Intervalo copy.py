@@ -44,7 +44,7 @@ TTV: Tiempo_Total_Viaje
     '''
     Planta_Principal = 1
     Pisos_Superiores = 84
-    Sotanos = 3
+    Sotanos = 3 # (ni)
     Distancia_Promedio = 3.5 #m (ep)
     Pisos_No_Servidos = 0 # (ne)
     Pisos_Servidos = 84 #(ns)
@@ -52,7 +52,7 @@ TTV: Tiempo_Total_Viaje
 
     print(f"Pisos servidos: {Pisos_Servidos} \n Pisos NO servidos: {Pisos_No_Servidos} \n Pisos totales: {Pisos_Totales}")
     
-    Recorrido_Ppal_Super = 0 #(Ha)
+    Recorrido_Ppal_Super = Pisos_Totales*Distancia_Promedio #(Ha)
 
 
 
