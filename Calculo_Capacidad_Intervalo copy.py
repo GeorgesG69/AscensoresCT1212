@@ -180,8 +180,12 @@ TTV: Tiempo_Total_Viaje
         df.to_excel(Writer, f"Calculo Grupo {Res_Grupo}", index=False)
 
         try:
-            
-            Writer.save()
+
+            Writer._save()
+
+            if AttributeError:
+
+                print("Error al guardar.", AttributeError)
 
         finally:
 
