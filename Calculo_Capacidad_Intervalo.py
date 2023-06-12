@@ -83,7 +83,7 @@ def main():
     Velocidad_Nominal_C = 10 #m/s
     Tiempo_Entrada_Salida_C = 2
 
-    Nro_Ascensores = Nro_Ascensores_A + Nro_Ascensores_B + Nro_Ascensores_C #Bloque A + Bloque B
+    Nro_Ascensores = Nro_Ascensores_A + Nro_Ascensores_B + Nro_Ascensores_C 
 
     Area_Pisos = 750 #m^2
 
