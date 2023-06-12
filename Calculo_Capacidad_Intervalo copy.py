@@ -88,6 +88,19 @@ TTV: Tiempo_Total_Viaje
 
         Tiempo_Viaje_Completo = (2*Recorrido_Ppal_Super/Velocidad_Nominal_Establecida)+((Velocidad_Nominal_Establecida/Aceleracion)+Tiempo_Apertira_cierre)*(Paradas_Probables+1)+Tiempo_Entrada_Salida*Personas_Viaje
 
+    elif ReferenciaV_Nom >= Velocidad_Nominal_Establecida and Zona_expresa == True:
+
+        Tiempo_Viaje_Completo = (2*Recorrido_Ppal_Super/Velocidad_Nominal_Establecida)+((Velocidad_Nominal_Establecida/Aceleracion)+Tiempo_Apertira_cierre)*(Paradas_Probables+1)-(Recorrido_Superior_Servido/(Paradas_Probables*Velocidad_Nominal_Establecida))+Tiempo_Entrada_Salida*Personas_Viaje
+
+    elif ReferenciaV_Nom < Velocidad_Nominal_Establecida and Zona_expresa == True:
+
+        Tiempo_Viaje_Completo = (2*Recorrido_Ppal_Super/Velocidad_Nominal_Establecida)-(Recorrido_Superior_Servido/Velocidad_Nominal_Establecida)+(2*Velocidad_Nominal_Establecida/Aceleracion)+((2*Recorrido_Superior_Servido)/(Recorrido_Superior_Servido*Aceleracion/Paradas_Probables)**(1/Paradas_Probables))*(Paradas_Probables-1)+(Tiempo_Apertira_cierre*(Paradas_Probables+1))+Tiempo_Entrada_Salida*Personas_Viaje
+
+    else:
+
+        print("Valor errado para Tiempo de Viaje Completo.")
+
+
     Tiempo_Total_Viaje = Tiempo_Viaje_Completo + Tiempo_Viaje_Completo*Tiempo_Adicional
 
 
@@ -96,6 +109,7 @@ TTV: Tiempo_Total_Viaje
 
     Tiempo_Llenado = 500/Capacidad_Transporte
     
+
 
 
 
