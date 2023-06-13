@@ -68,7 +68,8 @@ TTV: Tiempo_Total_Viaje
     print(f"Zona expresa: {Zona_expresa}")
     print(f"Pisos servidos: {Pisos_Servidos} \nPisos NO servidos: {Pisos_No_Servidos} \nPisos totales: {Pisos_Totales}")
 
-    Poblacion_Total = 16 #Poblacion_Piso*Pisos_Servidos + Poblacion_Sotano*Sotanos # (B)
+    Poblacion_Total = Poblacion_Piso*Pisos_Servidos + Poblacion_Sotano*Sotanos # (B)
+
 
     if Paridad == "Impar":
 
@@ -149,6 +150,7 @@ TTV: Tiempo_Total_Viaje
     print(f"Tiempo de Viaje Completo: {Tiempo_Viaje_Completo} [s]")
     print(f"Tiempo Total de Viaje: {Tiempo_Total_Viaje} [s] \n")
     print(f"Personas por viaje: {Personas_Viaje}")
+    print(f"Población total: {Poblacion_Total}")
     print(f"Paradas probables: {Paradas_Probables} \n")
     print(f"Capacidad de Transporte [C]: {Capacidad_Transporte} % (>12)")
     print(f"Intervalo Probable [I]: {Intervalo_Probable} [s] (<40) \n")
