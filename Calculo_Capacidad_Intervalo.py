@@ -58,7 +58,7 @@ TTV: Tiempo_Total_Viaje
     Pisos_Totales = Pisos_Servidos + Pisos_No_Servidos # (na)
 
     Nro_Ascensores = 6
-    Capacidad_Nominal_P = 26
+    Capacidad_Nominal_P = 22
     Velocidad_Nominal_Establecida = 10 #m/s
     Zona_expresa = False
 
@@ -85,7 +85,7 @@ TTV: Tiempo_Total_Viaje
     
         Recorrido_Ppal_Super = Pisos_Totales*Distancia_Promedio #(Ha)
         Recorrido_Ppal_1PSuper = Pisos_No_Servidos*Distancia_Promedio #(He)
-        
+
     Recorrido_Sotanos = Sotanos*Distancia_Promedio #(Hi)
     Recorrido_Superior_Servido = Recorrido_Ppal_Super - Recorrido_Ppal_1PSuper #(Hs)
     Recorrido_Total = Recorrido_Ppal_Super + Recorrido_Sotanos #(Ht)
