@@ -50,14 +50,14 @@ TTV: Tiempo_Total_Viaje
     Planta_Principal = 1
     Pisos_Superiores = 84
     Sotanos = 3 # (ni)
-    Distancia_Promedio = 10.5 #m (ep)
+    Distancia_Promedio = 3.5 #m (ep)
     Distancia_Promedio_Par = 7 # (ean)
     Distancia_Promedio_Impar = 7 # (eap)
     Pisos_No_Servidos = 0 # (ne)
     Pisos_Servidos = 21 #(ns)
     Pisos_Totales = Pisos_Servidos + Pisos_No_Servidos # (na)
 
-    Nro_Ascensores = 6
+    Nro_Ascensores = 3
     Capacidad_Nominal_P = 22
     Velocidad_Nominal_Establecida = 10 #m/s
     Zona_expresa = False
