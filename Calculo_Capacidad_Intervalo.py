@@ -59,8 +59,8 @@ TTV: Tiempo_Total_Viaje
 
     Nro_Ascensores = 6
     Capacidad_Nominal_P = 22
-    Velocidad_Nominal_Establecida = 10 #m/s
-    Zona_expresa = False
+    Velocidad_Nominal_Establecida = 56 #m/s
+    Zona_expresa = True
 
     Paridad = ""
 
