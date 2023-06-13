@@ -86,6 +86,7 @@ TTV: Tiempo_Total_Viaje
         Recorrido_Ppal_1PSuper == Pisos_No_Servidos*Distancia_Promedio_Par
 
     else:
+        
         print("Paridad no establecida.")
 
     
