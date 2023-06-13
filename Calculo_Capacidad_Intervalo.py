@@ -120,7 +120,7 @@ TTV: Tiempo_Total_Viaje
 
     elif ReferenciaV_Nom < Velocidad_Nominal_Establecida and Zona_expresa == True:
 
-        Tiempo_Viaje_Completo = (2*Recorrido_Ppal_Super/Velocidad_Nominal_Establecida)-(Recorrido_Superior_Servido/Velocidad_Nominal_Establecida)+(2*Velocidad_Nominal_Establecida/Aceleracion)+((2*Recorrido_Superior_Servido)/(Recorrido_Superior_Servido*Aceleracion/Paradas_Probables)**(1/Paradas_Probables))*(Paradas_Probables-1)+(Tiempo_Apertira_cierre*(Paradas_Probables+1))+Tiempo_Entrada_Salida*Personas_Viaje
+        Tiempo_Viaje_Completo = (2*Recorrido_Ppal_Super/Velocidad_Nominal_Establecida)-(Recorrido_Superior_Servido/Velocidad_Nominal_Establecida)+(2*Velocidad_Nominal_Establecida/Aceleracion)+((2*Recorrido_Superior_Servido)/((Recorrido_Superior_Servido*Aceleracion/Paradas_Probables)**(1/Paradas_Probables)))*(Paradas_Probables-1)+(Tiempo_Apertira_cierre*(Paradas_Probables+1))+Tiempo_Entrada_Salida*Personas_Viaje
 
     else:
 
