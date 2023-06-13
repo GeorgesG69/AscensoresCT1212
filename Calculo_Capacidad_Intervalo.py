@@ -51,6 +51,8 @@ TTV: Tiempo_Total_Viaje
     Pisos_Superiores = 84
     Sotanos = 3 # (ni)
     Distancia_Promedio = 3.5 #m (ep)
+    Distancia_Promedio_Par = 0 # (ean)
+    Distancia_Promedio_Impar = 0 # (eap)
     Pisos_No_Servidos = 0 # (ne)
     Pisos_Servidos = 42 #(ns)
     Pisos_Totales = Pisos_Servidos + Pisos_No_Servidos # (na)
@@ -58,7 +60,7 @@ TTV: Tiempo_Total_Viaje
     Nro_Ascensores = 10
     Capacidad_Nominal_P = 26
     Velocidad_Nominal_Establecida = 10 #m/s
-    Zona_expresa = False
+    Zona_expresa = True
 
     print(f"Zona expresa: {Zona_expresa}")
     print(f"Pisos servidos: {Pisos_Servidos} \nPisos NO servidos: {Pisos_No_Servidos} \nPisos totales: {Pisos_Totales}")
