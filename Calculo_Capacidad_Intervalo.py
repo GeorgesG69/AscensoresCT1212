@@ -68,12 +68,6 @@ TTV: Tiempo_Total_Viaje
     print(f"Pisos servidos: {Pisos_Servidos} \nPisos NO servidos: {Pisos_No_Servidos} \nPisos totales: {Pisos_Totales}")
 
     Poblacion_Total = Poblacion_Piso*Pisos_Servidos + Poblacion_Sotano*Sotanos # (B)
-    
-    Recorrido_Ppal_Super = Pisos_Totales*Distancia_Promedio #(Ha)
-    Recorrido_Ppal_1PSuper = Pisos_No_Servidos*Distancia_Promedio #(He)
-    Recorrido_Sotanos = Sotanos*Distancia_Promedio #(Hi)
-    Recorrido_Superior_Servido = Recorrido_Ppal_Super - Recorrido_Ppal_1PSuper #(Hs)
-    Recorrido_Total = Recorrido_Ppal_Super + Recorrido_Sotanos #(Ht)
 
     if Paridad == "Impar":
 
@@ -88,6 +82,15 @@ TTV: Tiempo_Total_Viaje
     else:
 
         print("Paridad no establecida.")
+    
+        Recorrido_Ppal_Super = Pisos_Totales*Distancia_Promedio #(Ha)
+        Recorrido_Ppal_1PSuper = Pisos_No_Servidos*Distancia_Promedio #(He)
+        
+    Recorrido_Sotanos = Sotanos*Distancia_Promedio #(Hi)
+    Recorrido_Superior_Servido = Recorrido_Ppal_Super - Recorrido_Ppal_1PSuper #(Hs)
+    Recorrido_Total = Recorrido_Ppal_Super + Recorrido_Sotanos #(Ht)
+
+    
 
     
     Personas_Viaje = int((3.2/Capacidad_Nominal_P)+(0.7*Capacidad_Nominal_P)+0.5) #Pv
