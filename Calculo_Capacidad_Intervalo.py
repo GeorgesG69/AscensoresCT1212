@@ -158,8 +158,8 @@ TTV: Tiempo_Total_Viaje
         Res_Grupo = input("Ingrese el grupo del cálculo: ")
 
 
-        df = pd.DataFrame({"Grupo" : [f"Grupo {Res_Grupo}"],
-                           "Ascensores" : [Nro_Ascensores],
+        df = pd.DataFrame({ "Grupo" : [f"Grupo {Res_Grupo}"],
+                            "Ascensores" : [Nro_Ascensores],
                             "Zona expresa" : [Zona_expresa],
                             "Pisos Servidos" : [Pisos_Servidos],
                             "Pisos no servidos" : [Pisos_No_Servidos],
