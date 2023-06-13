@@ -50,7 +50,7 @@ TTV: Tiempo_Total_Viaje
     Planta_Principal = 1
     Pisos_Superiores = 84
     Sotanos = 3 # (ni)
-    Distancia_Promedio = 3.4 #m (ep)
+    Distancia_Promedio = 3.5 #m (ep)
     Distancia_Promedio_Par = 7 # (ean)
     Distancia_Promedio_Impar = 7 # (eap)
     Pisos_No_Servidos = 0 # (ne)
