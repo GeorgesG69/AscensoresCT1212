@@ -53,7 +53,7 @@ TTV: Tiempo_Total_Viaje
     Distancia_Promedio = 7 #m (ep)
     Distancia_Promedio_Par = 7 # (ean)
     Distancia_Promedio_Impar = 7 # (eap)
-    Pisos_No_Servidos = 0 # (ne)
+    Pisos_No_Servidos = 1 # (ne)
     Pisos_Servidos = 28 #(ns)
     Pisos_Totales = Pisos_Servidos + Pisos_No_Servidos # (na)
 
