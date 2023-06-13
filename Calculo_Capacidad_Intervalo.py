@@ -85,6 +85,9 @@ TTV: Tiempo_Total_Viaje
         Recorrido_Ppal_Super == Pisos_Totales*Distancia_Promedio_Par
         Recorrido_Ppal_1PSuper == Pisos_No_Servidos*Distancia_Promedio_Par
 
+    else:
+        print("Paridad no establecida.")
+
     
     Personas_Viaje = int((3.2/Capacidad_Nominal_P)+(0.7*Capacidad_Nominal_P)+0.5) #Pv
 
