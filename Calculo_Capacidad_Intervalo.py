@@ -103,7 +103,7 @@ TTV: Tiempo_Total_Viaje
 
     ReferenciaV_Nom = numpy.sqrt((Recorrido_Superior_Servido*Aceleracion)/Paradas_Probables)
 
-    Tiempo_Apertira_cierre = 4.43 #s
+    Tiempo_Apertira_cierre = 5.5 #s
     Tiempo_Entrada_Salida = 1.8 #s
     Tiempo_Adicional = 3/10
 
