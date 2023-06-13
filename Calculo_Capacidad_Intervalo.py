@@ -54,12 +54,12 @@ TTV: Tiempo_Total_Viaje
     Distancia_Promedio_Par = 7 # (ean)
     Distancia_Promedio_Impar = 7 # (eap)
     Pisos_No_Servidos = 0 # (ne)
-    Pisos_Servidos = 28 #(ns)
+    Pisos_Servidos = 29 #(ns)
     Pisos_Totales = Pisos_Servidos + Pisos_No_Servidos # (na)
 
     Nro_Ascensores = 6
     Tamano_Puerta = 1100
-    Capacidad_Nominal_P = 22
+    Capacidad_Nominal_P = 24
     Velocidad_Nominal_Establecida = 10 #m/s
     Zona_expresa = False
 
