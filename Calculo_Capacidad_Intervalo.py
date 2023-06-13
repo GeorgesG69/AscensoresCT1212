@@ -53,14 +53,15 @@ TTV: Tiempo_Total_Viaje
     Distancia_Promedio = 3.5 #m (ep)
     Distancia_Promedio_Par = 7 # (ean)
     Distancia_Promedio_Impar = 7 # (eap)
-    Pisos_No_Servidos = 22 # (ne)
-    Pisos_Servidos = 22 #(ns)
+    Pisos_No_Servidos = 0 # (ne)
+    Pisos_Servidos = 28 #(ns)
     Pisos_Totales = Pisos_Servidos + Pisos_No_Servidos # (na)
 
     Nro_Ascensores = 6
-    Capacidad_Nominal_P = 21
-    Velocidad_Nominal_Establecida = 8 #m/s
-    Zona_expresa = True
+    Tamano_Puerta = 1100
+    Capacidad_Nominal_P = 22
+    Velocidad_Nominal_Establecida = 10 #m/s
+    Zona_expresa = False
 
     Paridad = ""
 
@@ -101,8 +102,8 @@ TTV: Tiempo_Total_Viaje
 
     ReferenciaV_Nom = numpy.sqrt((Recorrido_Superior_Servido*Aceleracion)/Paradas_Probables)
 
-    Tiempo_Apertira_cierre = 3.95 #s
-    Tiempo_Entrada_Salida = 2 #s
+    Tiempo_Apertira_cierre = 4.11 #s
+    Tiempo_Entrada_Salida = 1.9 #s
     Tiempo_Adicional = 3/10
 
     if ReferenciaV_Nom < Velocidad_Nominal_Establecida and Zona_expresa == False:
