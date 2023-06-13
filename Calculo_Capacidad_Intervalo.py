@@ -128,7 +128,7 @@ TTV: Tiempo_Total_Viaje
     print(f"Tiempo Total de Viaje: {Tiempo_Total_Viaje} [s] \n")
     print(f"Personas por viaje: {Personas_Viaje}")
     print(f"Paradas probables: {Paradas_Probables} \n")
-    print(f"Capacidad de Transporte [C] {Capacidad_Transporte} % (>12)")
+    print(f"Capacidad de Transporte [C]: {Capacidad_Transporte} % (>12)")
     print(f"Intervalo Probable [I]: {Intervalo_Probable} [s] (<40) \n")
     print(f"Tiempo de llenado: {Tiempo_Llenado}")
 
