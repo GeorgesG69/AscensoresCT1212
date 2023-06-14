@@ -29,7 +29,8 @@ from pandas import ExcelWriter
 from pandas import ExcelFile
 import sys
 
-
+filepath = "./Datos Ascensor.xlsx"
+de = pd.read_excel("Datos Ascensor.xls")
 
 
 def main():
@@ -63,6 +64,9 @@ TTV: Tiempo_Total_Viaje
     Tamano_Puerta = 800
     Capacidad_Nominal_P = 19
     Velocidad_Nominal_Establecida = 10 #m/s
+    Tiempo_Apertira_cierre = 3.15 #s
+    Tiempo_Entrada_Salida = 2.2 #s
+    Tiempo_Adicional = 3/10
     Zona_expresa = True
 
     Paridad = ""
@@ -105,9 +109,7 @@ TTV: Tiempo_Total_Viaje
 
     ReferenciaV_Nom = numpy.sqrt((Recorrido_Superior_Servido*Aceleracion)/Paradas_Probables)
 
-    Tiempo_Apertira_cierre = 3.15 #s
-    Tiempo_Entrada_Salida = 2.2 #s
-    Tiempo_Adicional = 3/10
+
 
     if ReferenciaV_Nom < Velocidad_Nominal_Establecida and Zona_expresa == False:
 
