@@ -5,6 +5,9 @@ import pandas
 import sys
 
 sys.path.append("C:\\Users\\Georges\\Desktop\\Mine\\Proyectos CT1212\\Ascensores\\AscensoresCT1212\\Calculo_Capacidad_Intervalo.py")
+from Calculo_Capacidad_Intervalo import Velocidad_Nominal_Establecida
+
+print(f"Velocidad nominal: {Velocidad_Nominal_Establecida}")
 
 Longitud_Fijacion_Cable = 0
 
@@ -62,7 +65,7 @@ elif Tipo_Garganta == "comb":
 else:
     print("Error en la presion específica.")
 
-Ref_Presion_esp = 125+40*main
+Ref_Presion_esp = 125+40*Velocidad_Nominal_Establecida
 
 
 # Tension:

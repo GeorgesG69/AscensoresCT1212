@@ -26,6 +26,8 @@ La altura entre pisos es de 3.5m
 import numpy
 import pandas as pd
 from pandas import ExcelWriter
+from pandas import ExcelFile
+import sys
 
 
 
