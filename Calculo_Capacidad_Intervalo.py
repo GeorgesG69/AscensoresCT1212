@@ -33,7 +33,12 @@ filepath = "./datos_ascensores.xlsm"
 de = pd.read_excel("datos_ascensores.xls")
 
 
+
+
 def main(fila):
+
+    Res_Grupo = de.iloc[fila,0]
+    print(f"\n{Res_Grupo}\n")
 
     '''
 Datos Generales: 
@@ -107,8 +112,6 @@ TTV: Tiempo_Total_Viaje
     Recorrido_Total = Recorrido_Ppal_Super + Recorrido_Sotanos #(Ht)
 
     
-
-    
     Personas_Viaje = numpy.nan_to_num(int((3.2/Capacidad_Nominal_P)+(0.7*Capacidad_Nominal_P)+0.5)) #Pv
 
     Paradas_Probables = Pisos_Servidos*(1-(((Pisos_Servidos-1)/Pisos_Servidos)**Personas_Viaje)) #np
@@ -116,7 +119,6 @@ TTV: Tiempo_Total_Viaje
     Aceleracion = 1 #m/s
 
     ReferenciaV_Nom = numpy.sqrt((Recorrido_Superior_Servido*Aceleracion)/Paradas_Probables)
-
 
 
     if ReferenciaV_Nom < Velocidad_Nominal_Establecida and Zona_expresa == False:
@@ -169,14 +171,14 @@ TTV: Tiempo_Total_Viaje
     print(f"Intervalo Probable [I]: {Intervalo_Probable} [s] (<40) \n")
     print(f"Tiempo de llenado: {Tiempo_Llenado}")
 
-    Res_Grupo = de.iloc[fila,0]
+    
 
     return (Res_Grupo, Zona_expresa,Pisos_Servidos,Pisos_No_Servidos,Pisos_Totales,Nro_Ascensores,Velocidad_Nominal_Establecida,ReferenciaV_Nom,Recorrido_Ppal_Super,Recorrido_Ppal_1PSuper,Recorrido_Superior_Servido,Tiempo_Apertira_cierre,Tiempo_Entrada_Salida,Tiempo_Viaje_Completo,Tiempo_Total_Viaje,Capacidad_Nominal_P,Personas_Viaje,Poblacion_Total,Paradas_Probables,Capacidad_Transporte,Intervalo_Probable,Tiempo_Llenado)
 
 def Guardar_Calculo(Res_Grupo,Zona_expresa,Pisos_Servidos,Pisos_No_Servidos,Pisos_Totales,Nro_Ascensores,Velocidad_Nominal_Establecida,ReferenciaV_Nom,Recorrido_Ppal_Super,Recorrido_Ppal_1PSuper,Recorrido_Superior_Servido,Tiempo_Apertira_cierre,Tiempo_Entrada_Salida,Tiempo_Viaje_Completo,Tiempo_Total_Viaje,Capacidad_Nominal_P,Personas_Viaje,Poblacion_Total,Paradas_Probables,Capacidad_Transporte,Intervalo_Probable,Tiempo_Llenado): 
 
 
-    df = pd.DataFrame({ "Grupo" : [f"{Res_Grupo}"],
+    df = pd.DataFrame({ "Grupo" : [Res_Grupo],
                             "Ascensores" : [Nro_Ascensores],
                             "Zona expresa" : [Zona_expresa],
                             "Pisos Servidos" : [Pisos_Servidos],
@@ -233,7 +235,7 @@ def Guardar_Calculo(Res_Grupo,Zona_expresa,Pisos_Servidos,Pisos_No_Servidos,Piso
 
     finally:
 
-        print("Programa terminado.\n")
+        print(f"Programa terminado para {Res_Grupo}.\n")
 
     
 
