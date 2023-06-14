@@ -33,7 +33,7 @@ filepath = "./Datos Ascensor.xlsx"
 de = pd.read_excel("Datos Ascensor.xls")
 
 
-def main():
+def main(fila):
 
     '''
 Datos Generales: 
@@ -56,18 +56,26 @@ TTV: Tiempo_Total_Viaje
     Distancia_Promedio = 3.5 #m (ep)
     Distancia_Promedio_Par = 7 # (ean)
     Distancia_Promedio_Impar = 7 # (eap)
-    Pisos_No_Servidos = 64 # (ne)
-    Pisos_Servidos = 21 #(ns)
+    Pisos_No_Servidos = float(de.iloc[fila,3]) # (ne)
+    Pisos_Servidos = float(de.iloc[fila,2]) #(ns)
     Pisos_Totales = Pisos_Servidos + Pisos_No_Servidos # (na)
 
-    Nro_Ascensores = 6
+    Nro_Ascensores = float(de.iloc[fila,4])
     Tamano_Puerta = 800
-    Capacidad_Nominal_P = 19
-    Velocidad_Nominal_Establecida = 10 #m/s
-    Tiempo_Apertira_cierre = 3.15 #s
-    Tiempo_Entrada_Salida = 2.2 #s
+    Capacidad_Nominal_P = float(de.iloc[fila,5])
+    Velocidad_Nominal_Establecida = float(de.iloc[fila, 6]) #m/s
+    Tiempo_Apertira_cierre = float(de.iloc[fila,7]) #s
+    Tiempo_Entrada_Salida = float(de.iloc[fila, 8]) #s
     Tiempo_Adicional = 3/10
-    Zona_expresa = True
+    #Zona expresa
+    if de.iloc[fila,1] == "si":
+
+        Zona_expresa = True
+    
+    elif de.iloc[fila,1] == "no":
+
+        Zona_expresa = False
+
 
     Paridad = ""
 
