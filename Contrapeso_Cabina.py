@@ -5,11 +5,17 @@ import pandas
 import sys
 
 sys.path.append("C:\\Users\\Georges\\Desktop\\Mine\\Proyectos CT1212\\Ascensores\\AscensoresCT1212\\Calculo_Capacidad_Intervalo.py")
-from Calculo_Capacidad_Intervalo import Velocidad_Nominal_Establecida
+from Calculo_Capacidad_Intervalo import main
 
-print(f"Velocidad nominal: {Velocidad_Nominal_Establecida}")
+Res_Grupo_G, Zona_expresa_G,Pisos_Servidos_G,Pisos_No_Servidos_G,Pisos_Totales_G,Nro_Ascensores_G,Velocidad_Nominal_Establecida_G,ReferenciaV_Nom_G,Recorrido_Ppal_Super_G,Recorrido_Ppal_1PSuper_G,Recorrido_Superior_Servido_G,Tiempo_Apertira_cierre_G,Tiempo_Entrada_Salida_G,Tiempo_Viaje_Completo_G,Tiempo_Total_Viaje_G,Capacidad_Nominal_P_G,Personas_Viaje_G,Poblacion_Total_G,Paradas_Probables_G,Capacidad_Transporte_G,Intervalo_Probable_G,Tiempo_Llenado_G = main
+
+#print(f"Velocidad nominal: {Velocidad_Nominal_Establecida}")
 
 Longitud_Fijacion_Cable = 0
+
+Peso_estructura_carro = 500
+Exceso_Carga_Nominal = 2000*4/10
+Peso_Contrapeso = Peso_estructura_carro + Exceso_Carga_Nominal
 
 Contrapeso_Pared = 5 + Longitud_Fijacion_Cable*2/1000
 Carro_Contrapeso = 7 + Longitud_Fijacion_Cable*2/1000
@@ -65,7 +71,7 @@ elif Tipo_Garganta == "comb":
 else:
     print("Error en la presion específica.")
 
-Ref_Presion_esp = 125+40*Velocidad_Nominal_Establecida
+Ref_Presion_esp = 125+40*Velocidad_Nominal_Establecida_G
 
 
 # Tension:
