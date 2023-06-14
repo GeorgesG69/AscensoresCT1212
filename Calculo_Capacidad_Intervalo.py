@@ -29,8 +29,8 @@ from pandas import ExcelWriter
 from pandas import ExcelFile
 import sys
 
-filepath = "./Datos_Ascensor.xlsm"
-de = pd.read_excel("Datos_Ascensor.xls")
+filepath = "./datos_ascensores.xlsm"
+de = pd.read_excel("datos_ascensores.xls")
 
 
 def main(fila):
