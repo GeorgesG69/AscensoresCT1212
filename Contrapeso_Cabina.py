@@ -36,6 +36,9 @@ elif Tipo_Garganta == "comb":
     Angulo_Entralladura = ()
 
     Indice_Rozamiento_Comb = 4*Coeficiente_M*(1-numpy.sin(Angulo_Entralladura/2))/(numpy.pi-Angulo_Entralladura-numpy.sin(Angulo_Entralladura))
+
+else:
+    print("Tipo de garganta no especificado")
 # Presion específica entre los cables y gargantas de la polea:
 
 
