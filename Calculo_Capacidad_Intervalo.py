@@ -58,7 +58,7 @@ TTV: Tiempo_Total_Viaje
     Pisos_Totales = Pisos_Servidos + Pisos_No_Servidos # (na)
 
     Nro_Ascensores = 6
-    Tamano_Puerta = 1100
+    Tamano_Puerta = 800
     Capacidad_Nominal_P = 19
     Velocidad_Nominal_Establecida = 10 #m/s
     Zona_expresa = True
