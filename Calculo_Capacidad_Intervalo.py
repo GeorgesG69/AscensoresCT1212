@@ -109,7 +109,7 @@ TTV: Tiempo_Total_Viaje
     
 
     
-    Personas_Viaje = int((3.2/Capacidad_Nominal_P)+(0.7*Capacidad_Nominal_P)+0.5) #Pv
+    Personas_Viaje = numpy.nan_to_num(int((3.2/Capacidad_Nominal_P)+(0.7*Capacidad_Nominal_P)+0.5)) #Pv
 
     Paradas_Probables = Pisos_Servidos*(1-(((Pisos_Servidos-1)/Pisos_Servidos)**Personas_Viaje)) #np
 
@@ -169,12 +169,14 @@ TTV: Tiempo_Total_Viaje
     print(f"Intervalo Probable [I]: {Intervalo_Probable} [s] (<40) \n")
     print(f"Tiempo de llenado: {Tiempo_Llenado}")
 
-    return (Zona_expresa,Pisos_Servidos,Pisos_No_Servidos,Pisos_Totales,Nro_Ascensores,Velocidad_Nominal_Establecida,ReferenciaV_Nom,Recorrido_Ppal_Super,Recorrido_Ppal_1PSuper,Recorrido_Superior_Servido,Tiempo_Apertira_cierre,Tiempo_Entrada_Salida,Tiempo_Viaje_Completo,Tiempo_Total_Viaje,Capacidad_Nominal_P,Personas_Viaje,Poblacion_Total,Paradas_Probables,Capacidad_Transporte,Intervalo_Probable,Tiempo_Llenado)
+    Res_Grupo = de.iloc[fila,0]
+
+    return (Res_Grupo, Zona_expresa,Pisos_Servidos,Pisos_No_Servidos,Pisos_Totales,Nro_Ascensores,Velocidad_Nominal_Establecida,ReferenciaV_Nom,Recorrido_Ppal_Super,Recorrido_Ppal_1PSuper,Recorrido_Superior_Servido,Tiempo_Apertira_cierre,Tiempo_Entrada_Salida,Tiempo_Viaje_Completo,Tiempo_Total_Viaje,Capacidad_Nominal_P,Personas_Viaje,Poblacion_Total,Paradas_Probables,Capacidad_Transporte,Intervalo_Probable,Tiempo_Llenado)
 
 def Guardar_Calculo(Res_Grupo,Zona_expresa,Pisos_Servidos,Pisos_No_Servidos,Pisos_Totales,Nro_Ascensores,Velocidad_Nominal_Establecida,ReferenciaV_Nom,Recorrido_Ppal_Super,Recorrido_Ppal_1PSuper,Recorrido_Superior_Servido,Tiempo_Apertira_cierre,Tiempo_Entrada_Salida,Tiempo_Viaje_Completo,Tiempo_Total_Viaje,Capacidad_Nominal_P,Personas_Viaje,Poblacion_Total,Paradas_Probables,Capacidad_Transporte,Intervalo_Probable,Tiempo_Llenado): 
 
 
-    df = pd.DataFrame({ "Grupo" : [f"Grupo {Res_Grupo}"],
+    df = pd.DataFrame({ "Grupo" : [f"{Res_Grupo}"],
                             "Ascensores" : [Nro_Ascensores],
                             "Zona expresa" : [Zona_expresa],
                             "Pisos Servidos" : [Pisos_Servidos],
@@ -236,8 +238,9 @@ def Guardar_Calculo(Res_Grupo,Zona_expresa,Pisos_Servidos,Pisos_No_Servidos,Piso
     
 
 def run():
-    Zona_expresa_G,Pisos_Servidos_G,Pisos_No_Servidos_G,Pisos_Totales_G,Nro_Ascensores_G,Velocidad_Nominal_Establecida_G,ReferenciaV_Nom_G,Recorrido_Ppal_Super_G,Recorrido_Ppal_1PSuper_G,Recorrido_Superior_Servido_G,Tiempo_Apertira_cierre_G,Tiempo_Entrada_Salida_G,Tiempo_Viaje_Completo_G,Tiempo_Total_Viaje_G,Capacidad_Nominal_P_G,Personas_Viaje_G,Poblacion_Total_G,Paradas_Probables_G,Capacidad_Transporte_G,Intervalo_Probable_G,Tiempo_Llenado_G = main(2)
-    Guardar_Calculo(Zona_expresa_G,Pisos_Servidos_G,Pisos_No_Servidos_G,Pisos_Totales_G,Nro_Ascensores_G,Velocidad_Nominal_Establecida_G,ReferenciaV_Nom_G,Recorrido_Ppal_Super_G,Recorrido_Ppal_1PSuper_G,Recorrido_Superior_Servido_G,Tiempo_Apertira_cierre_G,Tiempo_Entrada_Salida_G,Tiempo_Viaje_Completo_G,Tiempo_Total_Viaje_G,Capacidad_Nominal_P_G,Personas_Viaje_G,Poblacion_Total_G,Paradas_Probables_G,Capacidad_Transporte_G,Intervalo_Probable_G,Tiempo_Llenado_G)
+    print(de)
+    Res_Grupo_G, Zona_expresa_G,Pisos_Servidos_G,Pisos_No_Servidos_G,Pisos_Totales_G,Nro_Ascensores_G,Velocidad_Nominal_Establecida_G,ReferenciaV_Nom_G,Recorrido_Ppal_Super_G,Recorrido_Ppal_1PSuper_G,Recorrido_Superior_Servido_G,Tiempo_Apertira_cierre_G,Tiempo_Entrada_Salida_G,Tiempo_Viaje_Completo_G,Tiempo_Total_Viaje_G,Capacidad_Nominal_P_G,Personas_Viaje_G,Poblacion_Total_G,Paradas_Probables_G,Capacidad_Transporte_G,Intervalo_Probable_G,Tiempo_Llenado_G = main(1)
+    Guardar_Calculo(Res_Grupo_G,Zona_expresa_G,Pisos_Servidos_G,Pisos_No_Servidos_G,Pisos_Totales_G,Nro_Ascensores_G,Velocidad_Nominal_Establecida_G,ReferenciaV_Nom_G,Recorrido_Ppal_Super_G,Recorrido_Ppal_1PSuper_G,Recorrido_Superior_Servido_G,Tiempo_Apertira_cierre_G,Tiempo_Entrada_Salida_G,Tiempo_Viaje_Completo_G,Tiempo_Total_Viaje_G,Capacidad_Nominal_P_G,Personas_Viaje_G,Poblacion_Total_G,Paradas_Probables_G,Capacidad_Transporte_G,Intervalo_Probable_G,Tiempo_Llenado_G)
 
 
 if __name__ == "__main__":
