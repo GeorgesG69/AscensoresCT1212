@@ -48,7 +48,7 @@ TTV: Tiempo_Total_Viaje
     Poblacion_Sotano = 15
     
     Planta_Principal = 1
-    Pisos_Superiores = 84
+    Pisos_Superiores = 85
     Sotanos = 3 # (ni)
     Distancia_Promedio = 3.5 #m (ep)
     Distancia_Promedio_Par = 7 # (ean)
@@ -149,6 +149,7 @@ TTV: Tiempo_Total_Viaje
 
     print(f"Tiempo de Viaje Completo: {Tiempo_Viaje_Completo} [s]")
     print(f"Tiempo Total de Viaje: {Tiempo_Total_Viaje} [s] \n")
+    print(f"Capacidad nominal: {Capacidad_Nominal_P}")
     print(f"Personas por viaje: {Personas_Viaje}")
     print(f"Población total: {Poblacion_Total}")
     print(f"Paradas probables: {Paradas_Probables} \n")
@@ -176,6 +177,7 @@ TTV: Tiempo_Total_Viaje
                             "Tiempo de entrada y salida" : [Tiempo_Entrada_Salida],
                             "Tiempo de Viaje Completo" : [Tiempo_Viaje_Completo],
                             "Tiempo Total de viaje" : [Tiempo_Total_Viaje],
+                            "Capacidad Nominal" : [Capacidad_Nominal_P],
                             "Personas por viaje" : [Personas_Viaje],
                             "Paradas Probables" : [Paradas_Probables],
                             "C (>12)" : [Capacidad_Transporte],
@@ -197,6 +199,7 @@ TTV: Tiempo_Total_Viaje
                  "Tiempo de entrada y salida",
                  "Tiempo de Viaje Completo",
                  "Tiempo Total de viaje",
+                 "Capacidad Nominal",
                  "Personas por viaje",
                  "Paradas Probables",
                  "C (>12)",
