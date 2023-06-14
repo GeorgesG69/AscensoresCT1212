@@ -169,12 +169,12 @@ TTV: Tiempo_Total_Viaje
     print(f"Intervalo Probable [I]: {Intervalo_Probable} [s] (<40) \n")
     print(f"Tiempo de llenado: {Tiempo_Llenado}")
 
-    def Guardar_Calculo(): 
+    return (Zona_expresa,Pisos_Servidos,Pisos_No_Servidos,Pisos_Totales,Nro_Ascensores,Velocidad_Nominal_Establecida,ReferenciaV_Nom,Recorrido_Ppal_Super,Recorrido_Ppal_1PSuper,Recorrido_Superior_Servido,Tiempo_Apertira_cierre,Tiempo_Entrada_Salida,Tiempo_Viaje_Completo,Tiempo_Total_Viaje,Capacidad_Nominal_P,Personas_Viaje,Poblacion_Total,Paradas_Probables,Capacidad_Transporte,Intervalo_Probable,Tiempo_Llenado)
 
-        Res_Grupo = input("Ingrese el grupo del cálculo: ")
+def Guardar_Calculo(Res_Grupo,Zona_expresa,Pisos_Servidos,Pisos_No_Servidos,Pisos_Totales,Nro_Ascensores,Velocidad_Nominal_Establecida,ReferenciaV_Nom,Recorrido_Ppal_Super,Recorrido_Ppal_1PSuper,Recorrido_Superior_Servido,Tiempo_Apertira_cierre,Tiempo_Entrada_Salida,Tiempo_Viaje_Completo,Tiempo_Total_Viaje,Capacidad_Nominal_P,Personas_Viaje,Poblacion_Total,Paradas_Probables,Capacidad_Transporte,Intervalo_Probable,Tiempo_Llenado): 
 
 
-        df = pd.DataFrame({ "Grupo" : [f"Grupo {Res_Grupo}"],
+    df = pd.DataFrame({ "Grupo" : [f"Grupo {Res_Grupo}"],
                             "Ascensores" : [Nro_Ascensores],
                             "Zona expresa" : [Zona_expresa],
                             "Pisos Servidos" : [Pisos_Servidos],
@@ -196,7 +196,7 @@ TTV: Tiempo_Total_Viaje
                             "I (<40)" : [Intervalo_Probable],
                             "Tiempo de llenado" : [Tiempo_Llenado]})
         
-        df = df[["Grupo",
+    df = df[["Grupo",
                  "Ascensores",
                  "Zona expresa",
                  "Pisos Servidos",
@@ -218,27 +218,30 @@ TTV: Tiempo_Total_Viaje
                  "I (<40)",
                  "Tiempo de llenado"]]
         
-        Writer = ExcelWriter(f".\\Cálculo Grupo {Res_Grupo}.xlsx")
-        df.to_excel(Writer, f"Calculo Grupo {Res_Grupo}", index=False)
+    Writer = ExcelWriter(f".\\Cálculo Todos.xlsx")
+    df.to_excel(Writer, f"Calculo Todos", index=False)
 
-        try:
+    try:
 
-            Writer._save()
+        Writer._save()
 
-            if AttributeError:
+        if AttributeError:
 
-                print("\nError al guardar:", AttributeError)
+            print("\nError al guardar:", AttributeError)
 
-        finally:
+    finally:
 
-            print("Programa terminado.\n")
+        print("Programa terminado.\n")
 
-    Guardar_Calculo()
+    
 
+def run():
+    Zona_expresa_G,Pisos_Servidos_G,Pisos_No_Servidos_G,Pisos_Totales_G,Nro_Ascensores_G,Velocidad_Nominal_Establecida_G,ReferenciaV_Nom_G,Recorrido_Ppal_Super_G,Recorrido_Ppal_1PSuper_G,Recorrido_Superior_Servido_G,Tiempo_Apertira_cierre_G,Tiempo_Entrada_Salida_G,Tiempo_Viaje_Completo_G,Tiempo_Total_Viaje_G,Capacidad_Nominal_P_G,Personas_Viaje_G,Poblacion_Total_G,Paradas_Probables_G,Capacidad_Transporte_G,Intervalo_Probable_G,Tiempo_Llenado_G = main(2)
+    Guardar_Calculo(Zona_expresa_G,Pisos_Servidos_G,Pisos_No_Servidos_G,Pisos_Totales_G,Nro_Ascensores_G,Velocidad_Nominal_Establecida_G,ReferenciaV_Nom_G,Recorrido_Ppal_Super_G,Recorrido_Ppal_1PSuper_G,Recorrido_Superior_Servido_G,Tiempo_Apertira_cierre_G,Tiempo_Entrada_Salida_G,Tiempo_Viaje_Completo_G,Tiempo_Total_Viaje_G,Capacidad_Nominal_P_G,Personas_Viaje_G,Poblacion_Total_G,Paradas_Probables_G,Capacidad_Transporte_G,Intervalo_Probable_G,Tiempo_Llenado_G)
 
 
 if __name__ == "__main__":
 
     print("Running... \n")
-    main()
+    run()
     
