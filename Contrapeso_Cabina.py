@@ -9,7 +9,7 @@ Carro_Contrapeso = 7 + Longitud_Fijacion_Cable*2/1000
 
 Valor_T7 = 1
 
-Nro_Cables_Suspencion = 10
+Nro_Cables_Suspencion = 15
 
 Carga_Rotura_Cable = 2000
 
