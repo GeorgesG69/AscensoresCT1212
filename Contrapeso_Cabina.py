@@ -57,7 +57,10 @@ if Tipo_Garganta == "cuna":
 elif Tipo_Garganta == "comb":
 
     Presion_esp = (8*Carga_Estatica_Cables*numpy.cos(Angulo_Entralladura/2))/(Numero_Cables_Traccion*Diametro_Cable_Traccion*Diametro_Primitivo_Polea*(numpy.pi-Angulo_Entralladura-numpy.sin(Angulo_Entralladura)))
-    
+
+else:
+    print("Error en la presion específica.")
+
 
 # Tension:
 
