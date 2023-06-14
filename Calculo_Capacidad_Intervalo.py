@@ -79,7 +79,7 @@ TTV: Tiempo_Total_Viaje
 
     Paridad = ""
 
-    print(f"Zona expresa: {Zona_expresa}")
+    #print(f"Zona expresa: {Zona_expresa}")
     print(f"Pisos servidos: {Pisos_Servidos} \nPisos NO servidos: {Pisos_No_Servidos} \nPisos totales: {Pisos_Totales}")
 
     Poblacion_Total = Poblacion_Piso*Pisos_Servidos + Poblacion_Sotano*Sotanos # (B)
