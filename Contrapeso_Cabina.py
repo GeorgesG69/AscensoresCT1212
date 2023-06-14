@@ -2,6 +2,8 @@
 
 import numpy
 import pandas
+import Calculo_Capacidad_Intervalo
+
 
 Longitud_Fijacion_Cable = 0
 
@@ -39,9 +41,23 @@ elif Tipo_Garganta == "comb":
 
 else:
     print("Tipo de garganta no especificado")
+
 # Presion específica entre los cables y gargantas de la polea:
 
+Carga_Estatica_Cables = 2000 + (1000)
+Numero_Cables_Traccion = 15
+Diametro_Cable_Traccion = 10
+Diametro_Primitivo_Polea = 20
 
+
+if Tipo_Garganta == "cuna":
+
+    Presion_esp = (5*Carga_Estatica_Cables)/(Numero_Cables_Traccion*Diametro_Cable_Traccion*Diametro_Primitivo_Polea*numpy.sin(Angulo_Mecanizado_Garganta/2))
+
+elif Tipo_Garganta == "comb":
+
+    Presion_esp = (8*Carga_Estatica_Cables*numpy.cos(Angulo_Entralladura/2))/(Numero_Cables_Traccion*Diametro_Cable_Traccion*Diametro_Primitivo_Polea*(numpy.pi-Angulo_Entralladura-numpy.sin(Angulo_Entralladura)))
+    
 
 # Tension:
 
