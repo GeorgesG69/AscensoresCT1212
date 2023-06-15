@@ -13,12 +13,20 @@ from Calculo_Capacidad_Intervalo import main
 
 Longitud_Fijacion_Cable = 0
 
-Peso_estructura_carro = 500
+Peso_estructura_carro = 2000
 Exceso_Carga_Nominal = 2000*4/10
 Peso_Contrapeso = Peso_estructura_carro + Exceso_Carga_Nominal
 
 Contrapeso_Pared = 5 + Longitud_Fijacion_Cable*2/1000
 Carro_Contrapeso = 7 + Longitud_Fijacion_Cable*2/1000
+
+# Cabina
+#-Superficie:
+
+Ancho_Cabina = 2100
+Largo_Cabina = 1750
+
+Superficie_Cabina = Ancho_Cabina*Largo_Cabina
 
 # Cables:
 
