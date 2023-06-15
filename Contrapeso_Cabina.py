@@ -56,8 +56,8 @@ else:
 
 Carga_Estatica_Cables = 2000 + (1000)
 Numero_Cables_Traccion = 15
-Diametro_Cable_Traccion = 10
-Diametro_Primitivo_Polea = 400
+Diametro_Cable_Traccion = 10 #cm
+Diametro_Primitivo_Polea = 400 #cm
 
 Velocidad_Nominal = 10
 
