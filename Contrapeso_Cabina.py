@@ -55,7 +55,7 @@ else:
 # Presion específica entre los cables y gargantas de la polea:
 
 Carga_Estatica_Cables = 2000 + (1000)
-Numero_Cables_Traccion = 15
+Numero_Cables_Traccion = 20
 Diametro_Cable_Traccion = 10 #cm
 Diametro_Primitivo_Polea = 400 #cm
 
