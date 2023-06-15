@@ -39,15 +39,15 @@ Tipo_Garganta = "" #sin ñ
 
 if Tipo_Garganta == "cuna":
 
-    Angulo_Mecanizado_Garganta = ()
+    Angulo_Mecanizado_Garganta = 0
 
-    Indice_Rozamiento_Cuna = Coeficiente_M/numpy.sin(Angulo_Mecanizado_Garganta/2)
+    Indice_Rozamiento = Coeficiente_M/numpy.sin(Angulo_Mecanizado_Garganta/2)
 
 elif Tipo_Garganta == "comb":
 
-    Angulo_Entralladura = ()
+    Angulo_Entralladura = 0
 
-    Indice_Rozamiento_Comb = 4*Coeficiente_M*(1-numpy.sin(Angulo_Entralladura/2))/(numpy.pi-Angulo_Entralladura-numpy.sin(Angulo_Entralladura))
+    Indice_Rozamiento = 4*Coeficiente_M*(1-numpy.sin(Angulo_Entralladura/2))/(numpy.pi-Angulo_Entralladura-numpy.sin(Angulo_Entralladura))
 
 else:
     print("Tipo de garganta no especificado")
@@ -58,6 +58,8 @@ Carga_Estatica_Cables = 2000 + (1000)
 Numero_Cables_Traccion = 15
 Diametro_Cable_Traccion = 10
 Diametro_Primitivo_Polea = 20
+
+Velocidad_Nominal = 10
 
 
 if Tipo_Garganta == "cuna":
@@ -71,15 +73,20 @@ elif Tipo_Garganta == "comb":
 else:
     print("Error en la presion específica.")
 
-Ref_Presion_esp = 125+40*Velocidad_Nominal_Establecida_G
+Ref_Presion_esp = 125+40*Velocidad_Nominal
 
 
 # Tension:
 
-Tension_1 = ()
-Tension_2 = ()
+Tension_1 = 0
+Tension_2 = 0
 
+Ceoficiente_aceleracon = (9.8+1)/(9.8-1)
+Coeficiente_Forma_Garganta = 1
 
+ANgulo_Contacto = 141
+
+efa = numpy.exp(Indice_Rozamiento*ANgulo_Contacto)
 
 print(f"Valor de la tabla 7: {Valor_T7}")
 print(f"Número de cables suspendidos: {Nro_Cables_Suspencion}")

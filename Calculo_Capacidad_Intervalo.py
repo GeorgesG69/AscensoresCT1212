@@ -177,9 +177,12 @@ TTV: Tiempo_Total_Viaje
 
 def Guardar_Calculo(Res_Grupo,Zona_expresa,Pisos_Servidos,Pisos_No_Servidos,Pisos_Totales,Nro_Ascensores,Velocidad_Nominal_Establecida,ReferenciaV_Nom,Recorrido_Ppal_Super,Recorrido_Ppal_1PSuper,Recorrido_Superior_Servido,Tiempo_Apertira_cierre,Tiempo_Entrada_Salida,Tiempo_Viaje_Completo,Tiempo_Total_Viaje,Capacidad_Nominal_P,Personas_Viaje,Poblacion_Total,Paradas_Probables,Capacidad_Transporte,Intervalo_Probable,Tiempo_Llenado): 
 
+    lista = []
     for g in Res_Grupo:
 
-        df = pd.DataFrame({ "Grupo" : [g],
+        lista.append(Res_Grupo)
+
+    df = pd.DataFrame({ "Grupo" : [lista],
                             "Ascensores" : [Nro_Ascensores],
                             "Zona expresa" : [Zona_expresa],
                             "Pisos Servidos" : [Pisos_Servidos],
@@ -201,7 +204,7 @@ def Guardar_Calculo(Res_Grupo,Zona_expresa,Pisos_Servidos,Pisos_No_Servidos,Piso
                             "I (<40)" : [Intervalo_Probable],
                             "Tiempo de llenado" : [Tiempo_Llenado]})
         
-        df = df[["Grupo",
+    df = df[["Grupo",
                  "Ascensores",
                  "Zona expresa",
                  "Pisos Servidos",
@@ -223,9 +226,9 @@ def Guardar_Calculo(Res_Grupo,Zona_expresa,Pisos_Servidos,Pisos_No_Servidos,Piso
                  "I (<40)",
                  "Tiempo de llenado"]]
         
-        Writer = ExcelWriter(f".\\Cálculo Todos.xlsx", mode="a", if_sheet_exists="replace")
+    Writer = ExcelWriter(f".\\Cálculo Todos.xlsx", mode="a", if_sheet_exists="replace")
 
-        df.to_excel(Writer, f"Calculo {Res_Grupo}", index=False)
+    df.to_excel(Writer, f"Calculo {Res_Grupo}", index=False)
 
     try:
 
