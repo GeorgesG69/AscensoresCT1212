@@ -18,12 +18,14 @@ Radio_Polea = 2 #m
 
 Velocidad_Angular_Polea = Velocidad_Tangencial_Polea/Radio_Polea
 
-Factor_Reduccion = Velocidad_Angular_Motor/Velocidad_Angular_Polea
+Factor_Reduccion = Velocidad_Angular_Polea/Velocidad_Angular_Motor
 
 
 # Cálculo de la caja de cambios:
 
-Velocidad_Salida = Velocidad_Angular_Polea - Velocidad_Angular_Polea/Factor_Reduccion
+Velocidad_Salida = Velocidad_Angular_Motor*Factor_Reduccion
+
+
 
 Nro_Engranajes = 0
 
@@ -35,5 +37,5 @@ print(f"Vang motor= {Velocidad_Angular_Motor} [rad/s]\n")
 print(f"Radio de la polea = {Radio_Polea} [m]\n")
 print(f"Factor de reducción = {Factor_Reduccion} veces")
 
-print(f"Velocidad de Salida = {Velocidad_Salida} [m/s]")
+print(f"Velocidad de Salida = {Velocidad_Salida} [rad/s]")
 print(f"Número de engranajes = {Nro_Engranajes}\n")
