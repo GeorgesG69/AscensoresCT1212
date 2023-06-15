@@ -16,14 +16,16 @@ Velocidad_Angular_Motor = 3600*2*numpy.pi/60
 
 Radio_Ideal = 5
 
-Factor_Reduccion = Velocidad_Angular_Motor*Radio_Ideal/Velocidad_Tangencial_Polea
+Velocidad_Tangencial_Motor = Velocidad_Angular_Motor*Radio_Ideal
+
+Factor_Reduccion = Velocidad_Tangencial_Motor/Velocidad_Tangencial_Polea
 
 
 # Cálculo de la caja de cambios:
 
-RPM_Salida = RPM_Motor - RPM_Motor*2/10
+Velocidad_Salida = Velocidad_Tangencial_Motor-Velocidad_Tangencial_Motor/Factor_Reduccion
 
-Nro_Engranajes = RPM_Motor/RPM_Salida
+Nro_Engranajes = 0
 
 print(f"RPM = {RPM_Motor} [rpm]")
 print(f"Vtan polea = {Velocidad_Tangencial_Polea} [m/s]")
