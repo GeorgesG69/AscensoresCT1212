@@ -10,11 +10,13 @@ import numpy
 
 RPM_Motor = 3600
 
-Velocidad_Tangencial = 10 #m/s
+Velocidad_Tangencial_Polea = 10 #m/s
 
-Velocidad_Angular = 3600*2*numpy.pi/60
+Velocidad_Angular_Motor = 3600*2*numpy.pi/60
 
-Radio_Ideal = Velocidad_Tangencial/Velocidad_Angular
+Radio_Ideal = 5
+
+Factor_Reduccion = Velocidad_Angular_Motor*Radio_Ideal/Velocidad_Tangencial_Polea
 
 
 # Cálculo de la caja de cambios:
@@ -24,10 +26,11 @@ RPM_Salida = RPM_Motor - RPM_Motor*2/10
 Nro_Engranajes = RPM_Motor/RPM_Salida
 
 print(f"RPM = {RPM_Motor} [rpm]")
-print(f"Vtan = {Velocidad_Tangencial} [m/s]")
-print(f"Vang = {Velocidad_Angular} [rad/s]\n")
+print(f"Vtan polea = {Velocidad_Tangencial_Polea} [m/s]")
+print(f"Vang motor= {Velocidad_Angular_Motor} [rad/s]\n")
 
 print(f"Radio ideal = {Radio_Ideal} [m]\n")
+print(f"Factor de reducción = {Factor_Reduccion} veces")
 
 print(f"RPM de Salida = {RPM_Salida} [rpm]")
 print(f"Número de engranajes = {Nro_Engranajes}\n")
