@@ -86,11 +86,30 @@ Coeficiente_Forma_Garganta = 1
 
 ANgulo_Contacto = 141
 
+Relacion_equilibrio_cables = Tension_1/Tension_2
+
 efa = numpy.exp(Indice_Rozamiento*ANgulo_Contacto)
+
+if Relacion_equilibrio_cables*Ceoficiente_aceleracon*Coeficiente_Forma_Garganta <= efa:
+
+    print(f"{Relacion_equilibrio_cables*Ceoficiente_aceleracon*Coeficiente_Forma_Garganta} <= {efa}")
+    print(f"Hay estabilidad en la instalación")
+
+elif Relacion_equilibrio_cables*Ceoficiente_aceleracon*Coeficiente_Forma_Garganta > efa:
+
+    print(f"{Relacion_equilibrio_cables*Ceoficiente_aceleracon*Coeficiente_Forma_Garganta} >= {efa}")
+    print(f"No hay estabilidad en la instalación")
+
+
 
 print(f"Valor de la tabla 7: {Valor_T7}")
 print(f"Número de cables suspendidos: {Nro_Cables_Suspencion}")
 print(f"Carga de rotura del cable: {Carga_Rotura_Cable}")
 print(f"Peso del cable + Carga máxima: {Peso_Cable}\n")
 
-print(f"Factor seguridad (F): {Factor_Seguridad}")
+print(f"Factor seguridad (F): {Factor_Seguridad} \n")
+
+print(f"Indice de rozamiento: {Indice_Rozamiento}")
+print(f"Referencia de la presión esperada: {Ref_Presion_esp}")
+print(f"Presion esperada: {Presion_esp}")
+
