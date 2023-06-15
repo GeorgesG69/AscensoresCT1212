@@ -13,8 +13,8 @@ from Calculo_Capacidad_Intervalo import main
 
 Longitud_Fijacion_Cable = 0
 
-Peso_estructura_carro = 2000
-Exceso_Carga_Nominal = 2000*4/10
+Peso_estructura_carro = 1800
+Exceso_Carga_Nominal = 1800*4/10
 Peso_Contrapeso = Peso_estructura_carro + Exceso_Carga_Nominal
 
 Contrapeso_Pared = 5 + Longitud_Fijacion_Cable*2/1000
@@ -26,7 +26,7 @@ Carro_Contrapeso = 7 + Longitud_Fijacion_Cable*2/1000
 Ancho_Cabina = 2100
 Largo_Cabina = 1750
 
-Superficie_Cabina = Ancho_Cabina*Largo_Cabina
+Superficie_Cabina = Ancho_Cabina*Largo_Cabina/1000
 
 # Cables:
 
@@ -112,7 +112,12 @@ elif Relacion_equilibrio_cables*Ceoficiente_aceleracon*Coeficiente_Forma_Gargant
 
 print(f"Valor de la tabla 7: {Valor_T7}")
 print(f"Número de cables suspendidos: {Nro_Cables_Suspencion}")
-print(f"Carga de rotura del cable: {Carga_Rotura_Cable}")
+print(f"Carga de rotura del cable: {Carga_Rotura_Cable}\n")
+
+print(f"Ancho cabina: {Ancho_Cabina/1000} [m]")
+print(f"Largo cabina: {Largo_Cabina/1000} [m]")
+print(f"Superficie de la cabina: {Superficie_Cabina} [m^2]\n")
+
 print(f"Peso del cable + Carga máxima: {Peso_Cable}\n")
 
 print(f"Factor seguridad (F): {Factor_Seguridad} \n")
