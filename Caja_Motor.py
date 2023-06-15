@@ -21,7 +21,7 @@ Radio_Ideal = Velocidad_Tangencial/Velocidad_Angular
 
 RPM_Salida = RPM_Motor - RPM_Motor*2/10
 
-Nro_Engranajes = RPM_Salida/RPM_Motor
+Nro_Engranajes = RPM_Motor/RPM_Salida
 
 print(f"RPM = {RPM_Motor} [rpm]")
 print(f"Vtan = {Velocidad_Tangencial} [m/s]")
