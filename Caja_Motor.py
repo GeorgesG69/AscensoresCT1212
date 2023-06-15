@@ -14,7 +14,7 @@ Velocidad_Tangencial_Polea = 10 #m/s
 
 Velocidad_Angular_Motor = 3600*2*numpy.pi/60
 
-Radio_Ideal = 5
+Radio_Ideal = 200
 
 Velocidad_Tangencial_Motor = Velocidad_Angular_Motor*Radio_Ideal
 
@@ -34,5 +34,5 @@ print(f"Vang motor= {Velocidad_Angular_Motor} [rad/s]\n")
 print(f"Radio ideal = {Radio_Ideal} [m]\n")
 print(f"Factor de reducción = {Factor_Reduccion} veces")
 
-print(f"RPM de Salida = {RPM_Salida} [rpm]")
+print(f"Velocidad de Salida = {Velocidad_Salida} [m/s]")
 print(f"Número de engranajes = {Nro_Engranajes}\n")
