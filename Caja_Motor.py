@@ -30,4 +30,4 @@ print(f"Vang = {Velocidad_Angular} [rad/s]\n")
 print(f"Radio ideal = {Radio_Ideal} [m]\n")
 
 print(f"RPM de Salida = {RPM_Salida} [rpm]")
-print(f"Número de engranajes = {Nro_Engranajes}")
+print(f"Número de engranajes = {Nro_Engranajes}\n")
