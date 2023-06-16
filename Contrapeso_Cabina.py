@@ -1,21 +1,28 @@
 # Determinación de los valores del Contrapeso y la Cabina según la normativa Covenin.
 
 import numpy
-import pandas
+import pandas as pd
 import sys
 
-sys.path.append("C:\\Users\\Georges\\Desktop\\Mine\\Proyectos CT1212\\Ascensores\\AscensoresCT1212\\Calculo_Capacidad_Intervalo.py")
-from Calculo_Capacidad_Intervalo import main
+filepath = "./datos_ascensores.xlsm"
+de = pd.read_excel("datos_ascensores.xls")
 
-#Res_Grupo_G, Zona_expresa_G,Pisos_Servidos_G,Pisos_No_Servidos_G,Pisos_Totales_G,Nro_Ascensores_G,Velocidad_Nominal_Establecida_G,ReferenciaV_Nom_G,Recorrido_Ppal_Super_G,Recorrido_Ppal_1PSuper_G,Recorrido_Superior_Servido_G,Tiempo_Apertira_cierre_G,Tiempo_Entrada_Salida_G,Tiempo_Viaje_Completo_G,Tiempo_Total_Viaje_G,Capacidad_Nominal_P_G,Personas_Viaje_G,Poblacion_Total_G,Paradas_Probables_G,Capacidad_Transporte_G,Intervalo_Probable_G,Tiempo_Llenado_G = main
+print(de)
 
-#print(f"Velocidad nominal: {Velocidad_Nominal_Establecida}")
+def Carga(f):
 
-Carga_nominal = 1600
+    Carga_nominal = de.iloc[f, 9]
 
-Peso_estructura_carro = Carga_nominal/2
-Exceso_Carga_Nominal = Carga_nominal*5/10
-Peso_Contrapeso = 1.5*Peso_estructura_carro
+    Peso_estructura_carro = Carga_nominal/2
+    Exceso_Carga_Nominal = Carga_nominal*5/10
+    Peso_Contrapeso = 1.5*Peso_estructura_carro
+
+    print(f"Contrapeso: {Peso_Contrapeso}")
+    print(f"Peso Cabina = {Peso_estructura_carro}")
+
+    return Carga_nominal, Peso_estructura_carro, Peso_Contrapeso, Exceso_Carga_Nominal
+
+
 
 # Cabina
 #-Superficie:
@@ -49,8 +56,7 @@ print(f"Ancho cabina: {Ancho_Cabina/1000} [m]")
 print(f"Largo cabina: {Largo_Cabina/1000} [m]")
 print(f"Superficie de la cabina: {Superficie_Cabina} [m^2]\n")
 
-print(f"Contrapeso: {Peso_Contrapeso}")
-print(f"Peso Cabina = {Peso_estructura_carro}")
+
 print(f"Peso del cable + Carga máxima: {Peso_Cable}\n")
 
 print(f"Factor seguridad (F): {Factor_Seguridad} \n")
