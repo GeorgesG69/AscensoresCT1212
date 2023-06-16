@@ -8,7 +8,7 @@ la velocidad del motor a la de la polea del ascensor.
 '''
 import numpy
 
-M_Cabina = 450 #kg
+M_Cabina = 900 #kg
 M_Contrapeso = 1350 #kg
 Gravedad = 9.8
 
@@ -19,7 +19,7 @@ Radio_Polea = 0.2
 
 Vang_Polea = Vtan_Polea/Radio_Polea
 
-Tension = M_Contrapeso*Gravedad #N
+Tension = 4.4*M_Cabina+5.4*M_Contrapeso #N
 
 
 
@@ -36,7 +36,7 @@ Potencia_Motor = 10*Potencia_Caja/9
 Nro_Engranes = 376.99/Vang_Polea
 
 
-print(f"Tension 2: {Tension}\n")
+print(f"Tension: {Tension}\n")
 
 print(f"Radio de la polea: {Radio_Polea}")
 #print(f"Torque del motor: {Torque_Motor}")

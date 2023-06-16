@@ -15,7 +15,7 @@ Carga_nominal = 1800
 
 Peso_estructura_carro = Carga_nominal/2
 Exceso_Carga_Nominal = Carga_nominal*5/10
-Peso_Contrapeso = Peso_estructura_carro + Exceso_Carga_Nominal
+Peso_Contrapeso = 1.5*Peso_estructura_carro
 
 # Cabina
 #-Superficie:
