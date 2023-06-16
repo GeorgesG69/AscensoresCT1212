@@ -40,73 +40,7 @@ Peso_Cable = 0.14 + 2000
 
 Factor_Seguridad = Valor_T7*Nro_Cables_Suspencion*Carga_Rotura_Cable/Peso_Cable
 
-# Rozamiento entre cables y polea:
-Coeficiente_M = 0.09
 
-Tipo_Garganta = "cuna" #sin ñ
-
-if Tipo_Garganta == "cuna":
-
-    Angulo_Mecanizado_Garganta = 0.785398
-
-    Indice_Rozamiento = Coeficiente_M/numpy.sin(Angulo_Mecanizado_Garganta/2)
-
-elif Tipo_Garganta == "comb":
-
-    Angulo_Entralladura = 0.785398
-
-    Indice_Rozamiento = 4*Coeficiente_M*(1-numpy.sin(Angulo_Entralladura/2))/(numpy.pi-Angulo_Entralladura-numpy.sin(Angulo_Entralladura))
-
-else:
-    print("Tipo de garganta no especificado")
-
-# Presion específica entre los cables y gargantas de la polea:
-
-Carga_Estatica_Cables = 2000 + (1000)
-Numero_Cables_Traccion = 20
-Diametro_Cable_Traccion = 0.10 #cm
-Diametro_Primitivo_Polea = 100 #cm
-
-Velocidad_Nominal = 10
-
-
-if Tipo_Garganta == "cuna":
-
-    Presion_esp = (5*Carga_Estatica_Cables)/(Numero_Cables_Traccion*Diametro_Cable_Traccion*Diametro_Primitivo_Polea*numpy.sin(Angulo_Mecanizado_Garganta/2))
-
-elif Tipo_Garganta == "comb":
-
-    Presion_esp = (8*Carga_Estatica_Cables*numpy.cos(Angulo_Entralladura/2))/(Numero_Cables_Traccion*Diametro_Cable_Traccion*Diametro_Primitivo_Polea*(numpy.pi-Angulo_Entralladura-numpy.sin(Angulo_Entralladura)))
-
-else:
-    print("Error en la presion específica.")
-
-Ref_Presion_esp = 125+40*Velocidad_Nominal
-
-
-# Tension:
-
-Tension_1 = Peso_estructura_carro*9.8
-Tension_2 = Peso_Contrapeso*9.8
-
-Ceoficiente_aceleracon = (9.8+1)/(9.8-1)
-Coeficiente_Forma_Garganta = 1
-
-ANgulo_Contacto = 141
-
-Relacion_equilibrio_cables = Tension_1/Tension_2
-
-efa = numpy.exp(Indice_Rozamiento*ANgulo_Contacto)
-
-if Relacion_equilibrio_cables*Ceoficiente_aceleracon*Coeficiente_Forma_Garganta <= efa:
-
-    print(f"Relación: {Relacion_equilibrio_cables*Ceoficiente_aceleracon*Coeficiente_Forma_Garganta} <= {efa}")
-    print(f"Hay estabilidad en la instalación")
-
-elif Relacion_equilibrio_cables*Ceoficiente_aceleracon*Coeficiente_Forma_Garganta > efa:
-
-    print(f"Relación: {Relacion_equilibrio_cables*Ceoficiente_aceleracon*Coeficiente_Forma_Garganta} >= {efa}")
-    print(f"No hay estabilidad en la instalación")
 
 
 
@@ -122,7 +56,7 @@ print(f"Peso del cable + Carga máxima: {Peso_Cable}\n")
 
 print(f"Factor seguridad (F): {Factor_Seguridad} \n")
 
-print(f"Indice de rozamiento: {Indice_Rozamiento}")
-print(f"Referencia de la presión esperada: {Ref_Presion_esp}")
-print(f"Presion esperada: {Presion_esp} \n")
+
+
+
 
