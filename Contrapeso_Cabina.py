@@ -11,14 +11,11 @@ from Calculo_Capacidad_Intervalo import main
 
 #print(f"Velocidad nominal: {Velocidad_Nominal_Establecida}")
 
-Longitud_Fijacion_Cable = 0
 
-Peso_estructura_carro = 1800
-Exceso_Carga_Nominal = 1800*4/10
+
+Peso_estructura_carro = 900
+Exceso_Carga_Nominal = 1800*5/10
 Peso_Contrapeso = Peso_estructura_carro + Exceso_Carga_Nominal
-
-Contrapeso_Pared = 5 + Longitud_Fijacion_Cable*2/1000
-Carro_Contrapeso = 7 + Longitud_Fijacion_Cable*2/1000
 
 # Cabina
 #-Superficie:
@@ -52,6 +49,7 @@ print(f"Ancho cabina: {Ancho_Cabina/1000} [m]")
 print(f"Largo cabina: {Largo_Cabina/1000} [m]")
 print(f"Superficie de la cabina: {Superficie_Cabina} [m^2]\n")
 
+print(f"Contrapeso: {Peso_Contrapeso}")
 print(f"Peso del cable + Carga máxima: {Peso_Cable}\n")
 
 print(f"Factor seguridad (F): {Factor_Seguridad} \n")
