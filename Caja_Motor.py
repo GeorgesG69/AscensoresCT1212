@@ -7,46 +7,49 @@ la velocidad del motor a la de la polea del ascensor.
 6. Calculando el motor eléctrico con un 90% de eficiencia que gira a 3600RPM.
 '''
 import numpy
+import pandas as pd
+import sys
 
-M_Cabina = 800 #kg
-M_Contrapeso = 1200 #kg
-Gravedad = 9.8
+def Calculos():
 
-Vtan_Polea = 10 #m/s
+    M_Cabina = 800 #kg
+    M_Contrapeso = 1200 #kg
+    Gravedad = 9.8
 
-Radio_Polea = 0.2
+    Vtan_Polea = 10 #m/s
 
-
-Vang_Polea = Vtan_Polea/Radio_Polea
-
-Tension = 4.4*M_Cabina+5.4*M_Contrapeso #N
-
+    Radio_Polea = 0.2
 
 
-Torque_Polea = Tension*Radio_Polea
+    Vang_Polea = Vtan_Polea/Radio_Polea
 
-Potencia_Polea = Torque_Polea*Vang_Polea
+    Tension = 4.4*M_Cabina+5.4*M_Contrapeso #N
 
-Potencia_Caja = 10*Potencia_Polea/8
-Potencia_Motor = 10*Potencia_Caja/9
+
+
+    Torque_Polea = Tension*Radio_Polea
+
+    Potencia_Polea = Torque_Polea*Vang_Polea
+
+    Potencia_Caja = 10*Potencia_Polea/8
+    Potencia_Motor = 10*Potencia_Caja/9
 
 #Torque_Motor = Potencia_Motor*152.069 # 487.5
 #Vang_Motor = Potencia_Motor/Torque_Motor
 
-Nro_Engranes = 376.99/Vang_Polea
+    Nro_Engranes = 376.99/Vang_Polea
 
 
-print(f"Tension: {Tension}\n")
+    print(f"Tension: {Tension}\n")
 
-print(f"Radio de la polea: {Radio_Polea}")
-#print(f"Torque del motor: {Torque_Motor}")
-print(f"Torque de la polea: {Torque_Polea}\n")
+    print(f"Radio de la polea: {Radio_Polea}")
 
-print(f"Potencia de la polea: {Potencia_Polea}")
-print(f"Potencia de la caja: {Potencia_Caja}")
-print(f"Potencia del motor: {Potencia_Motor}\n")
+    print(f"Torque de la polea: {Torque_Polea}\n")
 
-print(f"Velocidad angular de la polea: {Vang_Polea}")
-#print(f"Velocidad angular del motor: {Vang_Motor} [rad/s] (377)\n")
+    print(f"Potencia de la polea: {Potencia_Polea}")
+    print(f"Potencia de la caja: {Potencia_Caja}")
+    print(f"Potencia del motor: {Potencia_Motor}\n")
 
-print(f"Nro de engranajes: {Nro_Engranes} => {round(Nro_Engranes)} engranajes")
+    print(f"Velocidad angular de la polea: {Vang_Polea}")
+
+    print(f"Nro de engranajes: {Nro_Engranes} => {round(Nro_Engranes)} engranajes")
