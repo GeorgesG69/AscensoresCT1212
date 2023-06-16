@@ -89,7 +89,7 @@ def guardar(grp, contrapeso, cabina, tension, radiop, torquep, potenciap, potenc
              "Vel ang polea",
              "Nro engranes"]]
     
-    Escritor = pd.ExcelWriter(".\\Caja_Motor.xlsx")
+    Escritor = pd.ExcelWriter(".\\Caja_Motor.xlsx", mode="a", if_sheet_exists="replace")
 
     df.to_excel(Escritor, f"Calculo {grp}", index=False)
 
