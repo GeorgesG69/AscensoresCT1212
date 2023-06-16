@@ -43,6 +43,8 @@ def Calculos(fila):
 
     Nro_Engranes = 376.99/Vang_Polea
 
+    print(f"{grupo} \n")
+
     print(f"Contrapeso: {M_Contrapeso} kg")
     print(f"Cabina: {M_Cabina} kg")
     print(f"Tension: {Tension}\n")
