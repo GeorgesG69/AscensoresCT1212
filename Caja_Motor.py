@@ -32,7 +32,7 @@ Potencia_Motor = 10*Potencia_Caja/9
 Torque_Motor = 162.5
 Vang_Motor = Potencia_Motor/Torque_Motor
 
-#Nro_Engranes = Vang_Motor/Vang_Polea
+Nro_Engranes = Vang_Motor/Vang_Polea
 
 print(f"Tension 1: {Tension_1}")
 print(f"Tension 2: {Tension_2}\n")
@@ -47,4 +47,4 @@ print(f"Potencia del motor: {Potencia_Motor}\n")
 print(f"Velocidad angular de la polea: {Vang_Polea}")
 print(f"Velocidad angular del motor: {Vang_Motor} [rad/s] (377)\n")
 
-#print(f"Nro de engranajes: {Nro_Engranes}")
+print(f"Nro de engranajes: {Nro_Engranes}")
