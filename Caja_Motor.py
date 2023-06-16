@@ -47,4 +47,4 @@ print(f"Potencia del motor: {Potencia_Motor}\n")
 print(f"Velocidad angular de la polea: {Vang_Polea}")
 print(f"Velocidad angular del motor: {Vang_Motor} [rad/s] (377)\n")
 
-print(f"Nro de engranajes: {Nro_Engranes}")
+print(f"Nro de engranajes: {Nro_Engranes} => {round(Nro_Engranes)} engranajes")
