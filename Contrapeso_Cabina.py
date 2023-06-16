@@ -13,7 +13,7 @@ from Calculo_Capacidad_Intervalo import main
 
 Carga_nominal = 1800
 
-Peso_estructura_carro = Carga_nominal/4
+Peso_estructura_carro = Carga_nominal/2
 Exceso_Carga_Nominal = 1800*5/10
 Peso_Contrapeso = Peso_estructura_carro + Exceso_Carga_Nominal
 

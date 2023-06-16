@@ -19,7 +19,7 @@ Radio_Polea = 0.2
 
 Vang_Polea = Vtan_Polea/Radio_Polea
 
-Tension = (4.4*M_Cabina)+(5.4*M_Contrapeso) #N
+Tension = M_Contrapeso*Gravedad #N
 
 
 
