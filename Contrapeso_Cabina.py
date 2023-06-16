@@ -7,9 +7,7 @@ import sys
 filepath = "./datos_ascensores.xlsm"
 de = pd.read_excel("datos_ascensores.xls")
 
-print(de)
-
-def Carga(f):
+def Carga(f, grupo):
 
     Carga_nominal = de.iloc[f, 9]
 
@@ -17,12 +15,37 @@ def Carga(f):
     Exceso_Carga_Nominal = Carga_nominal*5/10
     Peso_Contrapeso = 1.5*Peso_estructura_carro
 
+    print(f"{grupo}\n")
+
+    print(f"Carga nominal: {Carga_nominal}")
     print(f"Contrapeso: {Peso_Contrapeso}")
-    print(f"Peso Cabina = {Peso_estructura_carro}")
+    print(f"Peso Cabina = {Peso_estructura_carro}\n")
 
-    return Carga_nominal, Peso_estructura_carro, Peso_Contrapeso, Exceso_Carga_Nominal
+    return Carga_nominal, Peso_estructura_carro, Peso_Contrapeso, Exceso_Carga_Nominal, grupo
+
+def guardar(Carga_N, Peso_C, Peso_co, Grupo):
+
+    df = pd.DataFrame({"Grupo" : [Grupo],
+                       "Carga Nominal" : [Carga_N],
+                       "Peso cabina" : [Peso_C],
+                       "Peso contrapeso" : [Peso_co]})
+    
+    df = df[["Grupo",
+             "Carga Nominal",
+             "Peso Cabina",
+             "Peso contrapeso"]]
+
+    Escritor = pd.ExcelWriter(".\\Contrapeso_Cabina.xlsx")
+
+    df.to_excel(Escritor, f"Calculo {Grupo}", index=False)
+
+    Escritor.save()
 
 
+Carga(1, de.iloc[1, 0])
+Carga(2, de.iloc[2, 0])
+Carga(3, de.iloc[3, 0])
+Carga(4, de.iloc[4, 0])
 
 # Cabina
 #-Superficie:
