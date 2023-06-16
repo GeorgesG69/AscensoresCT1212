@@ -33,7 +33,7 @@ Potencia_Motor = 10*Potencia_Caja/9
 #Torque_Motor = Potencia_Motor*152.069 # 487.5
 #Vang_Motor = Potencia_Motor/Torque_Motor
 
-Nro_Engranes = 377/Vang_Polea
+Nro_Engranes = 376.99/Vang_Polea
 
 print(f"Tension 1: {Tension_1}")
 print(f"Tension 2: {Tension_2}\n")
