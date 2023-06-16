@@ -10,10 +10,13 @@ import numpy
 import pandas as pd
 import sys
 
-def Calculos():
+filepath = "./datos_ascensores.xlsm"
+de = pd.read_excel("datos_ascensores.xls")
 
-    M_Cabina = 800 #kg
-    M_Contrapeso = 1200 #kg
+def Calculos(fila):
+
+    M_Cabina = de.iloc[fila, 9]/2 #kg
+    M_Contrapeso = de.iloc[fila, 9]*1.5/2 #kg
     Gravedad = 9.8
 
     Vtan_Polea = 10 #m/s
@@ -39,7 +42,8 @@ def Calculos():
 
     Nro_Engranes = 376.99/Vang_Polea
 
-
+    print(f"Contrapeso: {M_Contrapeso} kg")
+    print(f"Cabina: {M_Cabina} kg")
     print(f"Tension: {Tension}\n")
 
     print(f"Radio de la polea: {Radio_Polea}")
@@ -53,3 +57,5 @@ def Calculos():
     print(f"Velocidad angular de la polea: {Vang_Polea}")
 
     print(f"Nro de engranajes: {Nro_Engranes} => {round(Nro_Engranes)} engranajes")
+
+Calculos(1)
