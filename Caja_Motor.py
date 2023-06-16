@@ -20,7 +20,7 @@ def Calculos(fila):
     M_Contrapeso = de.iloc[fila, 9]*1.5/2 #kg
     Gravedad = 9.8
 
-    Vtan_Polea = 10 #m/s
+    Vtan_Polea = de.iloc[fila, 6] #m/s
 
     Radio_Polea = 0.2
 
@@ -59,7 +59,7 @@ def Calculos(fila):
 
     print(f"Velocidad angular de la polea: {Vang_Polea}")
 
-    print(f"Nro de engranajes: {Nro_Engranes} => {round(Nro_Engranes)} engranajes")
+    print(f"Nro de engranajes: {Nro_Engranes} => {round(Nro_Engranes)} engranajes \n")
 
     return grupo, M_Contrapeso, M_Cabina, Tension, Radio_Polea, Torque_Polea, Potencia_Polea, Potencia_Caja, Potencia_Motor, Vang_Polea, round(Nro_Engranes)
 
@@ -86,7 +86,7 @@ def guardar(grp, contrapeso, cabina, tension, radiop, torquep, potenciap, potenc
              "Potencia polea",
              "Potencia caja",
              "Potencia motor",
-             "vel ang polea",
+             "Vel ang polea",
              "Nro engranes"]]
     
     Escritor = pd.ExcelWriter(".\\Caja_Motor.xlsx")
