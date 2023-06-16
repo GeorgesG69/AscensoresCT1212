@@ -21,7 +21,7 @@ def Carga(f, grupo):
     print(f"Contrapeso: {Peso_Contrapeso}")
     print(f"Peso Cabina = {Peso_estructura_carro}\n")
 
-    return Carga_nominal, Peso_estructura_carro, Peso_Contrapeso, Exceso_Carga_Nominal, grupo
+    return Carga_nominal, Peso_estructura_carro, Peso_Contrapeso, grupo
 
 def guardar(Carga_N, Peso_C, Peso_co, Grupo):
 
@@ -32,20 +32,27 @@ def guardar(Carga_N, Peso_C, Peso_co, Grupo):
     
     df = df[["Grupo",
              "Carga Nominal",
-             "Peso Cabina",
+             "Peso cabina",
              "Peso contrapeso"]]
 
-    Escritor = pd.ExcelWriter(".\\Contrapeso_Cabina.xlsx")
+    Escritor = pd.ExcelWriter(".\\Contrapeso_Cabina.xlsx", mode="a", if_sheet_exists="replace")
 
     df.to_excel(Escritor, f"Calculo {Grupo}", index=False)
 
-    Escritor.save()
+    Escritor._save()
 
 
-Carga(1, de.iloc[1, 0])
-Carga(2, de.iloc[2, 0])
-Carga(3, de.iloc[3, 0])
-Carga(4, de.iloc[4, 0])
+Carga_N_A, Peso_C_A, Peso_co_A, Grupo_A = Carga(1, de.iloc[1, 0])
+guardar(Carga_N_A, Peso_C_A, Peso_co_A, Grupo_A)
+
+Carga_N_B, Peso_C_B, Peso_co_B, Grupo_B = Carga(2, de.iloc[2, 0])
+guardar(Carga_N_B, Peso_C_B, Peso_co_B, Grupo_B)
+
+Carga_N_C, Peso_C_C, Peso_co_C, Grupo_C = Carga(3, de.iloc[3, 0])
+guardar(Carga_N_C, Peso_C_C, Peso_co_C, Grupo_C)
+
+Carga_N_D, Peso_C_D, Peso_co_D, Grupo_D = Carga(4, de.iloc[4, 0])
+guardar(Carga_N_D, Peso_C_D, Peso_co_D, Grupo_D)
 
 # Cabina
 #-Superficie:
