@@ -22,7 +22,7 @@ Tension_1 = M_Cabina*Gravedad #N
 Tension_2 = M_Contrapeso*Gravedad #N
 
 
-Torque_Polea = Tension_1*Radio_Polea
+Torque_Polea = Tension_2*Radio_Polea
 
 Potencia_Polea = Torque_Polea*Vang_Polea
 
