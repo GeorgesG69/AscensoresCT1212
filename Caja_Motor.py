@@ -15,15 +15,15 @@ Gravedad = 9.8
 Vtan_Polea = 10 #m/s
 
 Radio_Polea = 0.2
-Radio_Rueda_Motor = 0.03681236799999999999988888
+
 
 Vang_Polea = Vtan_Polea/Radio_Polea
 
-Tension_1 = M_Cabina*Gravedad #N
-Tension_2 = M_Contrapeso*Gravedad #N
+Tension = (4.4*M_Cabina)+(5.4*M_Contrapeso) #N
 
 
-Torque_Polea = Tension_2*Radio_Polea
+
+Torque_Polea = Tension*Radio_Polea
 
 Potencia_Polea = Torque_Polea*Vang_Polea
 
@@ -35,8 +35,8 @@ Potencia_Motor = 10*Potencia_Caja/9
 
 Nro_Engranes = 376.99/Vang_Polea
 
-print(f"Tension 1: {Tension_1}")
-print(f"Tension 2: {Tension_2}\n")
+
+print(f"Tension 2: {Tension}\n")
 
 print(f"Radio de la polea: {Radio_Polea}")
 #print(f"Torque del motor: {Torque_Motor}")
