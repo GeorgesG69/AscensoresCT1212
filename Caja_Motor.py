@@ -14,7 +14,7 @@ Gravedad = 9.8
 
 Vtan_Polea = 10 #m/s
 
-Radio_Polea = 5
+Radio_Polea = 0.2
 
 Vang_Polea = Vtan_Polea/Radio_Polea
 
