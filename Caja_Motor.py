@@ -8,8 +8,8 @@ la velocidad del motor a la de la polea del ascensor.
 '''
 import numpy
 
-M_Cabina = 900 #kg
-M_Contrapeso = 1350 #kg
+M_Cabina = 800 #kg
+M_Contrapeso = 1200 #kg
 Gravedad = 9.8
 
 Vtan_Polea = 10 #m/s

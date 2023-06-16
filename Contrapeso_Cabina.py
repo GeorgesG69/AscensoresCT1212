@@ -11,7 +11,7 @@ from Calculo_Capacidad_Intervalo import main
 
 #print(f"Velocidad nominal: {Velocidad_Nominal_Establecida}")
 
-Carga_nominal = 1800
+Carga_nominal = 1600
 
 Peso_estructura_carro = Carga_nominal/2
 Exceso_Carga_Nominal = Carga_nominal*5/10
