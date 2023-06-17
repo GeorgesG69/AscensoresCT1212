@@ -29,8 +29,8 @@ from pandas import ExcelWriter
 from pandas import ExcelFile
 import sys
 
-filepath = "./datos_ascensores.xlsm"
-de = pd.read_excel("datos_ascensores.xls")
+filepath = "./Datos Ascensores intento.xlsm"
+de = pd.read_excel("Datos Ascensores intento.xls")
 
 
 
@@ -226,7 +226,7 @@ def Guardar_Calculo(Res_Grupo,Zona_expresa,Pisos_Servidos,Pisos_No_Servidos,Piso
                  "I (<40)",
                  "Tiempo de llenado"]]
         
-    Writer = ExcelWriter(f".\\Cálculo Nuevo.xlsx", mode="a", if_sheet_exists="replace")
+    Writer = ExcelWriter(f".\\Cálculo mas gente.xlsx", mode="a", if_sheet_exists="replace")
 
     df.to_excel(Writer, f"Calculo {Res_Grupo}", index=False)
 
