@@ -27,7 +27,7 @@ def Calculos(fila):
 
     Vang_Polea = Vtan_Polea/Radio_Polea
 
-    Tension = 4.4*M_Cabina #N
+    Tension = M_Cabina*Gravedad #N
 
 
 
